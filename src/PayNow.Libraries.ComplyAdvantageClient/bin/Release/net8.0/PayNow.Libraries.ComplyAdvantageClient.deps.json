@@ -1,0 +1,172 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "PayNow.Libraries.ComplyAdvantageClient/0.0.2": {
+        "dependencies": {
+          "Microsoft.Kiota.Bundle": "1.19.1"
+        },
+        "runtime": {
+          "PayNow.Libraries.ComplyAdvantageClient.dll": {}
+        }
+      },
+      "Microsoft.Kiota.Abstractions/1.19.1": {
+        "dependencies": {
+          "Std.UriTemplate": "2.0.5"
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Kiota.Abstractions.dll": {
+            "assemblyVersion": "1.19.1.0",
+            "fileVersion": "1.19.1.0"
+          }
+        }
+      },
+      "Microsoft.Kiota.Bundle/1.19.1": {
+        "dependencies": {
+          "Microsoft.Kiota.Abstractions": "1.19.1",
+          "Microsoft.Kiota.Http.HttpClientLibrary": "1.19.1",
+          "Microsoft.Kiota.Serialization.Form": "1.19.1",
+          "Microsoft.Kiota.Serialization.Json": "1.19.1",
+          "Microsoft.Kiota.Serialization.Multipart": "1.19.1",
+          "Microsoft.Kiota.Serialization.Text": "1.19.1"
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Kiota.Bundle.dll": {
+            "assemblyVersion": "1.19.1.0",
+            "fileVersion": "1.19.1.0"
+          }
+        }
+      },
+      "Microsoft.Kiota.Http.HttpClientLibrary/1.19.1": {
+        "dependencies": {
+          "Microsoft.Kiota.Abstractions": "1.19.1"
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Kiota.Http.HttpClientLibrary.dll": {
+            "assemblyVersion": "1.19.1.0",
+            "fileVersion": "1.19.1.0"
+          }
+        }
+      },
+      "Microsoft.Kiota.Serialization.Form/1.19.1": {
+        "dependencies": {
+          "Microsoft.Kiota.Abstractions": "1.19.1"
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Kiota.Serialization.Form.dll": {
+            "assemblyVersion": "1.19.1.0",
+            "fileVersion": "1.19.1.0"
+          }
+        }
+      },
+      "Microsoft.Kiota.Serialization.Json/1.19.1": {
+        "dependencies": {
+          "Microsoft.Kiota.Abstractions": "1.19.1"
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Kiota.Serialization.Json.dll": {
+            "assemblyVersion": "1.19.1.0",
+            "fileVersion": "1.19.1.0"
+          }
+        }
+      },
+      "Microsoft.Kiota.Serialization.Multipart/1.19.1": {
+        "dependencies": {
+          "Microsoft.Kiota.Abstractions": "1.19.1"
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Kiota.Serialization.Multipart.dll": {
+            "assemblyVersion": "1.19.1.0",
+            "fileVersion": "1.19.1.0"
+          }
+        }
+      },
+      "Microsoft.Kiota.Serialization.Text/1.19.1": {
+        "dependencies": {
+          "Microsoft.Kiota.Abstractions": "1.19.1"
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Kiota.Serialization.Text.dll": {
+            "assemblyVersion": "1.19.1.0",
+            "fileVersion": "1.19.1.0"
+          }
+        }
+      },
+      "Std.UriTemplate/2.0.5": {
+        "runtime": {
+          "lib/net5.0/Std.UriTemplate.dll": {
+            "assemblyVersion": "2.0.5.0",
+            "fileVersion": "2.0.5.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "PayNow.Libraries.ComplyAdvantageClient/0.0.2": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Kiota.Abstractions/1.19.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Z09qCHZJXGK0E+3N5bn8eo3OjTwP1EFRLiDwy7ESQlPnoJ1FcaYJ8yrczQOtMklYl9JuS6RDJeRMKb9sVcskTw==",
+      "path": "microsoft.kiota.abstractions/1.19.1",
+      "hashPath": "microsoft.kiota.abstractions.1.19.1.nupkg.sha512"
+    },
+    "Microsoft.Kiota.Bundle/1.19.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bAMM/ptCBKgICcA5s2tUOS6yxQ427kRIxZks3gXHHzaoTGttfvUEJj/1qb8mwwmRY3jf1IBVFYkLsOFC+mM7bQ==",
+      "path": "microsoft.kiota.bundle/1.19.1",
+      "hashPath": "microsoft.kiota.bundle.1.19.1.nupkg.sha512"
+    },
+    "Microsoft.Kiota.Http.HttpClientLibrary/1.19.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tJu61xvn3IX5eET8oFKMMxFJ/zndzyb7eiTffGr7co/vqji/iVBGfuMiiiRJkFoEIhJ41aP0sxnkjJwhvKsQyQ==",
+      "path": "microsoft.kiota.http.httpclientlibrary/1.19.1",
+      "hashPath": "microsoft.kiota.http.httpclientlibrary.1.19.1.nupkg.sha512"
+    },
+    "Microsoft.Kiota.Serialization.Form/1.19.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rFByTawwPWoP9qwp3lNwYiFad/+aoOQ9jJQZzbWriFGD9+43KOxwho4ePnShCCoQPc5sv+18KqkzHhOx9WMUbw==",
+      "path": "microsoft.kiota.serialization.form/1.19.1",
+      "hashPath": "microsoft.kiota.serialization.form.1.19.1.nupkg.sha512"
+    },
+    "Microsoft.Kiota.Serialization.Json/1.19.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-R5i0TfIX+ATb+WF26cGYn7WUp8nw0Qoh61QqmtrK0q9n6JlLuDmhJToB4KZLc91qEiA7ZtkaSLz82rotgvo/iw==",
+      "path": "microsoft.kiota.serialization.json/1.19.1",
+      "hashPath": "microsoft.kiota.serialization.json.1.19.1.nupkg.sha512"
+    },
+    "Microsoft.Kiota.Serialization.Multipart/1.19.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-WVPvAn+NzS7T4CdnbqOpWRSuUtGgAWd4szRG+AWj/zDM2LOplBGFX523g0NeR5mJ7nAwOq4GZyqxSsM/9i8Kow==",
+      "path": "microsoft.kiota.serialization.multipart/1.19.1",
+      "hashPath": "microsoft.kiota.serialization.multipart.1.19.1.nupkg.sha512"
+    },
+    "Microsoft.Kiota.Serialization.Text/1.19.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-OQXQrYTMRMUEAkkOTmoUm2PayFZzkd8NdwuBytfkgwWE90KYetHIZogDvK81Dg5CtKkHAc0u6dZ8+ewpfe1Gjw==",
+      "path": "microsoft.kiota.serialization.text/1.19.1",
+      "hashPath": "microsoft.kiota.serialization.text.1.19.1.nupkg.sha512"
+    },
+    "Std.UriTemplate/2.0.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-PtqPdWNBObRcDHjyjbgOz2XoCJQaiA+HNDPQve/O7yGCkospfHDCuH9ULVx1msImwHHG+uhpDjiZX7bpLN/cnw==",
+      "path": "std.uritemplate/2.0.5",
+      "hashPath": "std.uritemplate.2.0.5.nupkg.sha512"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+/home/runner/work/PayNow.Libraries.ComplyAdvantageClient/PayNow.Libraries.ComplyAdvantageClient/src/PayNow.Libraries.ComplyAdvantageClient/bin/Release/net8.0/PayNow.Libraries.ComplyAdvantageClient.deps.json
+/home/runner/work/PayNow.Libraries.ComplyAdvantageClient/PayNow.Libraries.ComplyAdvantageClient/src/PayNow.Libraries.ComplyAdvantageClient/bin/Release/net8.0/PayNow.Libraries.ComplyAdvantageClient.dll
+/home/runner/work/PayNow.Libraries.ComplyAdvantageClient/PayNow.Libraries.ComplyAdvantageClient/src/PayNow.Libraries.ComplyAdvantageClient/bin/Release/net8.0/PayNow.Libraries.ComplyAdvantageClient.pdb
+/home/runner/work/PayNow.Libraries.ComplyAdvantageClient/PayNow.Libraries.ComplyAdvantageClient/src/PayNow.Libraries.ComplyAdvantageClient/obj/Release/net8.0/PayNow.Libraries.ComplyAdvantageClient.csproj.AssemblyReference.cache
+/home/runner/work/PayNow.Libraries.ComplyAdvantageClient/PayNow.Libraries.ComplyAdvantageClient/src/PayNow.Libraries.ComplyAdvantageClient/obj/Release/net8.0/PayNow.Libraries.ComplyAdvantageClient.GeneratedMSBuildEditorConfig.editorconfig
+/home/runner/work/PayNow.Libraries.ComplyAdvantageClient/PayNow.Libraries.ComplyAdvantageClient/src/PayNow.Libraries.ComplyAdvantageClient/obj/Release/net8.0/PayNow.Libraries.ComplyAdvantageClient.AssemblyInfoInputs.cache
+/home/runner/work/PayNow.Libraries.ComplyAdvantageClient/PayNow.Libraries.ComplyAdvantageClient/src/PayNow.Libraries.ComplyAdvantageClient/obj/Release/net8.0/PayNow.Libraries.ComplyAdvantageClient.AssemblyInfo.cs
+/home/runner/work/PayNow.Libraries.ComplyAdvantageClient/PayNow.Libraries.ComplyAdvantageClient/src/PayNow.Libraries.ComplyAdvantageClient/obj/Release/net8.0/PayNow.Libraries.ComplyAdvantageClient.csproj.CoreCompileInputs.cache
+/home/runner/work/PayNow.Libraries.ComplyAdvantageClient/PayNow.Libraries.ComplyAdvantageClient/src/PayNow.Libraries.ComplyAdvantageClient/obj/Release/net8.0/PayNow.Libraries.ComplyAdvantageClient.sourcelink.json
+/home/runner/work/PayNow.Libraries.ComplyAdvantageClient/PayNow.Libraries.ComplyAdvantageClient/src/PayNow.Libraries.ComplyAdvantageClient/obj/Release/net8.0/PayNow.Libraries.ComplyAdvantageClient.dll
+/home/runner/work/PayNow.Libraries.ComplyAdvantageClient/PayNow.Libraries.ComplyAdvantageClient/src/PayNow.Libraries.ComplyAdvantageClient/obj/Release/net8.0/refint/PayNow.Libraries.ComplyAdvantageClient.dll
+/home/runner/work/PayNow.Libraries.ComplyAdvantageClient/PayNow.Libraries.ComplyAdvantageClient/src/PayNow.Libraries.ComplyAdvantageClient/obj/Release/net8.0/PayNow.Libraries.ComplyAdvantageClient.pdb
+/home/runner/work/PayNow.Libraries.ComplyAdvantageClient/PayNow.Libraries.ComplyAdvantageClient/src/PayNow.Libraries.ComplyAdvantageClient/obj/Release/net8.0/ref/PayNow.Libraries.ComplyAdvantageClient.dll
