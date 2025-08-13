@@ -27,9 +27,9 @@ jobs:
         with:
           dotnet-version: '8.0.x'
 
-      - name: Generate API client with NSwag
+      - name: Generate API client with Kiota
         run: |
-          dotnet tool install --global NSwag.ConsoleCore
+          dotnet tool install --global Microsoft.OpenApi.Kiota
           export PATH="$PATH:/home/runner/.dotnet/tools"
           cd src/PayNow.Libraries.ComplyAdvantageClient
           
@@ -38,7 +38,7 @@ jobs:
           
           # Generate new client
           curl -o openapi.json https://docs.mesh.complyadvantage.com/openapi/65d331cf63f13e003243dd79
-          nswag openapi2csclient /JsonLibrary:SystemTextJson /input:openapi.json /namespace:PayNow.Libraries.ComplyAdvantageClient /output:ComplyAdvantageClient.cs
+          kiota generate -d openapi.json --language csharp -o . --exclude-path **/iam/** -n PayNow.Libraries.ComplyAdvantageClient
 
       - name: Check for changes
         id: check_changes
