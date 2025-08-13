@@ -38,7 +38,7 @@ jobs:
           
           # Generate new client
           curl -o openapi.json https://docs.mesh.complyadvantage.com/openapi/65d331cf63f13e003243dd79
-          nswag openapi2csclient /input:openapi.json /output:ComplyAdvantageClient.cs
+          nswag openapi2csclient /JsonLibrary:SystemTextJson /input:openapi.json /output:ComplyAdvantageClient.cs
 
       - name: Check for changes
         id: check_changes
