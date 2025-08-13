@@ -38,7 +38,7 @@ jobs:
           curl -o openapi.json https://docs.mesh.complyadvantage.com/openapi/65d331cf63f13e003243dd79
           
           # Generate new client and capture output
-          KIOTA_OUTPUT=$(kiota generate -d openapi.json --language csharp -o . --exclude-path '**/iam/**' -n PayNow.Libraries.ComplyAdvantageClient 2>&1)
+          KIOTA_OUTPUT=$(kiota generate -d openapi.json --language csharp -o . --exclude-path '**/iam/**' -n PayNow.Libraries.ComplyAdvantageClient -c ComplyAdvantageApiClient 2>&1)
           KIOTA_EXIT_CODE=$?
           
           echo "Kiota output: $KIOTA_OUTPUT"
