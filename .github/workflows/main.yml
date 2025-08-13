@@ -1,0 +1,55 @@
+name: Generate API Client
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        
+    - name: Set up .NET Core
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x'
+        
+    - name: Generate API client with NSwag
+      run: |
+        dotnet tool install --global NSwag.ConsoleCore
+        export PATH="$PATH:/home/runner/.dotnet/tools"
+        curl -o openapi.json https://docs.mesh.complyadvantage.com/openapi/65d331cf63f13e003243dd79
+        nswag openapi2csclient /input:openapi.json /output:ComplyAdvantageClient.cs
+        
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v5
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        commit-message: 'Update API client for release ${{ github.event.release.tag_name }}'
+        title: '[Auto] Update API client for release ${{ github.event.release.tag_name }}'
+        body: |
+          ## Automated API Client Update
+          
+          This PR was automatically generated following the release of `${{ github.event.release.tag_name }}`.
+          
+          ### Changes
+          - Updated `ComplyAdvantageClient.cs` based on the latest OpenAPI specification
+          - Generated from: https://docs.mesh.complyadvantage.com/openapi/65d331cf63f13e003243dd79
+          
+          ### Release Details
+          - Release: ${{ github.event.release.name }}
+          - Tag: ${{ github.event.release.tag_name }}
+          - Published at: ${{ github.event.release.published_at }}
+        branch: update-api-client-${{ github.event.release.tag_name }}
+        delete-branch: true
+        labels: |
+          automated
+          api-client
+          dependencies
