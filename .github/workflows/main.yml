@@ -51,7 +51,3 @@ jobs:
           - Published at: ${{ github.event.release.published_at }}
         branch: update-api-client-${{ github.event.release.tag_name }}
         delete-branch: true
-        labels: |
-          automated
-          api-client
-          dependencies
