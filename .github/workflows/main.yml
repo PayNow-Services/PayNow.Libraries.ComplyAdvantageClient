@@ -1,7 +1,9 @@
 name: Generate API Client
 on:
-  release:
-    types: [published]
+  push:
+    branches: ['**']
+  schedule:
+    - cron: '0 0 * * *'
 
 permissions:
   contents: write
@@ -28,6 +30,17 @@ jobs:
         export PATH="$PATH:/home/runner/.dotnet/tools"
         curl -o openapi.json https://docs.mesh.complyadvantage.com/openapi/65d331cf63f13e003243dd79
         nswag openapi2csclient /input:openapi.json /output:ComplyAdvantageClient.cs
+
+    - name: Check for changes
+      id: check_changes
+      run: |
+        if git diff --quiet ComplyAdvantageClient.cs; then
+          echo "has_changes=false" >> $GITHUB_OUTPUT
+          echo "No changes detected in ComplyAdvantageClient.cs"
+        else
+          echo "has_changes=true" >> $GITHUB_OUTPUT
+          echo "Changes detected in ComplyAdvantageClient.cs"
+        fi
         
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v5
