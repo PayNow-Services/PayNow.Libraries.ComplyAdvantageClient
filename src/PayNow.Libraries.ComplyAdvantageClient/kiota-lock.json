@@ -3,7 +3,7 @@
   "descriptionLocation": "openapi.json",
   "lockFileVersion": "1.0.0",
   "kiotaVersion": "1.28.0",
-  "clientClassName": "ApiClient",
+  "clientClassName": "ComplyAdvantageApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "PayNow.Libraries.ComplyAdvantageClient",
   "language": "CSharp",
