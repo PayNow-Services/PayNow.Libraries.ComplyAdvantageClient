@@ -28,40 +28,37 @@ jobs:
           dotnet-version: '8.0.x'
 
       - name: Generate API client with Kiota
+        id: generate_client
         run: |
           dotnet tool install --global Microsoft.OpenApi.Kiota
           export PATH="$PATH:/home/runner/.dotnet/tools"
           cd src/PayNow.Libraries.ComplyAdvantageClient
           
-          # Save old file for comparison
-          cp ComplyAdvantageClient.cs ComplyAdvantageClient.cs.old || true
-          
-          # Generate new client
+          # Download the latest OpenAPI spec
           curl -o openapi.json https://docs.mesh.complyadvantage.com/openapi/65d331cf63f13e003243dd79
-          kiota generate -d openapi.json --language csharp -o . --exclude-path **/iam/** -n PayNow.Libraries.ComplyAdvantageClient
-
-      - name: Check for changes
-        id: check_changes
-        run: |
-          cd src/PayNow.Libraries.ComplyAdvantageClient
-          if [ -f ComplyAdvantageClient.cs.old ]; then
-            if diff -q ComplyAdvantageClient.cs.old ComplyAdvantageClient.cs > /dev/null; then
-              echo "has_changes=false" >> $GITHUB_OUTPUT
-              echo "No changes detected in ComplyAdvantageClient.cs"
-            else
-              echo "has_changes=true" >> $GITHUB_OUTPUT
-              echo "Changes detected in ComplyAdvantageClient.cs"
-              diff --stat ComplyAdvantageClient.cs.old ComplyAdvantageClient.cs || true
-            fi
-            rm ComplyAdvantageClient.cs.old
-          else
+          
+          # Generate new client and capture output
+          KIOTA_OUTPUT=$(kiota generate -d openapi.json --language csharp -o . --exclude-path '**/iam/**' -n PayNow.Libraries.ComplyAdvantageClient 2>&1)
+          KIOTA_EXIT_CODE=$?
+          
+          echo "Kiota output: $KIOTA_OUTPUT"
+          echo "Kiota exit code: $KIOTA_EXIT_CODE"
+          
+          # Check if Kiota skipped generation due to no changes
+          if echo "$KIOTA_OUTPUT" | grep -q "Generation skipped as no changes were detected"; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+            echo "✅ No changes detected by Kiota - skipping build and publish"
+          elif [ $KIOTA_EXIT_CODE -eq 0 ]; then
             echo "has_changes=true" >> $GITHUB_OUTPUT
-            echo "First time generating client"
+            echo "✅ Kiota generated new client successfully"
+          else
+            echo "❌ Kiota generation failed with exit code $KIOTA_EXIT_CODE"
+            exit 1
           fi
 
       - name: Calculate version
         id: version
-        if: steps.check_changes.outputs.has_changes == 'true'
+        if: steps.generate_client.outputs.has_changes == 'true'
         run: |
           # Get current version from csproj or use default
           cd src/PayNow.Libraries.ComplyAdvantageClient
@@ -81,7 +78,7 @@ jobs:
           echo "New version will be: $NEW_VERSION"
 
       - name: Update project version
-        if: steps.check_changes.outputs.has_changes == 'true'
+        if: steps.generate_client.outputs.has_changes == 'true'
         run: |
           cd src/PayNow.Libraries.ComplyAdvantageClient
           
@@ -96,21 +93,21 @@ jobs:
           fi
 
       - name: Build project
-        if: steps.check_changes.outputs.has_changes == 'true'
+        if: steps.generate_client.outputs.has_changes == 'true'
         run: |
           cd src/PayNow.Libraries.ComplyAdvantageClient
           dotnet restore
           dotnet build --configuration Release
 
       - name: Run tests
-        if: steps.check_changes.outputs.has_changes == 'true'
+        if: steps.generate_client.outputs.has_changes == 'true'
         continue-on-error: true  # Don't fail if no tests exist
         run: |
           cd src/PayNow.Libraries.ComplyAdvantageClient
           dotnet test --configuration Release --no-build || true
 
       - name: Pack NuGet package
-        if: steps.check_changes.outputs.has_changes == 'true'
+        if: steps.generate_client.outputs.has_changes == 'true'
         run: |
           cd src/PayNow.Libraries.ComplyAdvantageClient
           dotnet pack --configuration Release --no-build --output ./nupkg
@@ -119,7 +116,7 @@ jobs:
           ls -la ./nupkg/
 
       - name: Push to GitHub Packages
-        if: steps.check_changes.outputs.has_changes == 'true'
+        if: steps.generate_client.outputs.has_changes == 'true'
         run: |
           cd src/PayNow.Libraries.ComplyAdvantageClient
           
@@ -134,7 +131,7 @@ jobs:
           echo "🔗 URL: https://github.com/${{ github.repository }}/packages"
 
       - name: Commit version changes
-        if: steps.check_changes.outputs.has_changes == 'true'
+        if: steps.generate_client.outputs.has_changes == 'true'
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
@@ -143,7 +140,7 @@ jobs:
           git push || echo "No changes to push"
 
       - name: Create GitHub Release
-        if: steps.check_changes.outputs.has_changes == 'true'
+        if: steps.generate_client.outputs.has_changes == 'true'
         uses: softprops/action-gh-release@v1
         with:
           tag_name: v${{ steps.version.outputs.new_version }}
@@ -164,24 +161,31 @@ jobs:
             1. Add GitHub Packages source to your NuGet config:
             ```bash
             dotnet add package PayNow.Libraries.ComplyAdvantageClient --version ${{ steps.version.outputs.new_version }}
-                  ```
+            ```
+            
+            ### 🔗 Source
+            Generated from: https://docs.mesh.complyadvantage.com/openapi/65d331cf63f13e003243dd79
+          files: |
+            src/PayNow.Libraries.ComplyAdvantageClient/nupkg/*.nupkg
+          draft: false
+          prerelease: false
 
-                  ### 🔗 Source
-                  Generated from: https://docs.mesh.complyadvantage.com/openapi/65d331cf63f13e003243dd79
-                files: |
-                  src/PayNow.Libraries.ComplyAdvantageClient/nupkg/*.nupkg
-                draft: false
-                prerelease: false
-
-            - name: Summary
-              if: steps.check_changes.outputs.has_changes == 'true'
-              run: |
-                echo "## 📦 Package Published Successfully!" >> $GITHUB_STEP_SUMMARY
-                echo "" >> $GITHUB_STEP_SUMMARY
-                echo "- **Version:** ${{ steps.version.outputs.new_version }}" >> $GITHUB_STEP_SUMMARY
-                echo "- **Previous Version:** ${{ steps.version.outputs.current_version }}" >> $GITHUB_STEP_SUMMARY
-                echo "- **Package:** PayNow.Libraries.ComplyAdvantageClient" >> $GITHUB_STEP_SUMMARY
-                echo "- **Registry:** GitHub Packages" >> $GITHUB_STEP_SUMMARY
-                echo "" >> $GITHUB_STEP_SUMMARY
-                echo "### View Package" >> $GITHUB_STEP_SUMMARY
-                echo "[Open in GitHub Packages](https://github.com/${{ github.repository }}/packages)" >> $GITHUB_STEP_SUMMARY
+      - name: Summary
+        if: always()
+        run: |
+          if [ "${{ steps.generate_client.outputs.has_changes }}" == "true" ]; then
+            echo "## 📦 Package Published Successfully!" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "- **Version:** ${{ steps.version.outputs.new_version }}" >> $GITHUB_STEP_SUMMARY
+            echo "- **Previous Version:** ${{ steps.version.outputs.current_version }}" >> $GITHUB_STEP_SUMMARY
+            echo "- **Package:** PayNow.Libraries.ComplyAdvantageClient" >> $GITHUB_STEP_SUMMARY
+            echo "- **Registry:** GitHub Packages" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "### View Package" >> $GITHUB_STEP_SUMMARY
+            echo "[Open in GitHub Packages](https://github.com/${{ github.repository }}/packages)" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "## ℹ️ No Changes Detected" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "Kiota detected no changes in the API specification." >> $GITHUB_STEP_SUMMARY
+            echo "No new package version was published." >> $GITHUB_STEP_SUMMARY
+          fi
