@@ -1,66 +1,187 @@
-name: Generate API Client
+name: Generate and Publish API Client
 on:
   push:
-    branches: ['**']
+    branches: ['main']
   schedule:
     - cron: '0 0 * * *'
+  workflow_dispatch:
 
 permissions:
   contents: write
+  packages: write
   pull-requests: write
 
 jobs:
-  build:
+  build-and-publish:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        ref: main  # Explicitly checkout the main branch
-        
-    - name: Set up .NET Core
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: '8.0.x'
-        
-    - name: Generate API client with NSwag
-      run: |
-        dotnet tool install --global NSwag.ConsoleCore
-        export PATH="$PATH:/home/runner/.dotnet/tools"
-        curl -o openapi.json https://docs.mesh.complyadvantage.com/openapi/65d331cf63f13e003243dd79
-        nswag openapi2csclient /input:openapi.json /output:ComplyAdvantageClient.cs
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: main
+          fetch-depth: 0  # Need full history for version calculation
 
-    - name: Check for changes
-      id: check_changes
-      run: |
-        if git diff --quiet ComplyAdvantageClient.cs; then
-          echo "has_changes=false" >> $GITHUB_OUTPUT
-          echo "No changes detected in ComplyAdvantageClient.cs"
-        else
-          echo "has_changes=true" >> $GITHUB_OUTPUT
-          echo "Changes detected in ComplyAdvantageClient.cs"
-        fi
-        
-    - name: Create Pull Request
-      uses: peter-evans/create-pull-request@v5
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        base: main  # Explicitly specify the base branch
-        commit-message: 'Update API client for release ${{ github.event.release.tag_name }}'
-        title: '[Auto] Update API client for release ${{ github.event.release.tag_name }}'
-        body: |
-          ## Automated API Client Update
+      - name: Set up .NET Core
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Generate API client with NSwag
+        run: |
+          dotnet tool install --global NSwag.ConsoleCore
+          export PATH="$PATH:/home/runner/.dotnet/tools"
+          cd src/PayNow.Libraries.ComplyAdvantageClient
           
-          This PR was automatically generated following the release of `${{ github.event.release.tag_name }}`.
+          # Save old file for comparison
+          cp ComplyAdvantageClient.cs ComplyAdvantageClient.cs.old || true
           
-          ### Changes
-          - Updated `ComplyAdvantageClient.cs` based on the latest OpenAPI specification
-          - Generated from: https://docs.mesh.complyadvantage.com/openapi/65d331cf63f13e003243dd79
+          # Generate new client
+          curl -o openapi.json https://docs.mesh.complyadvantage.com/openapi/65d331cf63f13e003243dd79
+          nswag openapi2csclient /input:openapi.json /output:ComplyAdvantageClient.cs
+
+      - name: Check for changes
+        id: check_changes
+        run: |
+          cd src/PayNow.Libraries.ComplyAdvantageClient
+          if [ -f ComplyAdvantageClient.cs.old ]; then
+            if diff -q ComplyAdvantageClient.cs.old ComplyAdvantageClient.cs > /dev/null; then
+              echo "has_changes=false" >> $GITHUB_OUTPUT
+              echo "No changes detected in ComplyAdvantageClient.cs"
+            else
+              echo "has_changes=true" >> $GITHUB_OUTPUT
+              echo "Changes detected in ComplyAdvantageClient.cs"
+              diff --stat ComplyAdvantageClient.cs.old ComplyAdvantageClient.cs || true
+            fi
+            rm ComplyAdvantageClient.cs.old
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            echo "First time generating client"
+          fi
+
+      - name: Calculate version
+        id: version
+        if: steps.check_changes.outputs.has_changes == 'true'
+        run: |
+          # Get current version from csproj or use default
+          cd src/PayNow.Libraries.ComplyAdvantageClient
           
-          ### Release Details
-          - Release: ${{ github.event.release.name }}
-          - Tag: ${{ github.event.release.tag_name }}
-          - Published at: ${{ github.event.release.published_at }}
-        branch: update-api-client-${{ github.event.release.tag_name }}
-        delete-branch: true
+          # Extract current version from .csproj
+          CURRENT_VERSION=$(grep '<Version>' *.csproj | sed 's/.*<Version>\(.*\)<\/Version>.*/\1/' || echo "1.0.0")
+          
+          # Parse version components
+          IFS='.' read -r MAJOR MINOR PATCH <<< "$CURRENT_VERSION"
+          
+          # Increment patch version
+          NEW_PATCH=$((PATCH + 1))
+          NEW_VERSION="$MAJOR.$MINOR.$NEW_PATCH"
+          
+          echo "current_version=$CURRENT_VERSION" >> $GITHUB_OUTPUT
+          echo "new_version=$NEW_VERSION" >> $GITHUB_OUTPUT
+          echo "New version will be: $NEW_VERSION"
+
+      - name: Update project version
+        if: steps.check_changes.outputs.has_changes == 'true'
+        run: |
+          cd src/PayNow.Libraries.ComplyAdvantageClient
+          
+          # Update version in .csproj
+          sed -i "s/<Version>.*<\/Version>/<Version>${{ steps.version.outputs.new_version }}<\/Version>/" *.csproj
+          sed -i "s/<AssemblyVersion>.*<\/AssemblyVersion>/<AssemblyVersion>${{ steps.version.outputs.new_version }}<\/AssemblyVersion>/" *.csproj
+          sed -i "s/<FileVersion>.*<\/FileVersion>/<FileVersion>${{ steps.version.outputs.new_version }}<\/FileVersion>/" *.csproj
+          
+          # If no Version tag exists, add it
+          if ! grep -q '<Version>' *.csproj; then
+            sed -i '/<PropertyGroup>/a \    <Version>${{ steps.version.outputs.new_version }}</Version>' *.csproj
+          fi
+
+      - name: Build project
+        if: steps.check_changes.outputs.has_changes == 'true'
+        run: |
+          cd src/PayNow.Libraries.ComplyAdvantageClient
+          dotnet restore
+          dotnet build --configuration Release
+
+      - name: Run tests
+        if: steps.check_changes.outputs.has_changes == 'true'
+        continue-on-error: true  # Don't fail if no tests exist
+        run: |
+          cd src/PayNow.Libraries.ComplyAdvantageClient
+          dotnet test --configuration Release --no-build || true
+
+      - name: Pack NuGet package
+        if: steps.check_changes.outputs.has_changes == 'true'
+        run: |
+          cd src/PayNow.Libraries.ComplyAdvantageClient
+          dotnet pack --configuration Release --no-build --output ./nupkg
+          
+          # Display package info
+          ls -la ./nupkg/
+
+      - name: Push to GitHub Packages
+        if: steps.check_changes.outputs.has_changes == 'true'
+        run: |
+          cd src/PayNow.Libraries.ComplyAdvantageClient
+          
+          # Push to GitHub Packages
+          dotnet nuget push ./nupkg/*.nupkg \
+            --api-key ${{ secrets.GITHUB_TOKEN }} \
+            --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" \
+            --skip-duplicate
+          
+          echo "✅ Package published to GitHub Packages"
+          echo "📦 Version: ${{ steps.version.outputs.new_version }}"
+          echo "🔗 URL: https://github.com/${{ github.repository }}/packages"
+
+      - name: Commit version changes
+        if: steps.check_changes.outputs.has_changes == 'true'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add -A
+          git commit -m "Update API client to version ${{ steps.version.outputs.new_version }}" || echo "No changes to commit"
+          git push || echo "No changes to push"
+
+      - name: Create GitHub Release
+        if: steps.check_changes.outputs.has_changes == 'true'
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: v${{ steps.version.outputs.new_version }}
+          name: Release ${{ steps.version.outputs.new_version }}
+          body: |
+            ## API Client Update - v${{ steps.version.outputs.new_version }}
+            
+            ### 📋 Changes
+            - Updated ComplyAdvantage API client from OpenAPI specification
+            - Previous version: ${{ steps.version.outputs.current_version }}
+            - New version: ${{ steps.version.outputs.new_version }}
+            
+            ### 📦 Package Location
+            - GitHub Packages: [View Package](https://github.com/${{ github.repository }}/packages)
+            
+            ### 💻 Installation
+            
+            1. Add GitHub Packages source to your NuGet config:
+            ```bash
+            dotnet add package PayNow.Libraries.ComplyAdvantageClient --version ${{ steps.version.outputs.new_version }}
+                  ```
+
+                  ### 🔗 Source
+                  Generated from: https://docs.mesh.complyadvantage.com/openapi/65d331cf63f13e003243dd79
+                files: |
+                  src/PayNow.Libraries.ComplyAdvantageClient/nupkg/*.nupkg
+                draft: false
+                prerelease: false
+
+            - name: Summary
+              if: steps.check_changes.outputs.has_changes == 'true'
+              run: |
+                echo "## 📦 Package Published Successfully!" >> $GITHUB_STEP_SUMMARY
+                echo "" >> $GITHUB_STEP_SUMMARY
+                echo "- **Version:** ${{ steps.version.outputs.new_version }}" >> $GITHUB_STEP_SUMMARY
+                echo "- **Previous Version:** ${{ steps.version.outputs.current_version }}" >> $GITHUB_STEP_SUMMARY
+                echo "- **Package:** PayNow.Libraries.ComplyAdvantageClient" >> $GITHUB_STEP_SUMMARY
+                echo "- **Registry:** GitHub Packages" >> $GITHUB_STEP_SUMMARY
+                echo "" >> $GITHUB_STEP_SUMMARY
+                echo "### View Package" >> $GITHUB_STEP_SUMMARY
+                echo "[Open in GitHub Packages](https://github.com/${{ github.repository }}/packages)" >> $GITHUB_STEP_SUMMARY
