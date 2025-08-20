@@ -7,6 +7,7 @@ using Microsoft.Kiota.Serialization.Json;
 using Microsoft.Kiota.Serialization.Multipart;
 using Microsoft.Kiota.Serialization.Text;
 using PayNow.Libraries.ComplyAdvantageClient.V2;
+using PayNow.Libraries.ComplyAdvantageClient.V3;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -23,6 +24,11 @@ namespace PayNow.Libraries.ComplyAdvantageClient
         public global::PayNow.Libraries.ComplyAdvantageClient.V2.V2RequestBuilder V2
         {
             get => new global::PayNow.Libraries.ComplyAdvantageClient.V2.V2RequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The v3 property</summary>
+        public global::PayNow.Libraries.ComplyAdvantageClient.V3.V3RequestBuilder V3
+        {
+            get => new global::PayNow.Libraries.ComplyAdvantageClient.V3.V3RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::PayNow.Libraries.ComplyAdvantageClient.ComplyAdvantageApiClient"/> and sets the default values.

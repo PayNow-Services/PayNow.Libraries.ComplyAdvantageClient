@@ -8,32 +8,27 @@ using System;
 namespace PayNow.Libraries.ComplyAdvantageClient.Models
 {
     /// <summary>
-    /// Summary of payment information.
+    /// Composed type wrapper for classes <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_BankPaymentSummaryResponse"/>, <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_CardPaymentSummaryResponse"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CaseManagement_PaymentSummaryResponse : IAdditionalDataHolder, IParsable
+    public partial class CaseManagement_PaymentSummaryResponse : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Payment external identifier.</summary>
+        /// <summary>Composed type representation for type <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_BankPaymentSummaryResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExternalIdentifier { get; set; }
+        public global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_BankPaymentSummaryResponse? CaseManagementBankPaymentSummaryResponse { get; set; }
 #nullable restore
 #else
-        public string ExternalIdentifier { get; set; }
+        public global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_BankPaymentSummaryResponse CaseManagementBankPaymentSummaryResponse { get; set; }
 #endif
-        /// <summary>Payment unique identifier.</summary>
-        public Guid? Identifier { get; set; }
-        /// <summary>Payment type.</summary>
-        public global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_PaymentSummaryResponse_type? Type { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_PaymentSummaryResponse"/> and sets the default values.
-        /// </summary>
-        public CaseManagement_PaymentSummaryResponse()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_CardPaymentSummaryResponse"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_CardPaymentSummaryResponse? CaseManagementCardPaymentSummaryResponse { get; set; }
+#nullable restore
+#else
+        public global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_CardPaymentSummaryResponse CaseManagementCardPaymentSummaryResponse { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -42,7 +37,17 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         public static global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_PaymentSummaryResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_PaymentSummaryResponse();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_PaymentSummaryResponse();
+            if("case-management_BankPaymentSummaryResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CaseManagementBankPaymentSummaryResponse = new global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_BankPaymentSummaryResponse();
+            }
+            else if("case-management_CardPaymentSummaryResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CaseManagementCardPaymentSummaryResponse = new global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_CardPaymentSummaryResponse();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -50,12 +55,15 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(CaseManagementBankPaymentSummaryResponse != null)
             {
-                { "external_identifier", n => { ExternalIdentifier = n.GetStringValue(); } },
-                { "identifier", n => { Identifier = n.GetGuidValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_PaymentSummaryResponse_type>(); } },
-            };
+                return CaseManagementBankPaymentSummaryResponse.GetFieldDeserializers();
+            }
+            else if(CaseManagementCardPaymentSummaryResponse != null)
+            {
+                return CaseManagementCardPaymentSummaryResponse.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -64,10 +72,14 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("external_identifier", ExternalIdentifier);
-            writer.WriteGuidValue("identifier", Identifier);
-            writer.WriteEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_PaymentSummaryResponse_type>("type", Type);
-            writer.WriteAdditionalData(AdditionalData);
+            if(CaseManagementBankPaymentSummaryResponse != null)
+            {
+                writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_BankPaymentSummaryResponse>(null, CaseManagementBankPaymentSummaryResponse);
+            }
+            else if(CaseManagementCardPaymentSummaryResponse != null)
+            {
+                writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_CardPaymentSummaryResponse>(null, CaseManagementCardPaymentSummaryResponse);
+            }
         }
     }
 }

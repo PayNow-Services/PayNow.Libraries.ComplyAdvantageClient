@@ -148,10 +148,6 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         #pragma warning disable CS1591
         INVALID_TIMESTAMP,
         #pragma warning restore CS1591
-        [EnumMember(Value = "INVALID_IANA_TIMEZONE")]
-        #pragma warning disable CS1591
-        INVALID_IANA_TIMEZONE,
-        #pragma warning restore CS1591
         [EnumMember(Value = "INVALID_TRANSACTION_TYPE")]
         #pragma warning disable CS1591
         INVALID_TRANSACTION_TYPE,
@@ -224,6 +220,10 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         #pragma warning disable CS1591
         CUSTOMER_EXTERNAL_IDENTIFIER_MISMATCH,
         #pragma warning restore CS1591
+        [EnumMember(Value = "CARD_PARTY_CUSTOMER_IDENTIFIER_MISMATCH")]
+        #pragma warning disable CS1591
+        CARD_PARTY_CUSTOMER_IDENTIFIER_MISMATCH,
+        #pragma warning restore CS1591
         [EnumMember(Value = "INVALID_CARD_PAYMENT_TYPE")]
         #pragma warning disable CS1591
         INVALID_CARD_PAYMENT_TYPE,
@@ -255,6 +255,30 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         [EnumMember(Value = "INVALID_MERCHANT_CATEGORY_CODE")]
         #pragma warning disable CS1591
         INVALID_MERCHANT_CATEGORY_CODE,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "INVALID_CARD_CHARGEBACK_OUTCOME")]
+        #pragma warning disable CS1591
+        INVALID_CARD_CHARGEBACK_OUTCOME,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "INVALID_CARD_AUTHORIZATION_RESPONSE_CODE")]
+        #pragma warning disable CS1591
+        INVALID_CARD_AUTHORIZATION_RESPONSE_CODE,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "INVALID_CARD_AUTHORIZATION_STATE")]
+        #pragma warning disable CS1591
+        INVALID_CARD_AUTHORIZATION_STATE,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "INVALID_CARD_AUTHORIZATION_TYPE")]
+        #pragma warning disable CS1591
+        INVALID_CARD_AUTHORIZATION_TYPE,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CUSTOM_LIST_NOT_FOUND")]
+        #pragma warning disable CS1591
+        CUSTOM_LIST_NOT_FOUND,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CUSTOM_LIST_IDENTIFIER_MISMATCH")]
+        #pragma warning disable CS1591
+        CUSTOM_LIST_IDENTIFIER_MISMATCH,
         #pragma warning restore CS1591
     }
 }
