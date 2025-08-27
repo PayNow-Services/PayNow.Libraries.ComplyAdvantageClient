@@ -38,6 +38,14 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
 #else
         public string CompanyType { get; set; }
 #endif
+        /// <summary>The custom_fields property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_CustomFieldInstance>? CustomFields { get; set; }
+#nullable restore
+#else
+        public List<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_CustomFieldInstance> CustomFields { get; set; }
+#endif
         /// <summary>The incorporation_date property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -116,6 +124,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
                 { "address", n => { Address = n.GetCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_Address>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_Address.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "alias", n => { Alias = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "company_type", n => { CompanyType = n.GetStringValue(); } },
+                { "custom_fields", n => { CustomFields = n.GetCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_CustomFieldInstance>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_CustomFieldInstance.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "incorporation_date", n => { IncorporationDate = n.GetObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_Date>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_Date.CreateFromDiscriminatorValue); } },
                 { "industry", n => { Industry = n.GetStringValue(); } },
                 { "legal_name", n => { LegalName = n.GetStringValue(); } },
@@ -135,6 +144,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             writer.WriteCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_Address>("address", Address);
             writer.WriteCollectionOfPrimitiveValues<string>("alias", Alias);
             writer.WriteStringValue("company_type", CompanyType);
+            writer.WriteCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_CustomFieldInstance>("custom_fields", CustomFields);
             writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_Date>("incorporation_date", IncorporationDate);
             writer.WriteStringValue("industry", Industry);
             writer.WriteStringValue("legal_name", LegalName);

@@ -35,5 +35,9 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         #pragma warning disable CS1591
         CSOM_EMULATION_MONITORED_SEARCH_UPDATED,
         #pragma warning restore CS1591
+        [EnumMember(Value = "TRANSACTION_REVIEWED")]
+        #pragma warning disable CS1591
+        TRANSACTION_REVIEWED,
+        #pragma warning restore CS1591
     }
 }

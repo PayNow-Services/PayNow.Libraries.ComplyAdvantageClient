@@ -77,14 +77,6 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
 #else
         public global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_PaymentStagesInfoV3 PaymentStagesInfo { get; set; }
 #endif
-        /// <summary>Serialization discriminator.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PaymentType { get; set; }
-#nullable restore
-#else
-        public string PaymentType { get; set; }
-#endif
         /// <summary>Contains contextual information about the card payment environment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -138,7 +130,6 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
                 { "merchant", n => { Merchant = n.GetObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_MerchantV3>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_MerchantV3.CreateFromDiscriminatorValue); } },
                 { "payment_stage", n => { PaymentStage = n.GetEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_CardPaymentStageV3>(); } },
                 { "payment_stages_info", n => { PaymentStagesInfo = n.GetObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_PaymentStagesInfoV3>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_PaymentStagesInfoV3.CreateFromDiscriminatorValue); } },
-                { "payment_type", n => { PaymentType = n.GetStringValue(); } },
                 { "point_of_sale", n => { PointOfSale = n.GetObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_PointOfSaleConditionV3>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_PointOfSaleConditionV3.CreateFromDiscriminatorValue); } },
                 { "related_transaction_identifier", n => { RelatedTransactionIdentifier = n.GetStringValue(); } },
                 { "sub_merchant", n => { SubMerchant = n.GetObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_MerchantV3>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_MerchantV3.CreateFromDiscriminatorValue); } },
@@ -163,7 +154,6 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_MerchantV3>("merchant", Merchant);
             writer.WriteEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_CardPaymentStageV3>("payment_stage", PaymentStage);
             writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_PaymentStagesInfoV3>("payment_stages_info", PaymentStagesInfo);
-            writer.WriteStringValue("payment_type", PaymentType);
             writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_PointOfSaleConditionV3>("point_of_sale", PointOfSale);
             writer.WriteStringValue("related_transaction_identifier", RelatedTransactionIdentifier);
             writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_MerchantV3>("sub_merchant", SubMerchant);

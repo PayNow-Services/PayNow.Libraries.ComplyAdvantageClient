@@ -32,6 +32,14 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
 #endif
         /// <summary>The country_of_birth property</summary>
         public global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_Person_country_of_birth? CountryOfBirth { get; set; }
+        /// <summary>The custom_fields property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_CustomFieldInstance>? CustomFields { get; set; }
+#nullable restore
+#else
+        public List<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_CustomFieldInstance> CustomFields { get; set; }
+#endif
         /// <summary>The date_of_birth property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -206,6 +214,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
                 { "address", n => { Address = n.GetCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_Address>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_Address.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "contact_information", n => { ContactInformation = n.GetObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_ContactInformation>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_ContactInformation.CreateFromDiscriminatorValue); } },
                 { "country_of_birth", n => { CountryOfBirth = n.GetEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_Person_country_of_birth>(); } },
+                { "custom_fields", n => { CustomFields = n.GetCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_CustomFieldInstance>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_CustomFieldInstance.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "date_of_birth", n => { DateOfBirth = n.GetObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_Date>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_Date.CreateFromDiscriminatorValue); } },
                 { "fathers_name", n => { FathersName = n.GetStringValue(); } },
                 { "first_name", n => { FirstName = n.GetStringValue(); } },
@@ -237,6 +246,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             writer.WriteCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_Address>("address", Address);
             writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_ContactInformation>("contact_information", ContactInformation);
             writer.WriteEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_Person_country_of_birth>("country_of_birth", CountryOfBirth);
+            writer.WriteCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_CustomFieldInstance>("custom_fields", CustomFields);
             writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_Date>("date_of_birth", DateOfBirth);
             writer.WriteStringValue("fathers_name", FathersName);
             writer.WriteStringValue("first_name", FirstName);
