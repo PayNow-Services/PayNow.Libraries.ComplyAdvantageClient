@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>PayNow.Libraries.ComplyAdvantageClient</id>
+    <version>0.0.6</version>
+    <authors>PayNow.Libraries.ComplyAdvantageClient</authors>
+    <description>Package Description</description>
+    <repository type="git" commit="1fa87410fc92d4720a6f1f2a3a69b3abb8f5be68" />
+    <dependencies>
+      <group targetFramework="net8.0">
+        <dependency id="Microsoft.Kiota.Bundle" version="1.19.1" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="/home/runner/work/PayNow.Libraries.ComplyAdvantageClient/PayNow.Libraries.ComplyAdvantageClient/src/PayNow.Libraries.ComplyAdvantageClient/bin/Release/net8.0/PayNow.Libraries.ComplyAdvantageClient.dll" target="lib/net8.0/PayNow.Libraries.ComplyAdvantageClient.dll" />
+  </files>
+</package>

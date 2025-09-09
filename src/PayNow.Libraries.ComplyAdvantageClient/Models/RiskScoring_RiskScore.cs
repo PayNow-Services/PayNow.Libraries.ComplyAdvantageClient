@@ -13,6 +13,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>The account_identifier property</summary>
+        [Obsolete("")]
         public Guid? AccountIdentifier { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }

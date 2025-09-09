@@ -27,7 +27,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
 #endif
         /// <summary>The identifier property</summary>
         public Guid? Identifier { get; set; }
-        /// <summary>The name property</summary>
+        /// <summary>Name of the label.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v8.0": {
-      "PayNow.Libraries.ComplyAdvantageClient/0.0.5": {
+      "PayNow.Libraries.ComplyAdvantageClient/0.0.6": {
         "dependencies": {
           "Microsoft.Kiota.Bundle": "1.19.1"
         },
@@ -107,7 +107,7 @@
     }
   },
   "libraries": {
-    "PayNow.Libraries.ComplyAdvantageClient/0.0.5": {
+    "PayNow.Libraries.ComplyAdvantageClient/0.0.6": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
