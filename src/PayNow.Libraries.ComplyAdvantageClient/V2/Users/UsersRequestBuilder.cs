@@ -74,27 +74,27 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Users
         /// <summary>
         /// Creates a new user.To enable the user to access an account, they must be assigned at least one role. A user will not be sent an email invite until assigned at least one role.Follow these steps to create and configure a user: 1. **Create user:** Create the user by calling  `POST /users`.2. **Get role(s):** Use `GET /roles` to fetch the role_identifier(s) you wish to assign to the user.3. **(Optional) Get account**: If you need to assign roles for an account you&apos;re not currently logged into but within the same organization, retrieve the relevant `account_identifier` using `GET clients/me/accounts`.4. **Assign user role**: Use `POST /users/{user_identifier}/roles` to assign the user to an account with a list of `role_identifier(s)` and optionally the `account_identifier` if applicable.You need the &quot;Create and update users&quot; permission to use this endpoint.
         /// </summary>
-        /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Identity_AnyUserResponse"/></returns>
+        /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.AnyUserResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Identity_ProblemDetailErrorResponse">When receiving a 400 status code</exception>
+        /// <exception cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.ProblemDetailErrorResponse">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::PayNow.Libraries.ComplyAdvantageClient.Models.Identity_AnyUserResponse?> PostAsync(global::PayNow.Libraries.ComplyAdvantageClient.Models.Identity_UserRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::PayNow.Libraries.ComplyAdvantageClient.Models.AnyUserResponse?> PostAsync(global::PayNow.Libraries.ComplyAdvantageClient.Models.UserRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::PayNow.Libraries.ComplyAdvantageClient.Models.Identity_AnyUserResponse> PostAsync(global::PayNow.Libraries.ComplyAdvantageClient.Models.Identity_UserRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::PayNow.Libraries.ComplyAdvantageClient.Models.AnyUserResponse> PostAsync(global::PayNow.Libraries.ComplyAdvantageClient.Models.UserRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::PayNow.Libraries.ComplyAdvantageClient.Models.Identity_ProblemDetailErrorResponse.CreateFromDiscriminatorValue },
+                { "400", global::PayNow.Libraries.ComplyAdvantageClient.Models.ProblemDetailErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::PayNow.Libraries.ComplyAdvantageClient.Models.Identity_AnyUserResponse>(requestInfo, global::PayNow.Libraries.ComplyAdvantageClient.Models.Identity_AnyUserResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::PayNow.Libraries.ComplyAdvantageClient.Models.AnyUserResponse>(requestInfo, global::PayNow.Libraries.ComplyAdvantageClient.Models.AnyUserResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a new user.To enable the user to access an account, they must be assigned at least one role. A user will not be sent an email invite until assigned at least one role.Follow these steps to create and configure a user: 1. **Create user:** Create the user by calling  `POST /users`.2. **Get role(s):** Use `GET /roles` to fetch the role_identifier(s) you wish to assign to the user.3. **(Optional) Get account**: If you need to assign roles for an account you&apos;re not currently logged into but within the same organization, retrieve the relevant `account_identifier` using `GET clients/me/accounts`.4. **Assign user role**: Use `POST /users/{user_identifier}/roles` to assign the user to an account with a list of `role_identifier(s)` and optionally the `account_identifier` if applicable.You need the &quot;Create and update users&quot; permission to use this endpoint.
@@ -104,11 +104,11 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Users
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::PayNow.Libraries.ComplyAdvantageClient.Models.Identity_UserRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::PayNow.Libraries.ComplyAdvantageClient.Models.UserRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::PayNow.Libraries.ComplyAdvantageClient.Models.Identity_UserRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::PayNow.Libraries.ComplyAdvantageClient.Models.UserRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));

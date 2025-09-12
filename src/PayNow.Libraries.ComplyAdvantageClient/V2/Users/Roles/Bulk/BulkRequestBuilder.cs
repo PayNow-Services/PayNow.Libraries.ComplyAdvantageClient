@@ -36,22 +36,22 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Users.Roles.Bulk
         /// <summary>
         /// Set the roles for a list of users in an account.You need the &quot;Assign roles in account&quot; permission to use this endpoint.
         /// </summary>
-        /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Identity_BulkAccountUserRolesResponse"/></returns>
+        /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.BulkAccountUserRolesResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::PayNow.Libraries.ComplyAdvantageClient.Models.Identity_BulkAccountUserRolesResponse?> PutAsync(global::PayNow.Libraries.ComplyAdvantageClient.Models.Identity_BulkAccountUserRolesRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::PayNow.Libraries.ComplyAdvantageClient.Models.BulkAccountUserRolesResponse?> PutAsync(global::PayNow.Libraries.ComplyAdvantageClient.Models.BulkAccountUserRolesRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::PayNow.Libraries.ComplyAdvantageClient.Models.Identity_BulkAccountUserRolesResponse> PutAsync(global::PayNow.Libraries.ComplyAdvantageClient.Models.Identity_BulkAccountUserRolesRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::PayNow.Libraries.ComplyAdvantageClient.Models.BulkAccountUserRolesResponse> PutAsync(global::PayNow.Libraries.ComplyAdvantageClient.Models.BulkAccountUserRolesRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::PayNow.Libraries.ComplyAdvantageClient.Models.Identity_BulkAccountUserRolesResponse>(requestInfo, global::PayNow.Libraries.ComplyAdvantageClient.Models.Identity_BulkAccountUserRolesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::PayNow.Libraries.ComplyAdvantageClient.Models.BulkAccountUserRolesResponse>(requestInfo, global::PayNow.Libraries.ComplyAdvantageClient.Models.BulkAccountUserRolesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Set the roles for a list of users in an account.You need the &quot;Assign roles in account&quot; permission to use this endpoint.
@@ -61,11 +61,11 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Users.Roles.Bulk
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::PayNow.Libraries.ComplyAdvantageClient.Models.Identity_BulkAccountUserRolesRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::PayNow.Libraries.ComplyAdvantageClient.Models.BulkAccountUserRolesRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::PayNow.Libraries.ComplyAdvantageClient.Models.Identity_BulkAccountUserRolesRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::PayNow.Libraries.ComplyAdvantageClient.Models.BulkAccountUserRolesRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));

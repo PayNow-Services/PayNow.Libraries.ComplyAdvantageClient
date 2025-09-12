@@ -36,27 +36,27 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Users.Item.Roles
         /// <summary>
         /// Set the roles of a user in an account.You need the &quot;Assign roles in account&quot; permission to use this endpoint.
         /// </summary>
-        /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Identity_AccountUserRolesResponse"/></returns>
+        /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.AccountUserRolesResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Identity_ProblemDetailErrorResponse">When receiving a 400 status code</exception>
+        /// <exception cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.ProblemDetailErrorResponse">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::PayNow.Libraries.ComplyAdvantageClient.Models.Identity_AccountUserRolesResponse?> PutAsync(global::PayNow.Libraries.ComplyAdvantageClient.Models.Identity_AccountUserRolesRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::PayNow.Libraries.ComplyAdvantageClient.Models.AccountUserRolesResponse?> PutAsync(global::PayNow.Libraries.ComplyAdvantageClient.Models.AccountUserRolesRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::PayNow.Libraries.ComplyAdvantageClient.Models.Identity_AccountUserRolesResponse> PutAsync(global::PayNow.Libraries.ComplyAdvantageClient.Models.Identity_AccountUserRolesRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::PayNow.Libraries.ComplyAdvantageClient.Models.AccountUserRolesResponse> PutAsync(global::PayNow.Libraries.ComplyAdvantageClient.Models.AccountUserRolesRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::PayNow.Libraries.ComplyAdvantageClient.Models.Identity_ProblemDetailErrorResponse.CreateFromDiscriminatorValue },
+                { "400", global::PayNow.Libraries.ComplyAdvantageClient.Models.ProblemDetailErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::PayNow.Libraries.ComplyAdvantageClient.Models.Identity_AccountUserRolesResponse>(requestInfo, global::PayNow.Libraries.ComplyAdvantageClient.Models.Identity_AccountUserRolesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::PayNow.Libraries.ComplyAdvantageClient.Models.AccountUserRolesResponse>(requestInfo, global::PayNow.Libraries.ComplyAdvantageClient.Models.AccountUserRolesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Set the roles of a user in an account.You need the &quot;Assign roles in account&quot; permission to use this endpoint.
@@ -66,11 +66,11 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Users.Item.Roles
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::PayNow.Libraries.ComplyAdvantageClient.Models.Identity_AccountUserRolesRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::PayNow.Libraries.ComplyAdvantageClient.Models.AccountUserRolesRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::PayNow.Libraries.ComplyAdvantageClient.Models.Identity_AccountUserRolesRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::PayNow.Libraries.ComplyAdvantageClient.Models.AccountUserRolesRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
