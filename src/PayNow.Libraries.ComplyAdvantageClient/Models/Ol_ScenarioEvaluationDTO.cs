@@ -17,10 +17,10 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         /// <summary>Detail on the evaluation error of the scenario if any</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ErrorDetail { get; set; }
+        public global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_EvaluationErrorDTO? Error { get; set; }
 #nullable restore
 #else
-        public string ErrorDetail { get; set; }
+        public global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_EvaluationErrorDTO Error { get; set; }
 #endif
         /// <summary>The outcome of the scenario evaluation:- **HOLD**: A case will be open and the transaction should not be released until remediation of the case- **ALLOW**: A case will be open but the transaction can be released- **PROCESS**: The scenario did not identify a risk for the transaction- **ERROR**: The scenario could not be evaluated successfully. See errorDetails for more information</summary>
         public global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_ScenarioEvaluationDTO_outcome? Outcome { get; set; }
@@ -61,7 +61,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "error_detail", n => { ErrorDetail = n.GetStringValue(); } },
+                { "error", n => { Error = n.GetObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_EvaluationErrorDTO>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_EvaluationErrorDTO.CreateFromDiscriminatorValue); } },
                 { "outcome", n => { Outcome = n.GetEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_ScenarioEvaluationDTO_outcome>(); } },
                 { "priority", n => { Priority = n.GetIntValue(); } },
                 { "scenario_identifier", n => { ScenarioIdentifier = n.GetGuidValue(); } },
@@ -75,7 +75,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("error_detail", ErrorDetail);
+            writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_EvaluationErrorDTO>("error", Error);
             writer.WriteEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_ScenarioEvaluationDTO_outcome>("outcome", Outcome);
             writer.WriteIntValue("priority", Priority);
             writer.WriteGuidValue("scenario_identifier", ScenarioIdentifier);

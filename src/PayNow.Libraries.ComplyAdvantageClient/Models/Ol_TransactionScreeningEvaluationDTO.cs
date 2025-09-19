@@ -14,6 +14,14 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Detail on the evaluation error of the scenario if any</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_EvaluationErrorDTO? Error { get; set; }
+#nullable restore
+#else
+        public global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_EvaluationErrorDTO Error { get; set; }
+#endif
         /// <summary>The outcome property</summary>
         public global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_TransactionScreeningEvaluationDTO_outcome? Outcome { get; set; }
         /// <summary>The payment_screening_configuration_identifier property</summary>
@@ -43,6 +51,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "error", n => { Error = n.GetObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_EvaluationErrorDTO>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_EvaluationErrorDTO.CreateFromDiscriminatorValue); } },
                 { "outcome", n => { Outcome = n.GetEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_TransactionScreeningEvaluationDTO_outcome>(); } },
                 { "payment_screening_configuration_identifier", n => { PaymentScreeningConfigurationIdentifier = n.GetGuidValue(); } },
             };
@@ -54,6 +63,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_EvaluationErrorDTO>("error", Error);
             writer.WriteEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_TransactionScreeningEvaluationDTO_outcome>("outcome", Outcome);
             writer.WriteGuidValue("payment_screening_configuration_identifier", PaymentScreeningConfigurationIdentifier);
             writer.WriteAdditionalData(AdditionalData);

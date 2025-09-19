@@ -24,5 +24,9 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         #pragma warning disable CS1591
         UNSUPPORTED_COLUMN,
         #pragma warning restore CS1591
+        [EnumMember(Value = "MAX_ROW_LIMIT_EXCEEDED")]
+        #pragma warning disable CS1591
+        MAX_ROW_LIMIT_EXCEEDED,
+        #pragma warning restore CS1591
     }
 }

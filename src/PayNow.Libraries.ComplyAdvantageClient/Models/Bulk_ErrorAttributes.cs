@@ -38,6 +38,8 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
 #else
         public List<long?> ExpectedRange { get; set; }
 #endif
+        /// <summary>The max_row_limit property</summary>
+        public long? MaxRowLimit { get; set; }
         /// <summary>The rejected_values property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -91,6 +93,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
                 { "column_names", n => { ColumnNames = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "column_options", n => { ColumnOptions = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "expected_range", n => { ExpectedRange = n.GetCollectionOfPrimitiveValues<long?>()?.AsList(); } },
+                { "max_row_limit", n => { MaxRowLimit = n.GetLongValue(); } },
                 { "rejected_values", n => { RejectedValues = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "required_format", n => { RequiredFormat = n.GetStringValue(); } },
                 { "required_formats", n => { RequiredFormats = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -106,6 +109,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("column_names", ColumnNames);
             writer.WriteObjectValue<UntypedNode>("column_options", ColumnOptions);
             writer.WriteCollectionOfPrimitiveValues<long?>("expected_range", ExpectedRange);
+            writer.WriteLongValue("max_row_limit", MaxRowLimit);
             writer.WriteCollectionOfPrimitiveValues<string>("rejected_values", RejectedValues);
             writer.WriteStringValue("required_format", RequiredFormat);
             writer.WriteCollectionOfPrimitiveValues<string>("required_formats", RequiredFormats);

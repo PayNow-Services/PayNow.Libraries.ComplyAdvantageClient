@@ -45,7 +45,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient
             ApiClientBuilder.RegisterDefaultDeserializer<FormParseNodeFactory>();
             if (string.IsNullOrEmpty(RequestAdapter.BaseUrl))
             {
-                RequestAdapter.BaseUrl = "https://api.eu.mesh.complyadvantage.com";
+                RequestAdapter.BaseUrl = "https://api.mesh.complyadvantage.com";
             }
             PathParameters.TryAdd("baseurl", RequestAdapter.BaseUrl);
         }

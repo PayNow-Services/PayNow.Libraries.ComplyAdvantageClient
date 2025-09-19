@@ -14,6 +14,14 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The errors property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_EvaluationErrorDTO>? Errors { get; set; }
+#nullable restore
+#else
+        public List<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_EvaluationErrorDTO> Errors { get; set; }
+#endif
         /// <summary>The outcome property</summary>
         public global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_EvaluationResultDTO_outcome? Outcome { get; set; }
         /// <summary>The scenario_evaluations property</summary>
@@ -57,6 +65,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_EvaluationErrorDTO>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_EvaluationErrorDTO.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "outcome", n => { Outcome = n.GetEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_EvaluationResultDTO_outcome>(); } },
                 { "scenario_evaluations", n => { ScenarioEvaluations = n.GetCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_ScenarioConfigurationEvaluationDTO>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_ScenarioConfigurationEvaluationDTO.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "screening_evaluation_results", n => { ScreeningEvaluationResults = n.GetObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_TransactionScreeningEvaluationDTO>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_TransactionScreeningEvaluationDTO.CreateFromDiscriminatorValue); } },
@@ -69,6 +78,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_EvaluationErrorDTO>("errors", Errors);
             writer.WriteEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_EvaluationResultDTO_outcome>("outcome", Outcome);
             writer.WriteCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_ScenarioConfigurationEvaluationDTO>("scenario_evaluations", ScenarioEvaluations);
             writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_TransactionScreeningEvaluationDTO>("screening_evaluation_results", ScreeningEvaluationResults);

@@ -34,7 +34,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Customers.Item.Monitor
         {
         }
         /// <summary>
-        /// This endpoint returns the monitor status for a single customer.You need the &quot;View customer&apos;s monitoring status&quot; permission to use this endpoint.
+        /// This endpoint returns the monitor status for a single customer.You need the &quot;View customer monitoring status&quot; permission to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.CustomerManager_CustomerMonitoringData"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -61,7 +61,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Customers.Item.Monitor
             return await RequestAdapter.SendAsync<global::PayNow.Libraries.ComplyAdvantageClient.Models.CustomerManager_CustomerMonitoringData>(requestInfo, global::PayNow.Libraries.ComplyAdvantageClient.Models.CustomerManager_CustomerMonitoringData.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This endpoint allows you to set the monitoring configuration for a single customer.You need the &quot;Monitor customers&quot; and &quot;Access to base customer monitoring functionality&quot; permissions to use this endpoint.
+        /// This endpoint allows you to set the monitoring configuration for a single customer.You need &quot;Access to base customer monitoring functionality&quot; enabled and the &quot;Monitor and unmonitor customers&quot; permission to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.CustomerManager_CustomerMonitoringData"/></returns>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Customers.Item.Monitor
             return await RequestAdapter.SendAsync<global::PayNow.Libraries.ComplyAdvantageClient.Models.CustomerManager_CustomerMonitoringData>(requestInfo, global::PayNow.Libraries.ComplyAdvantageClient.Models.CustomerManager_CustomerMonitoringData.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This endpoint returns the monitor status for a single customer.You need the &quot;View customer&apos;s monitoring status&quot; permission to use this endpoint.
+        /// This endpoint returns the monitor status for a single customer.You need the &quot;View customer monitoring status&quot; permission to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -109,7 +109,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Customers.Item.Monitor
             return requestInfo;
         }
         /// <summary>
-        /// This endpoint allows you to set the monitoring configuration for a single customer.You need the &quot;Monitor customers&quot; and &quot;Access to base customer monitoring functionality&quot; permissions to use this endpoint.
+        /// This endpoint allows you to set the monitoring configuration for a single customer.You need &quot;Access to base customer monitoring functionality&quot; enabled and the &quot;Monitor and unmonitor customers&quot; permission to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

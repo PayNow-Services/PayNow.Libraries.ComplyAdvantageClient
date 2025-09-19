@@ -16,5 +16,9 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         #pragma warning disable CS1591
         CreateAndMonitor,
         #pragma warning restore CS1591
+        [EnumMember(Value = "manage-lookup-list")]
+        #pragma warning disable CS1591
+        ManageLookupList,
+        #pragma warning restore CS1591
     }
 }
