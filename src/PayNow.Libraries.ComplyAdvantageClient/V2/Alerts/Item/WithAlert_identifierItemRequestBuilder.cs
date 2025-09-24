@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using PayNow.Libraries.ComplyAdvantageClient.V2.Alerts.Item.Risks;
+using PayNow.Libraries.ComplyAdvantageClient.V2.Alerts.Item.Transition;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -19,6 +20,11 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Alerts.Item
         public global::PayNow.Libraries.ComplyAdvantageClient.V2.Alerts.Item.Risks.RisksRequestBuilder Risks
         {
             get => new global::PayNow.Libraries.ComplyAdvantageClient.V2.Alerts.Item.Risks.RisksRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The transition property</summary>
+        public global::PayNow.Libraries.ComplyAdvantageClient.V2.Alerts.Item.Transition.TransitionRequestBuilder Transition
+        {
+            get => new global::PayNow.Libraries.ComplyAdvantageClient.V2.Alerts.Item.Transition.TransitionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::PayNow.Libraries.ComplyAdvantageClient.V2.Alerts.Item.WithAlert_identifierItemRequestBuilder"/> and sets the default values.

@@ -53,6 +53,8 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
 #endif
         /// <summary>Date and time the user was last updated.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
+        /// <summary>Specifies the type of the entity.</summary>
+        public global::PayNow.Libraries.ComplyAdvantageClient.Models.UserData_user_type? UserType { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.UserData"/> and sets the default values.
         /// </summary>
@@ -88,6 +90,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "roles", n => { Roles = n.GetCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.StandardUserRole>(global::PayNow.Libraries.ComplyAdvantageClient.Models.StandardUserRole.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                { "user_type", n => { UserType = n.GetEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.UserData_user_type>(); } },
             };
         }
         /// <summary>
@@ -107,6 +110,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.StandardUserRole>("roles", Roles);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
+            writer.WriteEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.UserData_user_type>("user_type", UserType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

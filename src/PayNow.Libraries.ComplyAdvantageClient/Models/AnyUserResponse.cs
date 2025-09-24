@@ -48,6 +48,8 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>The unique identifier of who last updated the user.</summary>
         public Guid? UpdatedBy { get; set; }
+        /// <summary>Specifies the type of the entity.</summary>
+        public global::PayNow.Libraries.ComplyAdvantageClient.Models.AnyUserResponse_user_type? UserType { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.AnyUserResponse"/> and sets the default values.
         /// </summary>
@@ -84,6 +86,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "updated_by", n => { UpdatedBy = n.GetGuidValue(); } },
+                { "user_type", n => { UserType = n.GetEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.AnyUserResponse_user_type>(); } },
             };
         }
         /// <summary>
@@ -104,6 +107,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteGuidValue("updated_by", UpdatedBy);
+            writer.WriteEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.AnyUserResponse_user_type>("user_type", UserType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

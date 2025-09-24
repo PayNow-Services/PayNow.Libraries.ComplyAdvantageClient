@@ -158,21 +158,21 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Labels
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("identifier")]
-            public string? Identifier { get; set; }
+            public string[]? Identifier { get; set; }
 #nullable restore
 #else
             [QueryParameter("identifier")]
-            public string Identifier { get; set; }
+            public string[] Identifier { get; set; }
 #endif
             /// <summary>The unique name you provided when you created the label.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("name")]
-            public string? Name { get; set; }
+            public string[]? Name { get; set; }
 #nullable restore
 #else
             [QueryParameter("name")]
-            public string Name { get; set; }
+            public string[] Name { get; set; }
 #endif
             /// <summary>One-based page index (1..N)</summary>
             [QueryParameter("page_number")]
