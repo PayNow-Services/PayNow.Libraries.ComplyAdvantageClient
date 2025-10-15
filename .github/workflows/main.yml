@@ -3,7 +3,7 @@ on:
   push:
     branches: ['main']
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '0 0 * * TUE'
   workflow_dispatch:
 
 permissions:
@@ -35,7 +35,7 @@ jobs:
           cd src/PayNow.Libraries.ComplyAdvantageClient
           
           # Download the latest OpenAPI spec
-          curl -o openapi.json https://docs.mesh.complyadvantage.com/openapi/65d331cf63f13e003243dd79
+          curl -o openapi.json https://docs.mesh.complyadvantage.com/openapi/mesh-api.json
           
           # Generate new client and capture output
           KIOTA_OUTPUT=$(kiota generate -d openapi.json --language csharp -o . --exclude-path '**/iam/**' -n PayNow.Libraries.ComplyAdvantageClient -c ComplyAdvantageApiClient 2>&1)
