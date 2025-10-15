@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace PayNow.Libraries.ComplyAdvantageClient.Models
 {
-    /// <summary>Specifies the notification type</summary>
+    /// <summary>The type of webhook notification configuration being created</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum Ns_WebhookConfigurationLog_type
     {
@@ -19,6 +19,10 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         #pragma warning disable CS1591
         WORKFLOW_COMPLETED,
         #pragma warning restore CS1591
+        [EnumMember(Value = "CASE_ALERT_LIST_UPDATED")]
+        #pragma warning disable CS1591
+        CASE_ALERT_LIST_UPDATED,
+        #pragma warning restore CS1591
         [EnumMember(Value = "CSOM_EMULATION_MATCH_STATUS_UPDATED")]
         #pragma warning disable CS1591
         CSOM_EMULATION_MATCH_STATUS_UPDATED,
@@ -30,6 +34,10 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         [EnumMember(Value = "CSOM_EMULATION_MONITORED_SEARCH_UPDATED")]
         #pragma warning disable CS1591
         CSOM_EMULATION_MONITORED_SEARCH_UPDATED,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TRANSACTION_REVIEWED")]
+        #pragma warning disable CS1591
+        TRANSACTION_REVIEWED,
         #pragma warning restore CS1591
     }
 }

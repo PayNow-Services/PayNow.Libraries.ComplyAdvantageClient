@@ -78,7 +78,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Cases
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CasesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/cases{?alerts%2Ehighest_priority*,alerts%2Etitle*,assignee*,assignee_identifier*,created_at_from*,created_at_to*,customer%2Eacquisition_source*,customer%2Eidentifier*,customer%2Elabel*,customer%2Erisk_level*,page_number*,page_size*,risk_type*,search*,sort*,stage%2Eidentifier*,state*,type*}", pathParameters)
+        public CasesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/cases{?alerts%2Ehighest_priority*,alerts%2Etitle*,assignee*,assignee_identifier*,created_at_from*,created_at_to*,customer%2Eacquisition_source*,customer%2Eidentifier*,customer%2Elabel*,customer%2Erisk_level*,page_number*,page_size*,risk_catalog_risk_types%2Ekey*,risk_type*,search*,sort*,stage%2Eidentifier*,state*,type*}", pathParameters)
         {
         }
         /// <summary>
@@ -86,7 +86,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Cases
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CasesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/cases{?alerts%2Ehighest_priority*,alerts%2Etitle*,assignee*,assignee_identifier*,created_at_from*,created_at_to*,customer%2Eacquisition_source*,customer%2Eidentifier*,customer%2Elabel*,customer%2Erisk_level*,page_number*,page_size*,risk_type*,search*,sort*,stage%2Eidentifier*,state*,type*}", rawUrl)
+        public CasesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/cases{?alerts%2Ehighest_priority*,alerts%2Etitle*,assignee*,assignee_identifier*,created_at_from*,created_at_to*,customer%2Eacquisition_source*,customer%2Eidentifier*,customer%2Elabel*,customer%2Erisk_level*,page_number*,page_size*,risk_catalog_risk_types%2Ekey*,risk_type*,search*,sort*,stage%2Eidentifier*,state*,type*}", rawUrl)
         {
         }
         /// <summary>
@@ -245,6 +245,16 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Cases
             /// <summary>The size of the page to be returned</summary>
             [QueryParameter("page_size")]
             public int? PageSize { get; set; }
+            /// <summary>Filter cases by risk catalog risk type keys.Allows filtering for cases with risk types matching any of the provided keys.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("risk_catalog_risk_types%2Ekey")]
+            public string[]? RiskCatalogRiskTypesKey { get; set; }
+#nullable restore
+#else
+            [QueryParameter("risk_catalog_risk_types%2Ekey")]
+            public string[] RiskCatalogRiskTypesKey { get; set; }
+#endif
             /// <summary>Filter cases by a list of risk types. You can retrieve the full list of available risk types from the `/v2/risk-types` endpoint.</summary>
             [Obsolete("This property is deprecated, use RiskTypeAsGetRiskTypeQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -266,7 +276,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Cases
             [QueryParameter("risk_type")]
             public global::PayNow.Libraries.ComplyAdvantageClient.V2.Cases.GetRisk_typeQueryParameterType[] RiskTypeAsGetRiskTypeQueryParameterType { get; set; }
 #endif
-            /// <summary>Search for cases by customer name, customer external identifier, or external activity identifier (for payment screening cases only). Supports wildcard search.</summary>
+            /// <summary>Search for cases by customer name, customer external identifier, counterparty name, counterparty external identifier, or external activity identifier (for payment screening cases only). Supports wildcard search.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("search")]

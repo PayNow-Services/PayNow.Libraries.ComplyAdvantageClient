@@ -16,5 +16,9 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         #pragma warning disable CS1591
         FULL,
         #pragma warning restore CS1591
+        [EnumMember(Value = "MANUAL")]
+        #pragma warning disable CS1591
+        MANUAL,
+        #pragma warning restore CS1591
     }
 }

@@ -16,6 +16,22 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>            This flag sets whether the webhook is active or not.            If &apos;true&apos;, Mesh sends updates when the monitored events take place.            If &apos;false&apos;, Mesh will not send any updates.            </summary>
         public bool? IsActive { get; set; }
+        /// <summary>The name of the webhook configuration.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Name { get; set; }
+#nullable restore
+#else
+        public string Name { get; set; }
+#endif
+        /// <summary>The client side URL that webhooks should be sent to</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Url { get; set; }
+#nullable restore
+#else
+        public string Url { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Ns_UpdateWebhookPayload"/> and sets the default values.
         /// </summary>
@@ -42,6 +58,8 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "is_active", n => { IsActive = n.GetBoolValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -52,6 +70,8 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("is_active", IsActive);
+            writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

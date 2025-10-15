@@ -47,6 +47,8 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         public Guid? ScoreIdentifier { get; set; }
         /// <summary>The type property</summary>
         public global::PayNow.Libraries.ComplyAdvantageClient.Models.RiskScoring_RiskScore_type? Type { get; set; }
+        /// <summary>The updated_by property</summary>
+        public Guid? UpdatedBy { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.RiskScoring_RiskScore"/> and sets the default values.
         /// </summary>
@@ -82,6 +84,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
                 { "risk_model_version", n => { RiskModelVersion = n.GetIntValue(); } },
                 { "score_identifier", n => { ScoreIdentifier = n.GetGuidValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.RiskScoring_RiskScore_type>(); } },
+                { "updated_by", n => { UpdatedBy = n.GetGuidValue(); } },
             };
         }
         /// <summary>
@@ -101,6 +104,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             writer.WriteIntValue("risk_model_version", RiskModelVersion);
             writer.WriteGuidValue("score_identifier", ScoreIdentifier);
             writer.WriteEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.RiskScoring_RiskScore_type>("type", Type);
+            writer.WriteGuidValue("updated_by", UpdatedBy);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

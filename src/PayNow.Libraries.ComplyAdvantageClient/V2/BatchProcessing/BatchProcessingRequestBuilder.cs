@@ -60,7 +60,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.BatchProcessing
         {
         }
         /// <summary>
-        /// This endpoint will return a list of all batch processes that have been initiated, including their `identifiers`, status and errors.You need the &quot;View customers&quot; permission to use this endpoint.
+        /// This endpoint will return a list of all batch processes that have been initiated, including their `identifiers`, status and errors.You need one of the &quot;View customers&quot; or &quot;View transactions&quot; permissions to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Bulk_PaginatedResponseBatch"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,7 +78,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.BatchProcessing
             return await RequestAdapter.SendAsync<global::PayNow.Libraries.ComplyAdvantageClient.Models.Bulk_PaginatedResponseBatch>(requestInfo, global::PayNow.Libraries.ComplyAdvantageClient.Models.Bulk_PaginatedResponseBatch.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This endpoint initiates a batch process asynchronously for a given workflow type.The response will return an `identifier` that can be used to retrieve the file processing status by polling GET /v2/batch-processing/{identifier}.The workflow types available are:1. **Create and screen a batch of customers**This workflow will initiate all of the steps in the [&apos;Create and screen customer asynchronously&apos;](https://docs.mesh.complyadvantage.com/reference/createcustomerandscreenasync) for each of the customers in your file.The response will include an `identifier` that can be used to check the status of the batch process,as well as any validation errors that have caused the file to not be processed.To invoke &apos;create-and-screen&apos; workflow, you need &quot;Access to base customer screening functionality&quot; enabled and the &quot;Create and screen customers&quot; permission.To invoke &apos;create-and-monitor&apos; workflow, you need &quot;Access to base transaction monitoring functionality&quot; enabled.
+        /// This endpoint initiates a batch process asynchronously for a given workflow type.The response will return an `identifier` that can be used to retrieve the file processing status by polling GET /v2/batch-processing/{identifier}.The workflow types available are:1. **Create and screen a batch of customers** - This workflow will initiate all of the steps in the [&apos;Create and screen customer asynchronously&apos;](https://docs.mesh.complyadvantage.com/reference/createcustomerandscreenasync) for each of the customers in your file.2. **Create and monitor a batch of transactions** - This workflow will initiate all of the steps in the &apos;Create and process transactions asynchronously&apos; for each of the transactions in your file. To learn more about the format of the batch file, see [Batch transaction upload](https://support.complyadvantage.com/hc/en-gb/articles/36369611503633-Batch-transaction-upload).The response will include an `identifier` that can be used to check the status of the batch process,as well as any validation errors that have caused the file to not be processed.To invoke &apos;create-and-screen&apos; workflow, you need &quot;Access to base customer screening functionality&quot; enabled and the &quot;Create and screen customers&quot; permission.To invoke &apos;create-and-monitor&apos; workflow, you need &quot;Access to base transaction monitoring functionality&quot; enabled.
         /// </summary>
         /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Bulk_Batch"/></returns>
         /// <param name="body">The request body</param>
@@ -98,7 +98,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.BatchProcessing
             return await RequestAdapter.SendAsync<global::PayNow.Libraries.ComplyAdvantageClient.Models.Bulk_Batch>(requestInfo, global::PayNow.Libraries.ComplyAdvantageClient.Models.Bulk_Batch.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This endpoint will return a list of all batch processes that have been initiated, including their `identifiers`, status and errors.You need the &quot;View customers&quot; permission to use this endpoint.
+        /// This endpoint will return a list of all batch processes that have been initiated, including their `identifiers`, status and errors.You need one of the &quot;View customers&quot; or &quot;View transactions&quot; permissions to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -117,7 +117,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.BatchProcessing
             return requestInfo;
         }
         /// <summary>
-        /// This endpoint initiates a batch process asynchronously for a given workflow type.The response will return an `identifier` that can be used to retrieve the file processing status by polling GET /v2/batch-processing/{identifier}.The workflow types available are:1. **Create and screen a batch of customers**This workflow will initiate all of the steps in the [&apos;Create and screen customer asynchronously&apos;](https://docs.mesh.complyadvantage.com/reference/createcustomerandscreenasync) for each of the customers in your file.The response will include an `identifier` that can be used to check the status of the batch process,as well as any validation errors that have caused the file to not be processed.To invoke &apos;create-and-screen&apos; workflow, you need &quot;Access to base customer screening functionality&quot; enabled and the &quot;Create and screen customers&quot; permission.To invoke &apos;create-and-monitor&apos; workflow, you need &quot;Access to base transaction monitoring functionality&quot; enabled.
+        /// This endpoint initiates a batch process asynchronously for a given workflow type.The response will return an `identifier` that can be used to retrieve the file processing status by polling GET /v2/batch-processing/{identifier}.The workflow types available are:1. **Create and screen a batch of customers** - This workflow will initiate all of the steps in the [&apos;Create and screen customer asynchronously&apos;](https://docs.mesh.complyadvantage.com/reference/createcustomerandscreenasync) for each of the customers in your file.2. **Create and monitor a batch of transactions** - This workflow will initiate all of the steps in the &apos;Create and process transactions asynchronously&apos; for each of the transactions in your file. To learn more about the format of the batch file, see [Batch transaction upload](https://support.complyadvantage.com/hc/en-gb/articles/36369611503633-Batch-transaction-upload).The response will include an `identifier` that can be used to check the status of the batch process,as well as any validation errors that have caused the file to not be processed.To invoke &apos;create-and-screen&apos; workflow, you need &quot;Access to base customer screening functionality&quot; enabled and the &quot;Create and screen customers&quot; permission.To invoke &apos;create-and-monitor&apos; workflow, you need &quot;Access to base transaction monitoring functionality&quot; enabled.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -148,7 +148,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.BatchProcessing
             return new global::PayNow.Libraries.ComplyAdvantageClient.V2.BatchProcessing.BatchProcessingRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// This endpoint will return a list of all batch processes that have been initiated, including their `identifiers`, status and errors.You need the &quot;View customers&quot; permission to use this endpoint.
+        /// This endpoint will return a list of all batch processes that have been initiated, including their `identifiers`, status and errors.You need one of the &quot;View customers&quot; or &quot;View transactions&quot; permissions to use this endpoint.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class BatchProcessingRequestBuilderGetQueryParameters 

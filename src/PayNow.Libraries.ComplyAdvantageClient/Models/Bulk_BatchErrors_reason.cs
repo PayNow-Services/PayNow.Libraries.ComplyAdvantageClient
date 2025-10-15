@@ -20,5 +20,9 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         #pragma warning disable CS1591
         INVALID_ROWS,
         #pragma warning restore CS1591
+        [EnumMember(Value = "INVALID_SEQUENCE_KEY")]
+        #pragma warning disable CS1591
+        INVALID_SEQUENCE_KEY,
+        #pragma warning restore CS1591
     }
 }

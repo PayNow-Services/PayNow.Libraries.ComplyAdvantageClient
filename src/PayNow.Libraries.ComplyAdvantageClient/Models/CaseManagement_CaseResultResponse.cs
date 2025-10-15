@@ -58,6 +58,14 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
 #endif
         /// <summary>Number of items to review in case.</summary>
         public int? ReviewItemsCount { get; set; }
+        /// <summary>Risk catalog risk types associated with the case</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_RiskCatalogResponse>? RiskCatalogRiskTypes { get; set; }
+#nullable restore
+#else
+        public List<global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_RiskCatalogResponse> RiskCatalogRiskTypes { get; set; }
+#endif
         /// <summary>Risk types of case.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -77,6 +85,14 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         /// <summary>The current state of the case.For those using the deprecated case_state, if any new case stages are added the case state response for these will be returned as USER_DEFINED</summary>
         [Obsolete("")]
         public global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_CaseResultResponse_state? State { get; set; }
+        /// <summary>Subjects associated with the case.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_Subject>? Subjects { get; set; }
+#nullable restore
+#else
+        public List<global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_Subject> Subjects { get; set; }
+#endif
         /// <summary>Case type.</summary>
         public global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_CaseResultResponse_type? Type { get; set; }
         /// <summary>Case last updated date and time.</summary>
@@ -117,9 +133,11 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
                 { "last_user_state", n => { LastUserState = n.GetEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_CaseResultResponse_last_user_state>(); } },
                 { "payment", n => { Payment = n.GetObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_PaymentSummaryResponse>(global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_PaymentSummaryResponse.CreateFromDiscriminatorValue); } },
                 { "review_items_count", n => { ReviewItemsCount = n.GetIntValue(); } },
+                { "risk_catalog_risk_types", n => { RiskCatalogRiskTypes = n.GetCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_RiskCatalogResponse>(global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_RiskCatalogResponse.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "risk_types", n => { RiskTypes = n.GetCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_RiskTypesResponse>(global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_RiskTypesResponse.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "stage", n => { Stage = n.GetObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_Stage>(global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_Stage.CreateFromDiscriminatorValue); } },
                 { "state", n => { State = n.GetEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_CaseResultResponse_state>(); } },
+                { "subjects", n => { Subjects = n.GetCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_Subject>(global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_Subject.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "type", n => { Type = n.GetEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_CaseResultResponse_type>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "updated_by", n => { UpdatedBy = n.GetGuidValue(); } },
@@ -141,9 +159,11 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             writer.WriteEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_CaseResultResponse_last_user_state>("last_user_state", LastUserState);
             writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_PaymentSummaryResponse>("payment", Payment);
             writer.WriteIntValue("review_items_count", ReviewItemsCount);
+            writer.WriteCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_RiskCatalogResponse>("risk_catalog_risk_types", RiskCatalogRiskTypes);
             writer.WriteCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_RiskTypesResponse>("risk_types", RiskTypes);
             writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_Stage>("stage", Stage);
             writer.WriteEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_CaseResultResponse_state>("state", State);
+            writer.WriteCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_Subject>("subjects", Subjects);
             writer.WriteEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_CaseResultResponse_type>("type", Type);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteGuidValue("updated_by", UpdatedBy);

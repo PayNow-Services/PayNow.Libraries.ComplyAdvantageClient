@@ -34,7 +34,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.PaymentScreening.Configurati
         {
         }
         /// <summary>
-        /// This endpoint returns a version of a payment screening configuration with its metadata.Payment screening configurations define which lists a transaction will be screened against, and the fuzziness that should be applied to the search. You can create multiple of these in your account. Each payment screening configuration can have multiple versions.        You need the &quot;Access to base payment screening functionality&quot; permission to use this endpoint.
+        /// This endpoint returns a version of a payment screening configuration with its metadata.Payment screening configurations define which lists a transaction will be screened against, and the fuzziness that should be applied to the search. You can create multiple of these in your account. Each payment screening configuration can have multiple versions.        You need &quot;Access to base payment screening functionality&quot; enabled to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Ps_ConfigurationDetail"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.PaymentScreening.Configurati
             return await RequestAdapter.SendAsync<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ps_ConfigurationDetail>(requestInfo, global::PayNow.Libraries.ComplyAdvantageClient.Models.Ps_ConfigurationDetail.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This endpoint returns a version of a payment screening configuration with its metadata.Payment screening configurations define which lists a transaction will be screened against, and the fuzziness that should be applied to the search. You can create multiple of these in your account. Each payment screening configuration can have multiple versions.        You need the &quot;Access to base payment screening functionality&quot; permission to use this endpoint.
+        /// This endpoint returns a version of a payment screening configuration with its metadata.Payment screening configurations define which lists a transaction will be screened against, and the fuzziness that should be applied to the search. You can create multiple of these in your account. Each payment screening configuration can have multiple versions.        You need &quot;Access to base payment screening functionality&quot; enabled to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

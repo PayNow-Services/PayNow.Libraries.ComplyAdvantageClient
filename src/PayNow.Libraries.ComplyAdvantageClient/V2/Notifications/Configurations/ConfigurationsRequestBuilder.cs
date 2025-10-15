@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using PayNow.Libraries.ComplyAdvantageClient.V2.Notifications.Configurations.Email;
+using PayNow.Libraries.ComplyAdvantageClient.V2.Notifications.Configurations.Webhook;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -19,6 +20,11 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Notifications.Configurations
         public global::PayNow.Libraries.ComplyAdvantageClient.V2.Notifications.Configurations.Email.EmailRequestBuilder Email
         {
             get => new global::PayNow.Libraries.ComplyAdvantageClient.V2.Notifications.Configurations.Email.EmailRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The webhook property</summary>
+        public global::PayNow.Libraries.ComplyAdvantageClient.V2.Notifications.Configurations.Webhook.WebhookRequestBuilder Webhook
+        {
+            get => new global::PayNow.Libraries.ComplyAdvantageClient.V2.Notifications.Configurations.Webhook.WebhookRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::PayNow.Libraries.ComplyAdvantageClient.V2.Notifications.Configurations.ConfigurationsRequestBuilder"/> and sets the default values.

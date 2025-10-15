@@ -34,7 +34,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Customers.Item.Products
         {
         }
         /// <summary>
-        /// This endpoint returns a page containing the latest product information for a single customer.You need the &quot;View customers&quot; permission to use this endpoint.
+        /// This endpoint returns a list of the latest product information for a single customer.You need the &quot;View customers&quot; permission to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.CustomerManager_PaginatedProductsV2Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -61,7 +61,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Customers.Item.Products
             return await RequestAdapter.SendAsync<global::PayNow.Libraries.ComplyAdvantageClient.Models.CustomerManager_PaginatedProductsV2Response>(requestInfo, global::PayNow.Libraries.ComplyAdvantageClient.Models.CustomerManager_PaginatedProductsV2Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This endpoint returns a page containing the latest product information for a single customer.You need the &quot;View customers&quot; permission to use this endpoint.
+        /// This endpoint returns a list of the latest product information for a single customer.You need the &quot;View customers&quot; permission to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -89,7 +89,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Customers.Item.Products
             return new global::PayNow.Libraries.ComplyAdvantageClient.V2.Customers.Item.Products.ProductsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// This endpoint returns a page containing the latest product information for a single customer.You need the &quot;View customers&quot; permission to use this endpoint.
+        /// This endpoint returns a list of the latest product information for a single customer.You need the &quot;View customers&quot; permission to use this endpoint.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ProductsRequestBuilderGetQueryParameters 

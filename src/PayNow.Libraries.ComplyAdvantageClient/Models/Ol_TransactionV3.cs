@@ -57,6 +57,14 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         public DateTimeOffset? OccurredAt { get; set; }
         /// <summary>The timestamp the Transaction event was received by us.</summary>
         public DateTimeOffset? ReceivedAt { get; private set; }
+        /// <summary>Regulatory reporting transaction details.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_RegulatoryReportDetailsV3? RegulatoryReportingDetails { get; set; }
+#nullable restore
+#else
+        public global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_RegulatoryReportDetailsV3 RegulatoryReportingDetails { get; set; }
+#endif
         /// <summary>Represents the states of review decision</summary>
         public global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_TransactionV3_review_decision? ReviewDecision { get; private set; }
         /// <summary>
@@ -93,6 +101,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
                 { "identifier", n => { Identifier = n.GetGuidValue(); } },
                 { "occurred_at", n => { OccurredAt = n.GetDateTimeOffsetValue(); } },
                 { "received_at", n => { ReceivedAt = n.GetDateTimeOffsetValue(); } },
+                { "regulatory_reporting_details", n => { RegulatoryReportingDetails = n.GetObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_RegulatoryReportDetailsV3>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_RegulatoryReportDetailsV3.CreateFromDiscriminatorValue); } },
                 { "review_decision", n => { ReviewDecision = n.GetEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_TransactionV3_review_decision>(); } },
             };
         }
@@ -108,6 +117,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_MonetaryTransactionClassificationDetailsV3>("details", Details);
             writer.WriteStringValue("external_identifier", ExternalIdentifier);
             writer.WriteDateTimeOffsetValue("occurred_at", OccurredAt);
+            writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_RegulatoryReportDetailsV3>("regulatory_reporting_details", RegulatoryReportingDetails);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

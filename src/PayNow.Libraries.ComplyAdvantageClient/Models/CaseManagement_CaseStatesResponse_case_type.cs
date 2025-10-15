@@ -19,5 +19,9 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         #pragma warning disable CS1591
         PAYMENT_SCREENING,
         #pragma warning restore CS1591
+        [EnumMember(Value = "TRANSACTION_MONITORING")]
+        #pragma warning disable CS1591
+        TRANSACTION_MONITORING,
+        #pragma warning restore CS1591
     }
 }

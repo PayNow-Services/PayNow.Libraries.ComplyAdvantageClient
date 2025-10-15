@@ -28,5 +28,17 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         #pragma warning disable CS1591
         MAX_ROW_LIMIT_EXCEEDED,
         #pragma warning restore CS1591
+        [EnumMember(Value = "INVALID_CUSTOM_LIST_IDENTIFIER")]
+        #pragma warning disable CS1591
+        INVALID_CUSTOM_LIST_IDENTIFIER,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "INVALID_LOOKUP_LIST_IDENTIFIER")]
+        #pragma warning disable CS1591
+        INVALID_LOOKUP_LIST_IDENTIFIER,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "INVALID_LOOKUP_LIST_STATUS")]
+        #pragma warning disable CS1591
+        INVALID_LOOKUP_LIST_STATUS,
+        #pragma warning restore CS1591
     }
 }

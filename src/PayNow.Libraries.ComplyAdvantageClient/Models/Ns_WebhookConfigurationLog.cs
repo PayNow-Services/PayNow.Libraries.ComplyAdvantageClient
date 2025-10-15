@@ -14,15 +14,15 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Timestamp when the configuration was created</summary>
+        /// <summary>The datetime that the webook notification configuration was created</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The user who created the webhook notification configuration</summary>
         public Guid? CreatedBy { get; set; }
-        /// <summary>Unique identifier for the configuration</summary>
+        /// <summary>Identifier of the webhook notification configuration object</summary>
         public Guid? Identifier { get; set; }
-        /// <summary>Flag indicating if the notification configuration is active</summary>
+        /// <summary>The flag to make webhooks active or inactive</summary>
         public bool? IsActive { get; set; }
-        /// <summary>Name of the webhook configuration</summary>
+        /// <summary>The client provided name for the webhook configration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -30,11 +30,11 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>Specifies the notification type</summary>
+        /// <summary>The type of webhook notification configuration being created</summary>
         public global::PayNow.Libraries.ComplyAdvantageClient.Models.Ns_WebhookConfigurationLog_type? Type { get; set; }
-        /// <summary>Timestamp when the configuration was last updated</summary>
+        /// <summary>The datetime that the webhook notification configuration was last updated</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>The client side URL that webhooks should be sent to</summary>
+        /// <summary>The client side URL to send the webhooks to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Url { get; set; }

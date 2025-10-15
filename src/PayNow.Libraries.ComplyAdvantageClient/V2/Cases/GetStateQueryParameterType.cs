@@ -84,6 +84,30 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Cases
         #pragma warning disable CS1591
         PAYMENT_SCREENING_REJECT_PAYMENT_END_STATE,
         #pragma warning restore CS1591
+        [EnumMember(Value = "TRANSACTION_MONITORING_NOT_STARTED")]
+        #pragma warning disable CS1591
+        TRANSACTION_MONITORING_NOT_STARTED,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TRANSACTION_MONITORING_IN_PROGRESS")]
+        #pragma warning disable CS1591
+        TRANSACTION_MONITORING_IN_PROGRESS,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TRANSACTION_MONITORING_ESCALATED")]
+        #pragma warning disable CS1591
+        TRANSACTION_MONITORING_ESCALATED,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TRANSACTION_MONITORING_BLOCKED")]
+        #pragma warning disable CS1591
+        TRANSACTION_MONITORING_BLOCKED,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TRANSACTION_MONITORING_ACCEPTED_POSITIVE_END_STATE")]
+        #pragma warning disable CS1591
+        TRANSACTION_MONITORING_ACCEPTED_POSITIVE_END_STATE,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TRANSACTION_MONITORING_ESCALATED_NEGATIVE_END_STATE")]
+        #pragma warning disable CS1591
+        TRANSACTION_MONITORING_ESCALATED_NEGATIVE_END_STATE,
+        #pragma warning restore CS1591
         [EnumMember(Value = "USER_DEFINED")]
         #pragma warning disable CS1591
         USER_DEFINED,

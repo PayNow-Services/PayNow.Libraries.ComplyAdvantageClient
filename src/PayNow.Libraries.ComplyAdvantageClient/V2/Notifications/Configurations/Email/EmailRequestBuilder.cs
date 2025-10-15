@@ -25,7 +25,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Notifications.Configurations
             get => new global::PayNow.Libraries.ComplyAdvantageClient.V2.Notifications.Configurations.Email.Test.TestRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the PayNow.Libraries.ComplyAdvantageClient.v2.notifications.configurations.email.item collection</summary>
-        /// <param name="position">When you create an email configuration or run “Get list of email configurations”, you’ll receive a unique identifier for the configuration the specific email configuration. Supply that here for the email configuration you wish to make changes to.The previous value for `enabled_for` would be totally overwritten with what&apos;s passed in here.</param>
+        /// <param name="position">The identifier of the email configuration</param>
         /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.V2.Notifications.Configurations.Email.Item.WithIdentifierItemRequestBuilder"/></returns>
         public global::PayNow.Libraries.ComplyAdvantageClient.V2.Notifications.Configurations.Email.Item.WithIdentifierItemRequestBuilder this[string position]
         {

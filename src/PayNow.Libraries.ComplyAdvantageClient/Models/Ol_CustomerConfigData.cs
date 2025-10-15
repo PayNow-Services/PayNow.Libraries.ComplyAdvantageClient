@@ -15,9 +15,6 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The identifier of the monitoring configuration</summary>
-        [Obsolete("")]
-        public Guid? MonitoringConfigurationIdentifier { get; set; }
         /// <summary>The identifier of the screening configuration</summary>
         public Guid? ScreeningConfigurationIdentifier { get; set; }
         /// <summary>
@@ -45,7 +42,6 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "monitoring_configuration_identifier", n => { MonitoringConfigurationIdentifier = n.GetGuidValue(); } },
                 { "screening_configuration_identifier", n => { ScreeningConfigurationIdentifier = n.GetGuidValue(); } },
             };
         }
@@ -56,7 +52,6 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteGuidValue("monitoring_configuration_identifier", MonitoringConfigurationIdentifier);
             writer.WriteGuidValue("screening_configuration_identifier", ScreeningConfigurationIdentifier);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -22,7 +22,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Accounts.Me.Users
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UsersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/accounts/me/users{?active*,assigned_at_from*,assigned_at_to*,exclude_support_users*,name_contains*,page_number*,page_size*,role*,search*,sort*}", pathParameters)
+        public UsersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/accounts/me/users{?active*,assigned_at_from*,assigned_at_to*,exclude_support_users*,include_agents*,name_contains*,page_number*,page_size*,role*,search*,sort*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Accounts.Me.Users
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UsersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/accounts/me/users{?active*,assigned_at_from*,assigned_at_to*,exclude_support_users*,name_contains*,page_number*,page_size*,role*,search*,sort*}", rawUrl)
+        public UsersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/accounts/me/users{?active*,assigned_at_from*,assigned_at_to*,exclude_support_users*,include_agents*,name_contains*,page_number*,page_size*,role*,search*,sort*}", rawUrl)
         {
         }
         /// <summary>
@@ -97,6 +97,9 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Accounts.Me.Users
             /// <summary>Do not include support users in the response.</summary>
             [QueryParameter("exclude_support_users")]
             public bool? ExcludeSupportUsers { get; set; }
+            /// <summary>Include agents in the response.</summary>
+            [QueryParameter("include_agents")]
+            public bool? IncludeAgents { get; set; }
             /// <summary>Filter user by name.</summary>
             [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

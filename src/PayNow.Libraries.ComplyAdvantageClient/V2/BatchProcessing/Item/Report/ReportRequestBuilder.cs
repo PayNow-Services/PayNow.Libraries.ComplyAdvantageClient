@@ -34,7 +34,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.BatchProcessing.Item.Report
         {
         }
         /// <summary>
-        /// This endpoint returns a URL to download a CSV report for batch upload processes where one or more customers failed to be processed. Use the batch process identifier in the request in order to access the report URL.
+        /// This endpoint returns a URL to download a CSV report for batch upload processes where one or more customers failed to be processed. Use the batch process identifier in the request in order to access the report URL.You need one of the &quot;View customers&quot; or &quot;View transactions&quot; permissions to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Bulk_BatchReport"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.BatchProcessing.Item.Report
             return await RequestAdapter.SendAsync<global::PayNow.Libraries.ComplyAdvantageClient.Models.Bulk_BatchReport>(requestInfo, global::PayNow.Libraries.ComplyAdvantageClient.Models.Bulk_BatchReport.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This endpoint returns a URL to download a CSV report for batch upload processes where one or more customers failed to be processed. Use the batch process identifier in the request in order to access the report URL.
+        /// This endpoint returns a URL to download a CSV report for batch upload processes where one or more customers failed to be processed. Use the batch process identifier in the request in order to access the report URL.You need one of the &quot;View customers&quot; or &quot;View transactions&quot; permissions to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

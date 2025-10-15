@@ -15,7 +15,6 @@ using PayNow.Libraries.ComplyAdvantageClient.V2.Notifications;
 using PayNow.Libraries.ComplyAdvantageClient.V2.PaymentScreening;
 using PayNow.Libraries.ComplyAdvantageClient.V2.Token;
 using PayNow.Libraries.ComplyAdvantageClient.V2.Users;
-using PayNow.Libraries.ComplyAdvantageClient.V2.Webhooks;
 using PayNow.Libraries.ComplyAdvantageClient.V2.Workflows;
 using System.Collections.Generic;
 using System.IO;
@@ -93,11 +92,6 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2
         public global::PayNow.Libraries.ComplyAdvantageClient.V2.Users.UsersRequestBuilder Users
         {
             get => new global::PayNow.Libraries.ComplyAdvantageClient.V2.Users.UsersRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The webhooks property</summary>
-        public global::PayNow.Libraries.ComplyAdvantageClient.V2.Webhooks.WebhooksRequestBuilder Webhooks
-        {
-            get => new global::PayNow.Libraries.ComplyAdvantageClient.V2.Webhooks.WebhooksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The workflows property</summary>
         public global::PayNow.Libraries.ComplyAdvantageClient.V2.Workflows.WorkflowsRequestBuilder Workflows
