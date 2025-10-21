@@ -42,6 +42,8 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
 #else
         public string Status { get; set; }
 #endif
+        /// <summary>Export data since date</summary>
+        public DateTimeOffset? WindowDataSinceTime { get; set; }
         /// <summary>Export data end date</summary>
         public DateTimeOffset? WindowEndTime { get; set; }
         /// <summary>Export data start date</summary>
@@ -76,6 +78,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
                 { "export_type_key", n => { ExportTypeKey = n.GetStringValue(); } },
                 { "identifier", n => { Identifier = n.GetGuidValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
+                { "window_data_since_time", n => { WindowDataSinceTime = n.GetDateTimeOffsetValue(); } },
                 { "window_end_time", n => { WindowEndTime = n.GetDateTimeOffsetValue(); } },
                 { "window_start_time", n => { WindowStartTime = n.GetDateTimeOffsetValue(); } },
             };
@@ -92,6 +95,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             writer.WriteStringValue("export_type_key", ExportTypeKey);
             writer.WriteGuidValue("identifier", Identifier);
             writer.WriteStringValue("status", Status);
+            writer.WriteDateTimeOffsetValue("window_data_since_time", WindowDataSinceTime);
             writer.WriteDateTimeOffsetValue("window_end_time", WindowEndTime);
             writer.WriteDateTimeOffsetValue("window_start_time", WindowStartTime);
             writer.WriteAdditionalData(AdditionalData);

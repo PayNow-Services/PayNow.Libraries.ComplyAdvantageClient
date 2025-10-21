@@ -16,6 +16,14 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         #pragma warning disable CS1591
         ONBOARDING_IN_PROGRESS,
         #pragma warning restore CS1591
+        [EnumMember(Value = "ONBOARDING_ESCALATED")]
+        #pragma warning disable CS1591
+        ONBOARDING_ESCALATED,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ONBOARDING_BLOCKED")]
+        #pragma warning disable CS1591
+        ONBOARDING_BLOCKED,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ONBOARDING_POSITIVE_END_STATE")]
         #pragma warning disable CS1591
         ONBOARDING_POSITIVE_END_STATE,

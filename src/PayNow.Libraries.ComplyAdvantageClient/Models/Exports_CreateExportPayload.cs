@@ -14,6 +14,8 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Export data since date</summary>
+        public DateTimeOffset? DataSince { get; set; }
         /// <summary>Export data end date</summary>
         public DateTimeOffset? EndDate { get; set; }
         /// <summary>Export name, created by customer</summary>
@@ -59,6 +61,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "data_since", n => { DataSince = n.GetDateTimeOffsetValue(); } },
                 { "end_date", n => { EndDate = n.GetDateTimeOffsetValue(); } },
                 { "export_name", n => { ExportName = n.GetStringValue(); } },
                 { "export_type_key", n => { ExportTypeKey = n.GetStringValue(); } },
@@ -72,6 +75,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteDateTimeOffsetValue("data_since", DataSince);
             writer.WriteDateTimeOffsetValue("end_date", EndDate);
             writer.WriteStringValue("export_name", ExportName);
             writer.WriteStringValue("export_type_key", ExportTypeKey);

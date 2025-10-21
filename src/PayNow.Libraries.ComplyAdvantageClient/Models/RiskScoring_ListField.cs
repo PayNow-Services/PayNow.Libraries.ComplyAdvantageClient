@@ -52,18 +52,18 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             writer.WriteCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.RiskScoring_ListField.RiskScoring_ListField_attribute_results>("attribute_results", AttributeResults);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.RiskScoring_ListField1"/>, <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.RiskScoring_ValueField"/>
+        /// Composed type wrapper for classes <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.RiskScoring_ListField"/>, <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.RiskScoring_ValueField"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RiskScoring_ListField_attribute_results : IComposedTypeWrapper, IParsable
         {
-            /// <summary>Composed type representation for type <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.RiskScoring_ListField1"/></summary>
+            /// <summary>Composed type representation for type <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.RiskScoring_ListField"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public global::PayNow.Libraries.ComplyAdvantageClient.Models.RiskScoring_ListField1? RiskScoringListField1 { get; set; }
+            public global::PayNow.Libraries.ComplyAdvantageClient.Models.RiskScoring_ListField? RiskScoringListField { get; set; }
 #nullable restore
 #else
-            public global::PayNow.Libraries.ComplyAdvantageClient.Models.RiskScoring_ListField1 RiskScoringListField1 { get; set; }
+            public global::PayNow.Libraries.ComplyAdvantageClient.Models.RiskScoring_ListField RiskScoringListField { get; set; }
 #endif
             /// <summary>Composed type representation for type <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.RiskScoring_ValueField"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -83,9 +83,9 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
                 var result = new global::PayNow.Libraries.ComplyAdvantageClient.Models.RiskScoring_ListField.RiskScoring_ListField_attribute_results();
-                if("risk-scoring_ListField1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                if("risk-scoring_ListField".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
-                    result.RiskScoringListField1 = new global::PayNow.Libraries.ComplyAdvantageClient.Models.RiskScoring_ListField1();
+                    result.RiskScoringListField = new global::PayNow.Libraries.ComplyAdvantageClient.Models.RiskScoring_ListField();
                 }
                 else if("risk-scoring_ValueField".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
@@ -99,9 +99,9 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
             public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
             {
-                if(RiskScoringListField1 != null)
+                if(RiskScoringListField != null)
                 {
-                    return RiskScoringListField1.GetFieldDeserializers();
+                    return RiskScoringListField.GetFieldDeserializers();
                 }
                 else if(RiskScoringValueField != null)
                 {
@@ -116,9 +116,9 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             public virtual void Serialize(ISerializationWriter writer)
             {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                if(RiskScoringListField1 != null)
+                if(RiskScoringListField != null)
                 {
-                    writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.RiskScoring_ListField1>(null, RiskScoringListField1);
+                    writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.RiskScoring_ListField>(null, RiskScoringListField);
                 }
                 else if(RiskScoringValueField != null)
                 {

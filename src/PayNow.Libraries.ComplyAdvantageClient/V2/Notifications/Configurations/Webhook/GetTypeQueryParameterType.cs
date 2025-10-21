@@ -24,18 +24,6 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Notifications.Configurations
         #pragma warning disable CS1591
         CASE_ALERT_LIST_UPDATED,
         #pragma warning restore CS1591
-        [EnumMember(Value = "CSOM_EMULATION_MATCH_STATUS_UPDATED")]
-        #pragma warning disable CS1591
-        CSOM_EMULATION_MATCH_STATUS_UPDATED,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "CSOM_EMULATION_SEARCH_STATUS_UPDATED")]
-        #pragma warning disable CS1591
-        CSOM_EMULATION_SEARCH_STATUS_UPDATED,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "CSOM_EMULATION_MONITORED_SEARCH_UPDATED")]
-        #pragma warning disable CS1591
-        CSOM_EMULATION_MONITORED_SEARCH_UPDATED,
-        #pragma warning restore CS1591
         [EnumMember(Value = "TRANSACTION_REVIEWED")]
         #pragma warning disable CS1591
         TRANSACTION_REVIEWED,

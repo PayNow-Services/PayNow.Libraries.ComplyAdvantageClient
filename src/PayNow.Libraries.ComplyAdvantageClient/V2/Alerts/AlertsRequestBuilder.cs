@@ -22,7 +22,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Alerts
             get => new global::PayNow.Libraries.ComplyAdvantageClient.V2.Alerts.Mutes.MutesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the PayNow.Libraries.ComplyAdvantageClient.v2.alerts.item collection</summary>
-        /// <param name="position">UUID identifier of the alert from which to get the risks</param>
+        /// <param name="position">UUID identifier of the alert</param>
         /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.V2.Alerts.Item.WithAlert_identifierItemRequestBuilder"/></returns>
         public global::PayNow.Libraries.ComplyAdvantageClient.V2.Alerts.Item.WithAlert_identifierItemRequestBuilder this[Guid position]
         {
@@ -34,7 +34,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Alerts
             }
         }
         /// <summary>Gets an item from the PayNow.Libraries.ComplyAdvantageClient.v2.alerts.item collection</summary>
-        /// <param name="position">UUID identifier of the alert from which to get the risks</param>
+        /// <param name="position">UUID identifier of the alert</param>
         /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.V2.Alerts.Item.WithAlert_identifierItemRequestBuilder"/></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public global::PayNow.Libraries.ComplyAdvantageClient.V2.Alerts.Item.WithAlert_identifierItemRequestBuilder this[string position]
