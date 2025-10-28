@@ -88,7 +88,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Users
         public async Task<global::PayNow.Libraries.ComplyAdvantageClient.Models.AnyUserResponse> PostAsync(global::PayNow.Libraries.ComplyAdvantageClient.Models.UserRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -111,7 +111,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Users
         public RequestInformation ToPostRequestInformation(global::PayNow.Libraries.ComplyAdvantageClient.Models.UserRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

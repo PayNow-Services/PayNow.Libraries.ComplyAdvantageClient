@@ -73,7 +73,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::PayNow.Libraries.ComplyAdvantageClient.Models.TransactionV3 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::PayNow.Libraries.ComplyAdvantageClient.Models.TransactionV3();
         }
         /// <summary>
@@ -102,7 +102,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("customer_external_identifier", CustomerExternalIdentifier);
             writer.WriteCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.CustomFieldV3>("custom_fields", CustomFields);
             writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.MonetaryTransactionClassificationDetailsV3>("details", Details);

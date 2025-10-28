@@ -45,7 +45,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_CustomFieldV3 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_CustomFieldV3();
         }
         /// <summary>
@@ -66,7 +66,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("key", Key);
             writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_CustomFieldV3.Activity_CustomFieldV3_value>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
@@ -100,7 +100,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_CustomFieldV3.Activity_CustomFieldV3_value CreateFromDiscriminatorValue(IParseNode parseNode)
             {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("data_type")?.GetStringValue();
                 var result = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_CustomFieldV3.Activity_CustomFieldV3_value();
                 if("activity_DecimalValueV3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
@@ -135,7 +135,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             /// <param name="writer">Serialization writer to use to serialize this model</param>
             public virtual void Serialize(ISerializationWriter writer)
             {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
                 if(ActivityDecimalValueV3 != null)
                 {
                     writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_DecimalValueV3>(null, ActivityDecimalValueV3);

@@ -53,7 +53,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::PayNow.Libraries.ComplyAdvantageClient.Models.PartyIdentificationV3 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::PayNow.Libraries.ComplyAdvantageClient.Models.PartyIdentificationV3();
         }
         /// <summary>
@@ -75,7 +75,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.PartyIdentificationV3.PartyIdentificationV3_address>("address", Address);
             writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.PartyIdentificationV3.PartyIdentificationV3_identifier>("identifier", Identifier);
             writer.WriteStringValue("name", Name);
@@ -110,7 +110,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static global::PayNow.Libraries.ComplyAdvantageClient.Models.PartyIdentificationV3.PartyIdentificationV3_address CreateFromDiscriminatorValue(IParseNode parseNode)
             {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("format")?.GetStringValue();
                 var result = new global::PayNow.Libraries.ComplyAdvantageClient.Models.PartyIdentificationV3.PartyIdentificationV3_address();
                 if("StructuredAddressV3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
@@ -145,7 +145,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             /// <param name="writer">Serialization writer to use to serialize this model</param>
             public virtual void Serialize(ISerializationWriter writer)
             {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
                 if(StructuredAddressV3 != null)
                 {
                     writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.StructuredAddressV3>(null, StructuredAddressV3);
@@ -185,7 +185,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static global::PayNow.Libraries.ComplyAdvantageClient.Models.PartyIdentificationV3.PartyIdentificationV3_identifier CreateFromDiscriminatorValue(IParseNode parseNode)
             {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
                 var result = new global::PayNow.Libraries.ComplyAdvantageClient.Models.PartyIdentificationV3.PartyIdentificationV3_identifier();
                 if("CounterpartyPartyIdentifierV3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
@@ -220,7 +220,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             /// <param name="writer">Serialization writer to use to serialize this model</param>
             public virtual void Serialize(ISerializationWriter writer)
             {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
                 if(CounterpartyPartyIdentifierV3 != null)
                 {
                     writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.CounterpartyPartyIdentifierV3>(null, CounterpartyPartyIdentifierV3);

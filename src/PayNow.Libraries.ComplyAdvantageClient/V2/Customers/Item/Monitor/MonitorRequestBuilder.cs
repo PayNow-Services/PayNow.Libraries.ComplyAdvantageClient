@@ -79,7 +79,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Customers.Item.Monitor
         public async Task<global::PayNow.Libraries.ComplyAdvantageClient.Models.CustomerManager_CustomerMonitoringData> PatchAsync(global::PayNow.Libraries.ComplyAdvantageClient.Models.CustomerManager_CustomerMonitoringDataApi body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -123,7 +123,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Customers.Item.Monitor
         public RequestInformation ToPatchRequestInformation(global::PayNow.Libraries.ComplyAdvantageClient.Models.CustomerManager_CustomerMonitoringDataApi body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

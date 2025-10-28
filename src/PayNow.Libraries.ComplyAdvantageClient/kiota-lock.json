@@ -2,7 +2,7 @@
   "descriptionHash": "0DBFDBAD28CA817EEC2816F13A715E2A1E1813972481DA6BE88D92A1B465990280B0247B201B65ED5358E2FA4E3C76DF2E6667E788F2B426D74A4E1932CAB674",
   "descriptionLocation": "openapi.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.28.0",
+  "kiotaVersion": "1.29.0",
   "clientClassName": "ComplyAdvantageApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "PayNow.Libraries.ComplyAdvantageClient",

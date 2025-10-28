@@ -73,7 +73,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Cases.Workflows.Item
         public async Task<global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_WorkflowResponse> PutAsync(global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_UpdateWorkflowRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_WorkflowResponse>(requestInfo, global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_WorkflowResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
@@ -111,7 +111,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Cases.Workflows.Item
         public RequestInformation ToPutRequestInformation(global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_UpdateWorkflowRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

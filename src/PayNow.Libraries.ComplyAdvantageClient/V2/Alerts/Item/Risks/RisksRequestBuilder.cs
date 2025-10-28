@@ -163,7 +163,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Alerts.Item.Risks
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static global::PayNow.Libraries.ComplyAdvantageClient.V2.Alerts.Item.Risks.RisksRequestBuilder.RisksGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
             {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::PayNow.Libraries.ComplyAdvantageClient.V2.Alerts.Item.Risks.RisksRequestBuilder.RisksGetResponse();
                 if("am_TransactionMonitoringRisksResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
@@ -198,7 +198,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Alerts.Item.Risks
             /// <param name="writer">Serialization writer to use to serialize this model</param>
             public virtual void Serialize(ISerializationWriter writer)
             {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
                 if(AmTransactionMonitoringRisksResponse != null)
                 {
                     writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Am_TransactionMonitoringRisksResponse>(null, AmTransactionMonitoringRisksResponse);
@@ -269,7 +269,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Alerts.Item.Risks
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static global::PayNow.Libraries.ComplyAdvantageClient.V2.Alerts.Item.Risks.RisksRequestBuilder.RisksResponse CreateFromDiscriminatorValue(IParseNode parseNode)
             {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::PayNow.Libraries.ComplyAdvantageClient.V2.Alerts.Item.Risks.RisksRequestBuilder.RisksResponse();
                 if("am_TransactionMonitoringRisksResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
@@ -304,7 +304,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Alerts.Item.Risks
             /// <param name="writer">Serialization writer to use to serialize this model</param>
             public virtual void Serialize(ISerializationWriter writer)
             {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
                 if(AmTransactionMonitoringRisksResponse != null)
                 {
                     writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Am_TransactionMonitoringRisksResponse>(null, AmTransactionMonitoringRisksResponse);
