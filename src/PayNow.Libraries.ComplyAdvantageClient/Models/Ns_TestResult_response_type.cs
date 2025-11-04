@@ -27,5 +27,17 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         #pragma warning disable CS1591
         NO_RESPONSE,
         #pragma warning restore CS1591
+        [EnumMember(Value = "OAUTH_CLIENT_REQUEST_ERROR")]
+        #pragma warning disable CS1591
+        OAUTH_CLIENT_REQUEST_ERROR,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "OAUTH_SERVER_ERROR")]
+        #pragma warning disable CS1591
+        OAUTH_SERVER_ERROR,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "OAUTH_NO_RESPONSE")]
+        #pragma warning disable CS1591
+        OAUTH_NO_RESPONSE,
+        #pragma warning restore CS1591
     }
 }
