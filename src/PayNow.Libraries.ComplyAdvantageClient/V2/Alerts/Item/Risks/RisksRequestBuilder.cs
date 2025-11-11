@@ -135,7 +135,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Alerts.Item.Risks
             return new global::PayNow.Libraries.ComplyAdvantageClient.V2.Alerts.Item.Risks.RisksRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Am_TransactionMonitoringRisksResponse"/>, <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_ListRisksResponse"/>
+        /// Composed type wrapper for classes <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Am_TransactionMonitoringRisksResponse"/>, <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_ListRiskV1Response"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RisksGetResponse : IComposedTypeWrapper, IParsable
@@ -148,13 +148,13 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Alerts.Item.Risks
 #else
             public global::PayNow.Libraries.ComplyAdvantageClient.Models.Am_TransactionMonitoringRisksResponse AmTransactionMonitoringRisksResponse { get; set; }
 #endif
-            /// <summary>Composed type representation for type <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_ListRisksResponse"/></summary>
+            /// <summary>Composed type representation for type <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_ListRiskV1Response"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_ListRisksResponse? SraListRisksResponse { get; set; }
+            public global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_ListRiskV1Response? SraListRiskV1Response { get; set; }
 #nullable restore
 #else
-            public global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_ListRisksResponse SraListRisksResponse { get; set; }
+            public global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_ListRiskV1Response SraListRiskV1Response { get; set; }
 #endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
@@ -170,9 +170,9 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Alerts.Item.Risks
                 {
                     result.AmTransactionMonitoringRisksResponse = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Am_TransactionMonitoringRisksResponse();
                 }
-                else if("sra_ListRisksResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("sra_ListRiskV1Response".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
-                    result.SraListRisksResponse = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_ListRisksResponse();
+                    result.SraListRiskV1Response = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_ListRiskV1Response();
                 }
                 return result;
             }
@@ -186,9 +186,9 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Alerts.Item.Risks
                 {
                     return AmTransactionMonitoringRisksResponse.GetFieldDeserializers();
                 }
-                else if(SraListRisksResponse != null)
+                else if(SraListRiskV1Response != null)
                 {
-                    return SraListRisksResponse.GetFieldDeserializers();
+                    return SraListRiskV1Response.GetFieldDeserializers();
                 }
                 return new Dictionary<string, Action<IParseNode>>();
             }
@@ -203,9 +203,9 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Alerts.Item.Risks
                 {
                     writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Am_TransactionMonitoringRisksResponse>(null, AmTransactionMonitoringRisksResponse);
                 }
-                else if(SraListRisksResponse != null)
+                else if(SraListRiskV1Response != null)
                 {
-                    writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_ListRisksResponse>(null, SraListRisksResponse);
+                    writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_ListRiskV1Response>(null, SraListRiskV1Response);
                 }
             }
         }
@@ -241,7 +241,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Alerts.Item.Risks
         {
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Am_TransactionMonitoringRisksResponse"/>, <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_ListRisksResponse"/>
+        /// Composed type wrapper for classes <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Am_TransactionMonitoringRisksResponse"/>, <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_ListRiskV1Response"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RisksResponse : IComposedTypeWrapper, IParsable
@@ -254,13 +254,13 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Alerts.Item.Risks
 #else
             public global::PayNow.Libraries.ComplyAdvantageClient.Models.Am_TransactionMonitoringRisksResponse AmTransactionMonitoringRisksResponse { get; set; }
 #endif
-            /// <summary>Composed type representation for type <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_ListRisksResponse"/></summary>
+            /// <summary>Composed type representation for type <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_ListRiskV1Response"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_ListRisksResponse? SraListRisksResponse { get; set; }
+            public global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_ListRiskV1Response? SraListRiskV1Response { get; set; }
 #nullable restore
 #else
-            public global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_ListRisksResponse SraListRisksResponse { get; set; }
+            public global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_ListRiskV1Response SraListRiskV1Response { get; set; }
 #endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
@@ -276,9 +276,9 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Alerts.Item.Risks
                 {
                     result.AmTransactionMonitoringRisksResponse = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Am_TransactionMonitoringRisksResponse();
                 }
-                else if("sra_ListRisksResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("sra_ListRiskV1Response".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
-                    result.SraListRisksResponse = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_ListRisksResponse();
+                    result.SraListRiskV1Response = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_ListRiskV1Response();
                 }
                 return result;
             }
@@ -292,9 +292,9 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Alerts.Item.Risks
                 {
                     return AmTransactionMonitoringRisksResponse.GetFieldDeserializers();
                 }
-                else if(SraListRisksResponse != null)
+                else if(SraListRiskV1Response != null)
                 {
-                    return SraListRisksResponse.GetFieldDeserializers();
+                    return SraListRiskV1Response.GetFieldDeserializers();
                 }
                 return new Dictionary<string, Action<IParseNode>>();
             }
@@ -309,9 +309,9 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Alerts.Item.Risks
                 {
                     writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Am_TransactionMonitoringRisksResponse>(null, AmTransactionMonitoringRisksResponse);
                 }
-                else if(SraListRisksResponse != null)
+                else if(SraListRiskV1Response != null)
                 {
-                    writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_ListRisksResponse>(null, SraListRisksResponse);
+                    writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_ListRiskV1Response>(null, SraListRiskV1Response);
                 }
             }
         }

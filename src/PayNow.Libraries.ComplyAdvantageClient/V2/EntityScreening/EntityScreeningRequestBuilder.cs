@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using PayNow.Libraries.ComplyAdvantageClient.V2.EntityScreening.Configurations;
+using PayNow.Libraries.ComplyAdvantageClient.V2.EntityScreening.Risks;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -19,6 +20,11 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.EntityScreening
         public global::PayNow.Libraries.ComplyAdvantageClient.V2.EntityScreening.Configurations.ConfigurationsRequestBuilder Configurations
         {
             get => new global::PayNow.Libraries.ComplyAdvantageClient.V2.EntityScreening.Configurations.ConfigurationsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The risks property</summary>
+        public global::PayNow.Libraries.ComplyAdvantageClient.V2.EntityScreening.Risks.RisksRequestBuilder Risks
+        {
+            get => new global::PayNow.Libraries.ComplyAdvantageClient.V2.EntityScreening.Risks.RisksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::PayNow.Libraries.ComplyAdvantageClient.V2.EntityScreening.EntityScreeningRequestBuilder"/> and sets the default values.

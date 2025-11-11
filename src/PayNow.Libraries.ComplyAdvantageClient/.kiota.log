@@ -1,12 +1,12 @@
 Warning: KiotaBuilder OpenAPI warning: #/ - The schema ol_StepOutput is a polymorphic type but does not define a discriminator. This will result in serialization errors.
+Warning: KiotaBuilder OpenAPI warning: #/ - The schema case-management_StageData is a polymorphic type but does not define a discriminator. This will result in serialization errors.
 Warning: KiotaBuilder OpenAPI warning: #/ - The schema case-management_CaseTransitionRequest is a polymorphic type but does not define a discriminator. This will result in serialization errors.
 Warning: KiotaBuilder OpenAPI warning: #/ - The schema case-management_PaymentSummaryResponse is a polymorphic type but does not define a discriminator. This will result in serialization errors.
-Warning: KiotaBuilder OpenAPI warning: #/ - The schema case-management_StageData is a polymorphic type but does not define a discriminator. This will result in serialization errors.
 Warning: KiotaBuilder OpenAPI warning: #/ - The schema case-management_TransitionCaseBulkActionPayload is a polymorphic type but does not define a discriminator. This will result in serialization errors.
 Warning: KiotaBuilder OpenAPI warning: #/ - The schema /v2/alerts/{alert_identifier}/risks is a polymorphic type but does not define a discriminator. This will result in serialization errors.
+Warning: KiotaBuilder OpenAPI warning: #/ - The schema /v2/iam/roles/{role_identifier} is a polymorphic type but does not define a discriminator. This will result in serialization errors.
+Warning: KiotaBuilder OpenAPI warning: #/ - The schema /v2/iam/roles/{role_identifier} is a polymorphic type but does not define a discriminator. This will result in serialization errors.
 Warning: KiotaBuilder OpenAPI warning: #/ - The schema /v2/iam/roles is a polymorphic type but does not define a discriminator. This will result in serialization errors.
-Warning: KiotaBuilder OpenAPI warning: #/ - The schema /v2/iam/roles/{role_identifier} is a polymorphic type but does not define a discriminator. This will result in serialization errors.
-Warning: KiotaBuilder OpenAPI warning: #/ - The schema /v2/iam/roles/{role_identifier} is a polymorphic type but does not define a discriminator. This will result in serialization errors.
 Warning: KiotaBuilder OpenAPI warning: #/components/schemas/TokenCreateRequestBody/properties/username - The format email is not supported by Kiota and the string type will be used.
 Warning: KiotaBuilder OpenAPI warning: #/components/schemas/ol_Address/properties/country - The format iso-3166-alpha-2 is not supported by Kiota for the type String and the string type will be used.
 Warning: KiotaBuilder OpenAPI warning: #/components/schemas/ol_Company/properties/place_of_registration - The format iso-3166-2 is not supported by Kiota for the type String and the string type will be used.
@@ -67,6 +67,12 @@ Warning: KiotaBuilder OpenAPI warning: #/components/schemas/activity_MonetaryVal
 Warning: KiotaBuilder OpenAPI warning: #/components/schemas/activity_ProblemDetailErrorResponse/properties/instance - The format uri is not supported by Kiota and the string type will be used.
 Warning: KiotaBuilder OpenAPI warning: #/components/schemas/activity_ProblemDetailErrorResponse/properties/type - The format uri is not supported by Kiota and the string type will be used.
 Warning: KiotaBuilder OpenAPI warning: #/components/schemas/activity_StructuredAddressV3/allOf/1/properties/country - The format iso-3166-alpha-2 is not supported by Kiota for the type String and the string type will be used.
+Warning: KiotaBuilder OpenAPI warning: #/components/schemas/customlist_AddressDTO/properties/country_code - The format iso-3166-alpha-2 is not supported by Kiota for the type String and the string type will be used.
+Warning: KiotaBuilder OpenAPI warning: #/components/schemas/customlist_PersonAddDTO/properties/nationalities - The format iso-3166-alpha-2 is not supported by Kiota for the type Array and the string type will be used.
+Warning: KiotaBuilder OpenAPI warning: #/components/schemas/customlist_PersonAddDTO/properties/nationalities/items - The format iso-3166-alpha-2 is not supported by Kiota for the type String and the string type will be used.
+Warning: KiotaBuilder OpenAPI warning: #/components/schemas/customlist_PersonDTO/properties/nationalities/items - The format iso-3166-alpha-2 is not supported by Kiota for the type String and the string type will be used.
+Warning: KiotaBuilder OpenAPI warning: #/components/schemas/customlist_ProblemDetailErrorResponse/properties/instance - The format uri is not supported by Kiota and the string type will be used.
+Warning: KiotaBuilder OpenAPI warning: #/components/schemas/customlist_ProblemDetailErrorResponse/properties/type - The format uri is not supported by Kiota and the string type will be used.
 Warning: KiotaBuilder OpenAPI warning: #/components/schemas/MonetaryValueV3/properties/currency - The format iso-4217 is not supported by Kiota for the type String and the string type will be used.
 Warning: KiotaBuilder OpenAPI warning: #/components/schemas/StructuredAddressV3/allOf/1/properties/country - The format iso-3166-alpha-2 is not supported by Kiota for the type String and the string type will be used.
 Error: KiotaBuilder OpenAPI error: #/components/schemas/case-management_CustomerSubject/discriminator - Schema  must contain property specified in the discriminator detail.type in the required field list.

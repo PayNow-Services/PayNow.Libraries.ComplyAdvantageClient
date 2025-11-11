@@ -40,7 +40,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.EntityScreening.Configuratio
         {
         }
         /// <summary>
-        /// This endpoint updates a screening configuration details
+        /// This endpoint updates a screening configuration detailsYou need &quot;Access to base customer screening functionality&quot; enabled and the &quot;Create and update customer screening configurations&quot; permission to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_ScreeningConfiguration"/></returns>
         /// <param name="body">Update configuration request containing a change reason and a screening configuration with multiple collections.</param>
@@ -65,7 +65,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.EntityScreening.Configuratio
             return await RequestAdapter.SendAsync<global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_ScreeningConfiguration>(requestInfo, global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_ScreeningConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This endpoint updates a screening configuration details
+        /// This endpoint updates a screening configuration detailsYou need &quot;Access to base customer screening functionality&quot; enabled and the &quot;Create and update customer screening configurations&quot; permission to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Update configuration request containing a change reason and a screening configuration with multiple collections.</param>

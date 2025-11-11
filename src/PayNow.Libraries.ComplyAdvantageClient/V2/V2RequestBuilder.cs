@@ -7,6 +7,7 @@ using PayNow.Libraries.ComplyAdvantageClient.V2.Alerts;
 using PayNow.Libraries.ComplyAdvantageClient.V2.BatchProcessing;
 using PayNow.Libraries.ComplyAdvantageClient.V2.Cases;
 using PayNow.Libraries.ComplyAdvantageClient.V2.Clients;
+using PayNow.Libraries.ComplyAdvantageClient.V2.CustomLists;
 using PayNow.Libraries.ComplyAdvantageClient.V2.Customers;
 using PayNow.Libraries.ComplyAdvantageClient.V2.EntityScreening;
 using PayNow.Libraries.ComplyAdvantageClient.V2.Exports;
@@ -57,6 +58,11 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2
         public global::PayNow.Libraries.ComplyAdvantageClient.V2.Customers.CustomersRequestBuilder Customers
         {
             get => new global::PayNow.Libraries.ComplyAdvantageClient.V2.Customers.CustomersRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The customLists property</summary>
+        public global::PayNow.Libraries.ComplyAdvantageClient.V2.CustomLists.CustomListsRequestBuilder CustomLists
+        {
+            get => new global::PayNow.Libraries.ComplyAdvantageClient.V2.CustomLists.CustomListsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The entityScreening property</summary>
         public global::PayNow.Libraries.ComplyAdvantageClient.V2.EntityScreening.EntityScreeningRequestBuilder EntityScreening

@@ -15,6 +15,14 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>List of known associates</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_Associate>? Associates { get; set; }
+#nullable restore
+#else
+        public List<global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_Associate> Associates { get; set; }
+#endif
         /// <summary>List of known names</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -48,6 +56,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "associates", n => { Associates = n.GetCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_Associate>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_Associate.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "names", n => { Names = n.GetCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_Name>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_Name.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -58,6 +67,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_Associate>("associates", Associates);
             writer.WriteCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_Name>("names", Names);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -15,6 +15,8 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Clients can enable or disable grouping of multiple alerts in a case via this configuration. When enabled, if new alerts are generated, these will continue to group within an existing open case rather than trigger the creation of new cases. We recommend that this configuration must always remain enabled for Transaction monitoring cases, as having alerts grouped in a single case provides an overall view of alert activity for a given customer or counterparty.</summary>
+        public bool? AlertGroupingEnabled { get; set; }
         /// <summary>The type of the case to which the workflow applies.</summary>
         public global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_WorkflowResponse_case_type? CaseType { get; set; }
         /// <summary>Workflow created date and time.</summary>
@@ -58,6 +60,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "alert_grouping_enabled", n => { AlertGroupingEnabled = n.GetBoolValue(); } },
                 { "case_type", n => { CaseType = n.GetEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_WorkflowResponse_case_type>(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "created_by", n => { CreatedBy = n.GetGuidValue(); } },
@@ -73,6 +76,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("alert_grouping_enabled", AlertGroupingEnabled);
             writer.WriteEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_WorkflowResponse_case_type>("case_type", CaseType);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteGuidValue("created_by", CreatedBy);

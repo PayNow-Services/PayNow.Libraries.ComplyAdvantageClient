@@ -14,6 +14,8 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Clients can enable or disable grouping of multiple alerts in a case via this configuration. When enabled, if new alerts are generated, these will continue to group within an existing open case rather than trigger the creation of new cases. We recommend that this configuration must always remain enabled for Transaction monitoring cases, as having alerts grouped in a single case provides an overall view of alert activity for a given customer or counterparty.</summary>
+        public bool? AlertGroupingEnabled { get; set; }
         /// <summary>The stages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -47,6 +49,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "alert_grouping_enabled", n => { AlertGroupingEnabled = n.GetBoolValue(); } },
                 { "stages", n => { Stages = n.GetCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_StageData>(global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_StageData.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -57,6 +60,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("alert_grouping_enabled", AlertGroupingEnabled);
             writer.WriteCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_StageData>("stages", Stages);
             writer.WriteAdditionalData(AdditionalData);
         }
