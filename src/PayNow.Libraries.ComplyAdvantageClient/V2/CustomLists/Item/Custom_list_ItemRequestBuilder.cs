@@ -28,7 +28,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.CustomLists.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Custom_list_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/custom-lists/{custom_list_%2Did}", pathParameters)
+        public Custom_list_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/custom-lists/{custom_list_%2Did}{?status*}", pathParameters)
         {
         }
         /// <summary>
@@ -36,11 +36,11 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.CustomLists.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Custom_list_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/custom-lists/{custom_list_%2Did}", rawUrl)
+        public Custom_list_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/custom-lists/{custom_list_%2Did}{?status*}", rawUrl)
         {
         }
         /// <summary>
-        /// Deletes a custom list if it&apos;s not being used by a Screening ConfigurationYou need &quot;Access to custom lists for customer screening&quot; enabled to use this endpoint.
+        /// Deletes a custom list if it&apos;s not being used by a Screening ConfigurationYou need &quot;Access to custom lists for customer screening&quot; enabled and the &quot;Create, update, and delete custom lists and their entities, and download entities&quot; permission to use this endpoint.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -66,7 +66,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.CustomLists.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the custom list details by identifier
+        /// Retrieve the custom list details by identifierYou need &quot;Access to custom lists for customer screening&quot; enabled and the &quot;Create, update, and delete custom lists and their entities, and download entities&quot; permission to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Customlist_CustomListDTO"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,11 +75,11 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.CustomLists.Item
         /// <exception cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Customlist_ProblemDetailErrorResponse">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::PayNow.Libraries.ComplyAdvantageClient.Models.Customlist_CustomListDTO?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::PayNow.Libraries.ComplyAdvantageClient.Models.Customlist_CustomListDTO?> GetAsync(Action<RequestConfiguration<global::PayNow.Libraries.ComplyAdvantageClient.V2.CustomLists.Item.Custom_list_ItemRequestBuilder.Custom_list_ItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::PayNow.Libraries.ComplyAdvantageClient.Models.Customlist_CustomListDTO> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::PayNow.Libraries.ComplyAdvantageClient.Models.Customlist_CustomListDTO> GetAsync(Action<RequestConfiguration<global::PayNow.Libraries.ComplyAdvantageClient.V2.CustomLists.Item.Custom_list_ItemRequestBuilder.Custom_list_ItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -91,7 +91,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.CustomLists.Item
             return await RequestAdapter.SendAsync<global::PayNow.Libraries.ComplyAdvantageClient.Models.Customlist_CustomListDTO>(requestInfo, global::PayNow.Libraries.ComplyAdvantageClient.Models.Customlist_CustomListDTO.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a custom list if it&apos;s not being used by a Screening ConfigurationYou need &quot;Access to custom lists for customer screening&quot; enabled to use this endpoint.
+        /// Deletes a custom list if it&apos;s not being used by a Screening ConfigurationYou need &quot;Access to custom lists for customer screening&quot; enabled and the &quot;Create, update, and delete custom lists and their entities, and download entities&quot; permission to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -110,17 +110,17 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.CustomLists.Item
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the custom list details by identifier
+        /// Retrieve the custom list details by identifierYou need &quot;Access to custom lists for customer screening&quot; enabled and the &quot;Create, update, and delete custom lists and their entities, and download entities&quot; permission to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::PayNow.Libraries.ComplyAdvantageClient.V2.CustomLists.Item.Custom_list_ItemRequestBuilder.Custom_list_ItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::PayNow.Libraries.ComplyAdvantageClient.V2.CustomLists.Item.Custom_list_ItemRequestBuilder.Custom_list_ItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -146,11 +146,39 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.CustomLists.Item
         {
         }
         /// <summary>
+        /// Retrieve the custom list details by identifierYou need &quot;Access to custom lists for customer screening&quot; enabled and the &quot;Create, update, and delete custom lists and their entities, and download entities&quot; permission to use this endpoint.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class Custom_list_ItemRequestBuilderGetQueryParameters 
+        {
+            /// <summary>Filter by entity status.</summary>
+            [Obsolete("This property is deprecated, use StatusAsGetStatusQueryParameterType instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("status")]
+            public string[]? Status { get; set; }
+#nullable restore
+#else
+            [QueryParameter("status")]
+            public string[] Status { get; set; }
+#endif
+            /// <summary>Filter by entity status.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("status")]
+            public global::PayNow.Libraries.ComplyAdvantageClient.V2.CustomLists.Item.GetStatusQueryParameterType[]? StatusAsGetStatusQueryParameterType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("status")]
+            public global::PayNow.Libraries.ComplyAdvantageClient.V2.CustomLists.Item.GetStatusQueryParameterType[] StatusAsGetStatusQueryParameterType { get; set; }
+#endif
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Custom_list_ItemRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class Custom_list_ItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::PayNow.Libraries.ComplyAdvantageClient.V2.CustomLists.Item.Custom_list_ItemRequestBuilder.Custom_list_ItemRequestBuilderGetQueryParameters>
         {
         }
     }

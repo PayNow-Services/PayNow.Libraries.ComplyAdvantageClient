@@ -23,6 +23,24 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
 #else
         public global::PayNow.Libraries.ComplyAdvantageClient.Models.BankV3 Bank { get; set; }
 #endif
+        /// <summary>The position of the agent in the list. Used to track the agent&apos;s order in the original sequence.</summary>
+        public int? Index { get; set; }
+        /// <summary>Represents a money transfer operator&apos;s details.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::PayNow.Libraries.ComplyAdvantageClient.Models.MoneyTransferOperatorV3? MoneyTransferOperator { get; set; }
+#nullable restore
+#else
+        public global::PayNow.Libraries.ComplyAdvantageClient.Models.MoneyTransferOperatorV3 MoneyTransferOperator { get; set; }
+#endif
+        /// <summary>Represents an online remittance platform&apos;s details.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::PayNow.Libraries.ComplyAdvantageClient.Models.OnlineRemittancePlatformV3? OnlineRemittancePlatform { get; set; }
+#nullable restore
+#else
+        public global::PayNow.Libraries.ComplyAdvantageClient.Models.OnlineRemittancePlatformV3 OnlineRemittancePlatform { get; set; }
+#endif
         /// <summary>The reference text supplied by an agent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -59,6 +77,9 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "bank", n => { Bank = n.GetObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.BankV3>(global::PayNow.Libraries.ComplyAdvantageClient.Models.BankV3.CreateFromDiscriminatorValue); } },
+                { "index", n => { Index = n.GetIntValue(); } },
+                { "money_transfer_operator", n => { MoneyTransferOperator = n.GetObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.MoneyTransferOperatorV3>(global::PayNow.Libraries.ComplyAdvantageClient.Models.MoneyTransferOperatorV3.CreateFromDiscriminatorValue); } },
+                { "online_remittance_platform", n => { OnlineRemittancePlatform = n.GetObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.OnlineRemittancePlatformV3>(global::PayNow.Libraries.ComplyAdvantageClient.Models.OnlineRemittancePlatformV3.CreateFromDiscriminatorValue); } },
                 { "reference_text", n => { ReferenceText = n.GetStringValue(); } },
                 { "role", n => { Role = n.GetEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.AgentRoleV3>(); } },
             };
@@ -71,6 +92,9 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.BankV3>("bank", Bank);
+            writer.WriteIntValue("index", Index);
+            writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.MoneyTransferOperatorV3>("money_transfer_operator", MoneyTransferOperator);
+            writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.OnlineRemittancePlatformV3>("online_remittance_platform", OnlineRemittancePlatform);
             writer.WriteStringValue("reference_text", ReferenceText);
             writer.WriteEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.AgentRoleV3>("role", Role);
             writer.WriteAdditionalData(AdditionalData);

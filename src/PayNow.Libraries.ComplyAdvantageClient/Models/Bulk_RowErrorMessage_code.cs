@@ -188,6 +188,30 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         #pragma warning disable CS1591
         INVALID_PAYMENT_CHANNEL,
         #pragma warning restore CS1591
+        [EnumMember(Value = "INVALID_REMITTANCE_PAYMENT_METHOD")]
+        #pragma warning disable CS1591
+        INVALID_REMITTANCE_PAYMENT_METHOD,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "INVALID_REMITTANCE_RELATIONSHIP")]
+        #pragma warning disable CS1591
+        INVALID_REMITTANCE_RELATIONSHIP,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "INVALID_REMITTANCE_PURPOSE")]
+        #pragma warning disable CS1591
+        INVALID_REMITTANCE_PURPOSE,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "INVALID_REMITTANCE_SOURCE_OF_FUNDS")]
+        #pragma warning disable CS1591
+        INVALID_REMITTANCE_SOURCE_OF_FUNDS,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "INVALID_REMITTANCE_SERVICE_PROVIDER_TYPE")]
+        #pragma warning disable CS1591
+        INVALID_REMITTANCE_SERVICE_PROVIDER_TYPE,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "INVALID_CASH_PICKUP_METHOD_MISMATCH")]
+        #pragma warning disable CS1591
+        INVALID_CASH_PICKUP_METHOD_MISMATCH,
+        #pragma warning restore CS1591
         [EnumMember(Value = "INVALID_CARD_VERIFICATION_RESULT")]
         #pragma warning disable CS1591
         INVALID_CARD_VERIFICATION_RESULT,

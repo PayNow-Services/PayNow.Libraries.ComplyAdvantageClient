@@ -23,6 +23,14 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
 #else
         public global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_UpdateCustomerApi Customer { get; set; }
 #endif
+        /// <summary>Represents a list of products to update if present will update the customer with this object if not present will not update the customer products. They can be either a bank account or a crypto wallet.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_ProductApi>? Products { get; set; }
+#nullable restore
+#else
+        public List<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_ProductApi> Products { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_UpdateAndRescoreCustomerRequest"/> and sets the default values.
         /// </summary>
@@ -49,6 +57,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "customer", n => { Customer = n.GetObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_UpdateCustomerApi>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_UpdateCustomerApi.CreateFromDiscriminatorValue); } },
+                { "products", n => { Products = n.GetCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_ProductApi>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_ProductApi.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -59,6 +68,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_UpdateCustomerApi>("customer", Customer);
+            writer.WriteCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_ProductApi>("products", Products);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -34,7 +34,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Customers.Item.Workflows.Syn
         {
         }
         /// <summary>
-        /// This endpoint initiates the synchronous &apos;update and re-score&apos; workflow for your customer in synchronous mode. The workflow consists of two steps:1. **Customer Record Update:** The customer record is updated.2. **Risk Scoring:** The risk score is re-calculated for the updated customer.The workflow executes synchronously returning the workflow status. This end-point is currently idempotent: in case of downstream error you can re-send the exact same request, and the workflow will be retried.
+        /// This endpoint initiates the synchronous &apos;update and re-score&apos; workflow for your customer in synchronous mode. The workflow consists of two steps:1. **Customer Record Update:** The customer record is updated.2. **Risk Scoring:** The risk score is re-calculated for the updated customer.The workflow executes synchronously returning the workflow status. This end-point is currently idempotent: in case of downstream error you can re-send the exact same request, and the workflow will be retried.You need the &quot;Update customers&quot; permission to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_WorkflowState"/></returns>
         /// <param name="body">Update and re-score customer synchronously</param>
@@ -61,7 +61,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Customers.Item.Workflows.Syn
             return await RequestAdapter.SendAsync<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_WorkflowState>(requestInfo, global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_WorkflowState.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This endpoint initiates the synchronous &apos;update and re-score&apos; workflow for your customer in synchronous mode. The workflow consists of two steps:1. **Customer Record Update:** The customer record is updated.2. **Risk Scoring:** The risk score is re-calculated for the updated customer.The workflow executes synchronously returning the workflow status. This end-point is currently idempotent: in case of downstream error you can re-send the exact same request, and the workflow will be retried.
+        /// This endpoint initiates the synchronous &apos;update and re-score&apos; workflow for your customer in synchronous mode. The workflow consists of two steps:1. **Customer Record Update:** The customer record is updated.2. **Risk Scoring:** The risk score is re-calculated for the updated customer.The workflow executes synchronously returning the workflow status. This end-point is currently idempotent: in case of downstream error you can re-send the exact same request, and the workflow will be retried.You need the &quot;Update customers&quot; permission to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Update and re-score customer synchronously</param>

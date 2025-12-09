@@ -47,7 +47,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.CustomLists.Item.Entity
         {
         }
         /// <summary>
-        /// Register the operation to add a new entity to an existing and active custom list.            The entity will be effectively added asynchronously and will be searchable later.            
+        /// Register the operation to add a new entity to an existing and active custom list.            The entity will be effectively added asynchronously and will be searchable later.            You need &quot;Access to custom lists for customer screening&quot; enabled and the &quot;Create, update, and delete custom lists and their entities, and download entities&quot; permission to use this endpoint.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,7 +75,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.CustomLists.Item.Entity
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Register the operation to add or update a new entity to an existing and active custom list.            The entity will be effectively added or updated asynchronously and will be searchable later.            
+        /// Register the operation to add or update a new entity to an existing and active custom list.            The entity will be effectively added or updated asynchronously and will be searchable later.            You need &quot;Access to custom lists for customer screening&quot; enabled and the &quot;Create, update, and delete custom lists and their entities, and download entities&quot; permission to use this endpoint.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -101,7 +101,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.CustomLists.Item.Entity
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Register the operation to add a new entity to an existing and active custom list.            The entity will be effectively added asynchronously and will be searchable later.            
+        /// Register the operation to add a new entity to an existing and active custom list.            The entity will be effectively added asynchronously and will be searchable later.            You need &quot;Access to custom lists for customer screening&quot; enabled and the &quot;Create, update, and delete custom lists and their entities, and download entities&quot; permission to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -123,7 +123,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.CustomLists.Item.Entity
             return requestInfo;
         }
         /// <summary>
-        /// Register the operation to add or update a new entity to an existing and active custom list.            The entity will be effectively added or updated asynchronously and will be searchable later.            
+        /// Register the operation to add or update a new entity to an existing and active custom list.            The entity will be effectively added or updated asynchronously and will be searchable later.            You need &quot;Access to custom lists for customer screening&quot; enabled and the &quot;Create, update, and delete custom lists and their entities, and download entities&quot; permission to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

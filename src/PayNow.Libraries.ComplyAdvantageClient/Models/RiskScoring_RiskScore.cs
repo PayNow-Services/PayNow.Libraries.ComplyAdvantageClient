@@ -39,6 +39,14 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
 #else
         public global::PayNow.Libraries.ComplyAdvantageClient.Models.RiskScoring_OverallResult OverallResult { get; set; }
 #endif
+        /// <summary>The override_reason property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OverrideReason { get; set; }
+#nullable restore
+#else
+        public string OverrideReason { get; set; }
+#endif
         /// <summary>The risk_model_identifier property</summary>
         public Guid? RiskModelIdentifier { get; set; }
         /// <summary>The risk_model_version property</summary>
@@ -80,6 +88,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
                 { "customer_identifier", n => { CustomerIdentifier = n.GetGuidValue(); } },
                 { "customer_version", n => { CustomerVersion = n.GetIntValue(); } },
                 { "overall_result", n => { OverallResult = n.GetObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.RiskScoring_OverallResult>(global::PayNow.Libraries.ComplyAdvantageClient.Models.RiskScoring_OverallResult.CreateFromDiscriminatorValue); } },
+                { "override_reason", n => { OverrideReason = n.GetStringValue(); } },
                 { "risk_model_identifier", n => { RiskModelIdentifier = n.GetGuidValue(); } },
                 { "risk_model_version", n => { RiskModelVersion = n.GetIntValue(); } },
                 { "score_identifier", n => { ScoreIdentifier = n.GetGuidValue(); } },
@@ -100,6 +109,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             writer.WriteGuidValue("customer_identifier", CustomerIdentifier);
             writer.WriteIntValue("customer_version", CustomerVersion);
             writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.RiskScoring_OverallResult>("overall_result", OverallResult);
+            writer.WriteStringValue("override_reason", OverrideReason);
             writer.WriteGuidValue("risk_model_identifier", RiskModelIdentifier);
             writer.WriteIntValue("risk_model_version", RiskModelVersion);
             writer.WriteGuidValue("score_identifier", ScoreIdentifier);

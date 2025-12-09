@@ -110,7 +110,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.MonetaryValueV3>("value", Value);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.BankPaymentMonetaryTransactionTypeDetailsV3"/>, <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.CardPaymentMonetaryTransactionTypeDetailsV3"/>
+        /// Composed type wrapper for classes <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.BankPaymentMonetaryTransactionTypeDetailsV3"/>, <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.CardPaymentMonetaryTransactionTypeDetailsV3"/>, <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.RemittanceMonetaryTransactionTypeDetailsV3"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MonetaryTransactionClassificationDetailsV3_details : IComposedTypeWrapper, IParsable
@@ -131,6 +131,14 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
 #else
             public global::PayNow.Libraries.ComplyAdvantageClient.Models.CardPaymentMonetaryTransactionTypeDetailsV3 CardPaymentMonetaryTransactionTypeDetailsV3 { get; set; }
 #endif
+            /// <summary>Composed type representation for type <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.RemittanceMonetaryTransactionTypeDetailsV3"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::PayNow.Libraries.ComplyAdvantageClient.Models.RemittanceMonetaryTransactionTypeDetailsV3? RemittanceMonetaryTransactionTypeDetailsV3 { get; set; }
+#nullable restore
+#else
+            public global::PayNow.Libraries.ComplyAdvantageClient.Models.RemittanceMonetaryTransactionTypeDetailsV3 RemittanceMonetaryTransactionTypeDetailsV3 { get; set; }
+#endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
             /// </summary>
@@ -149,6 +157,10 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
                 {
                     result.CardPaymentMonetaryTransactionTypeDetailsV3 = new global::PayNow.Libraries.ComplyAdvantageClient.Models.CardPaymentMonetaryTransactionTypeDetailsV3();
                 }
+                else if("RemittanceMonetaryTransactionTypeDetailsV3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.RemittanceMonetaryTransactionTypeDetailsV3 = new global::PayNow.Libraries.ComplyAdvantageClient.Models.RemittanceMonetaryTransactionTypeDetailsV3();
+                }
                 return result;
             }
             /// <summary>
@@ -164,6 +176,10 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
                 else if(CardPaymentMonetaryTransactionTypeDetailsV3 != null)
                 {
                     return CardPaymentMonetaryTransactionTypeDetailsV3.GetFieldDeserializers();
+                }
+                else if(RemittanceMonetaryTransactionTypeDetailsV3 != null)
+                {
+                    return RemittanceMonetaryTransactionTypeDetailsV3.GetFieldDeserializers();
                 }
                 return new Dictionary<string, Action<IParseNode>>();
             }
@@ -181,6 +197,10 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
                 else if(CardPaymentMonetaryTransactionTypeDetailsV3 != null)
                 {
                     writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.CardPaymentMonetaryTransactionTypeDetailsV3>(null, CardPaymentMonetaryTransactionTypeDetailsV3);
+                }
+                else if(RemittanceMonetaryTransactionTypeDetailsV3 != null)
+                {
+                    writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.RemittanceMonetaryTransactionTypeDetailsV3>(null, RemittanceMonetaryTransactionTypeDetailsV3);
                 }
             }
         }

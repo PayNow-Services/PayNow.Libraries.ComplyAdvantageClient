@@ -60,7 +60,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.CustomLists
         {
         }
         /// <summary>
-        /// Retrieve all custom lists regardless of their status
+        /// Retrieve all custom lists regardless of their statusYou need &quot;Access to custom lists for customer screening&quot; enabled to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Customlist_CustomListPageDTO"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,7 +78,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.CustomLists
             return await RequestAdapter.SendAsync<global::PayNow.Libraries.ComplyAdvantageClient.Models.Customlist_CustomListPageDTO>(requestInfo, global::PayNow.Libraries.ComplyAdvantageClient.Models.Customlist_CustomListPageDTO.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new empty custom list ready to be populated
+        /// Create a new empty custom list ready to be populatedYou need &quot;Access to custom lists for customer screening&quot; enabled and the &quot;Create, update, and delete custom lists and their entities, and download entities&quot; permission to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Customlist_CustomListDTO"/></returns>
         /// <param name="body">The request body</param>
@@ -103,7 +103,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.CustomLists
             return await RequestAdapter.SendAsync<global::PayNow.Libraries.ComplyAdvantageClient.Models.Customlist_CustomListDTO>(requestInfo, global::PayNow.Libraries.ComplyAdvantageClient.Models.Customlist_CustomListDTO.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve all custom lists regardless of their status
+        /// Retrieve all custom lists regardless of their statusYou need &quot;Access to custom lists for customer screening&quot; enabled to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -122,7 +122,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.CustomLists
             return requestInfo;
         }
         /// <summary>
-        /// Create a new empty custom list ready to be populated
+        /// Create a new empty custom list ready to be populatedYou need &quot;Access to custom lists for customer screening&quot; enabled and the &quot;Create, update, and delete custom lists and their entities, and download entities&quot; permission to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -153,7 +153,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.CustomLists
             return new global::PayNow.Libraries.ComplyAdvantageClient.V2.CustomLists.CustomListsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve all custom lists regardless of their status
+        /// Retrieve all custom lists regardless of their statusYou need &quot;Access to custom lists for customer screening&quot; enabled to use this endpoint.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CustomListsRequestBuilderGetQueryParameters 

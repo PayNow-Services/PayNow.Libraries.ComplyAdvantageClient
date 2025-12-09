@@ -110,7 +110,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_MonetaryValueV3>("value", Value);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_BankPaymentMonetaryTransactionTypeDetailsV3"/>, <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_CardPaymentMonetaryTransactionTypeDetailsV3"/>
+        /// Composed type wrapper for classes <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_BankPaymentMonetaryTransactionTypeDetailsV3"/>, <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_CardPaymentMonetaryTransactionTypeDetailsV3"/>, <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_RemittanceMonetaryTransactionTypeDetailsV3"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Ol_MonetaryTransactionClassificationDetailsV3_details : IComposedTypeWrapper, IParsable
@@ -131,6 +131,14 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
 #else
             public global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_CardPaymentMonetaryTransactionTypeDetailsV3 OlCardPaymentMonetaryTransactionTypeDetailsV3 { get; set; }
 #endif
+            /// <summary>Composed type representation for type <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_RemittanceMonetaryTransactionTypeDetailsV3"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_RemittanceMonetaryTransactionTypeDetailsV3? OlRemittanceMonetaryTransactionTypeDetailsV3 { get; set; }
+#nullable restore
+#else
+            public global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_RemittanceMonetaryTransactionTypeDetailsV3 OlRemittanceMonetaryTransactionTypeDetailsV3 { get; set; }
+#endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
             /// </summary>
@@ -149,6 +157,10 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
                 {
                     result.OlCardPaymentMonetaryTransactionTypeDetailsV3 = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_CardPaymentMonetaryTransactionTypeDetailsV3();
                 }
+                else if("ol_RemittanceMonetaryTransactionTypeDetailsV3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.OlRemittanceMonetaryTransactionTypeDetailsV3 = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_RemittanceMonetaryTransactionTypeDetailsV3();
+                }
                 return result;
             }
             /// <summary>
@@ -164,6 +176,10 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
                 else if(OlCardPaymentMonetaryTransactionTypeDetailsV3 != null)
                 {
                     return OlCardPaymentMonetaryTransactionTypeDetailsV3.GetFieldDeserializers();
+                }
+                else if(OlRemittanceMonetaryTransactionTypeDetailsV3 != null)
+                {
+                    return OlRemittanceMonetaryTransactionTypeDetailsV3.GetFieldDeserializers();
                 }
                 return new Dictionary<string, Action<IParseNode>>();
             }
@@ -181,6 +197,10 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
                 else if(OlCardPaymentMonetaryTransactionTypeDetailsV3 != null)
                 {
                     writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_CardPaymentMonetaryTransactionTypeDetailsV3>(null, OlCardPaymentMonetaryTransactionTypeDetailsV3);
+                }
+                else if(OlRemittanceMonetaryTransactionTypeDetailsV3 != null)
+                {
+                    writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_RemittanceMonetaryTransactionTypeDetailsV3>(null, OlRemittanceMonetaryTransactionTypeDetailsV3);
                 }
             }
         }

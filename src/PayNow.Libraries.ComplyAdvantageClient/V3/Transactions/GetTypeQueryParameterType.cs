@@ -16,5 +16,9 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V3.Transactions
         #pragma warning disable CS1591
         CARD_PAYMENT,
         #pragma warning restore CS1591
+        [EnumMember(Value = "REMITTANCE")]
+        #pragma warning disable CS1591
+        REMITTANCE,
+        #pragma warning restore CS1591
     }
 }

@@ -22,7 +22,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Cases.Item.Alerts
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AlertsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/cases/{case_identifier}/alerts{?page_number*,page_size*,sort*}", pathParameters)
+        public AlertsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/cases/{case_identifier}/alerts{?identifier*,page_number*,page_size*,sort*,states*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Cases.Item.Alerts
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AlertsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/cases/{case_identifier}/alerts{?page_number*,page_size*,sort*}", rawUrl)
+        public AlertsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/cases/{case_identifier}/alerts{?identifier*,page_number*,page_size*,sort*,states*}", rawUrl)
         {
         }
         /// <summary>
@@ -85,6 +85,9 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Cases.Item.Alerts
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AlertsRequestBuilderGetQueryParameters 
         {
+            /// <summary>Filter alerts by alert identifier</summary>
+            [QueryParameter("identifier")]
+            public Guid? Identifier { get; set; }
             /// <summary>One-based page index (1..N)</summary>
             [QueryParameter("page_number")]
             public int? PageNumber { get; set; }
@@ -100,6 +103,27 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Cases.Item.Alerts
 #else
             [QueryParameter("sort")]
             public string[] Sort { get; set; }
+#endif
+            /// <summary>Filter alerts by states</summary>
+            [Obsolete("This property is deprecated, use StatesAsGetStatesQueryParameterType instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("states")]
+            public string[]? States { get; set; }
+#nullable restore
+#else
+            [QueryParameter("states")]
+            public string[] States { get; set; }
+#endif
+            /// <summary>Filter alerts by states</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("states")]
+            public global::PayNow.Libraries.ComplyAdvantageClient.V2.Cases.Item.Alerts.GetStatesQueryParameterType[]? StatesAsGetStatesQueryParameterType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("states")]
+            public global::PayNow.Libraries.ComplyAdvantageClient.V2.Cases.Item.Alerts.GetStatesQueryParameterType[] StatesAsGetStatesQueryParameterType { get; set; }
 #endif
         }
         /// <summary>

@@ -5,6 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using PayNow.Libraries.ComplyAdvantageClient.Models;
 using PayNow.Libraries.ComplyAdvantageClient.V3.Transactions.Item.Review;
+using PayNow.Libraries.ComplyAdvantageClient.V3.Transactions.Item.Risk_types;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -22,6 +23,11 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V3.Transactions.Item
         public global::PayNow.Libraries.ComplyAdvantageClient.V3.Transactions.Item.Review.ReviewRequestBuilder Review
         {
             get => new global::PayNow.Libraries.ComplyAdvantageClient.V3.Transactions.Item.Review.ReviewRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The risk_types property</summary>
+        public global::PayNow.Libraries.ComplyAdvantageClient.V3.Transactions.Item.Risk_types.Risk_typesRequestBuilder Risk_types
+        {
+            get => new global::PayNow.Libraries.ComplyAdvantageClient.V3.Transactions.Item.Risk_types.Risk_typesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::PayNow.Libraries.ComplyAdvantageClient.V3.Transactions.Item.WithIdentifierItemRequestBuilder"/> and sets the default values.

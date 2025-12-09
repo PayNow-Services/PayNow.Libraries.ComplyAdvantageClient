@@ -34,7 +34,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.CustomLists.Item.Entity.Item
         {
         }
         /// <summary>
-        /// Register the operation to archive an existing entity to an existing custom list.            The entity will be archived asynchronously and will be removed from search later.            
+        /// Register the operation to archive an existing entity to an existing custom list.            The entity will be archived asynchronously and will be removed from search later.            You need &quot;Access to custom lists for customer screening&quot; enabled and the &quot;Create, update, and delete custom lists and their entities, and download entities&quot; permission to use this endpoint.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -56,7 +56,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.CustomLists.Item.Entity.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the latest version of an entity by id within a list
+        /// Retrieve the latest version of an entity by id within a listYou need &quot;Access to custom lists for customer screening&quot; enabled and the &quot;Create, update, and delete custom lists and their entities, and download entities&quot; permission to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Customlist_EntityDTO"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,7 +81,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.CustomLists.Item.Entity.Item
             return await RequestAdapter.SendAsync<global::PayNow.Libraries.ComplyAdvantageClient.Models.Customlist_EntityDTO>(requestInfo, global::PayNow.Libraries.ComplyAdvantageClient.Models.Customlist_EntityDTO.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Register the operation to archive an existing entity to an existing custom list.            The entity will be archived asynchronously and will be removed from search later.            
+        /// Register the operation to archive an existing entity to an existing custom list.            The entity will be archived asynchronously and will be removed from search later.            You need &quot;Access to custom lists for customer screening&quot; enabled and the &quot;Create, update, and delete custom lists and their entities, and download entities&quot; permission to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -100,7 +100,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.CustomLists.Item.Entity.Item
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the latest version of an entity by id within a list
+        /// Retrieve the latest version of an entity by id within a listYou need &quot;Access to custom lists for customer screening&quot; enabled and the &quot;Create, update, and delete custom lists and their entities, and download entities&quot; permission to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

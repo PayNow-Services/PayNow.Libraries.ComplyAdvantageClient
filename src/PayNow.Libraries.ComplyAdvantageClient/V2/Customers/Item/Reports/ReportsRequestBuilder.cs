@@ -34,7 +34,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Customers.Item.Reports
         {
         }
         /// <summary>
-        /// Calling this endpoint will return a download URL to a screening certificate for a specific customer. The status field in the response is READY if the screening certificate is generated successfully. If the status field is NOT_READY, it indicates that data for the report is not yet available and you should try again shortly.You need the &quot;View customers&quot; permission to use this endpoint.
+        /// Calling this endpoint will return a download URL to a screening certificate for a specific customer. When the response is 201, it means the screening certificate is generated successfully, and can be downloaded from the link returned. When the response is 200, it indicates that the data for the certificate is not yet available and you should try again shortly.You need the &quot;View customers&quot; permission to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Cert_PaginatedResponseReport"/></returns>
         /// <param name="body">The request body</param>
@@ -63,7 +63,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Customers.Item.Reports
             return await RequestAdapter.SendAsync<global::PayNow.Libraries.ComplyAdvantageClient.Models.Cert_PaginatedResponseReport>(requestInfo, global::PayNow.Libraries.ComplyAdvantageClient.Models.Cert_PaginatedResponseReport.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Calling this endpoint will return a download URL to a screening certificate for a specific customer. The status field in the response is READY if the screening certificate is generated successfully. If the status field is NOT_READY, it indicates that data for the report is not yet available and you should try again shortly.You need the &quot;View customers&quot; permission to use this endpoint.
+        /// Calling this endpoint will return a download URL to a screening certificate for a specific customer. When the response is 201, it means the screening certificate is generated successfully, and can be downloaded from the link returned. When the response is 200, it indicates that the data for the certificate is not yet available and you should try again shortly.You need the &quot;View customers&quot; permission to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
