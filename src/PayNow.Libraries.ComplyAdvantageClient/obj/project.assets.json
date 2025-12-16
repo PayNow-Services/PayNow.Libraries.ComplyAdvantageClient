@@ -313,7 +313,7 @@
     "/home/runner/.nuget/packages/": {}
   },
   "project": {
-    "version": "0.0.18",
+    "version": "0.0.19",
     "restore": {
       "projectUniqueName": "/home/runner/work/PayNow.Libraries.ComplyAdvantageClient/PayNow.Libraries.ComplyAdvantageClient/src/PayNow.Libraries.ComplyAdvantageClient/PayNow.Libraries.ComplyAdvantageClient.csproj",
       "projectName": "PayNow.Libraries.ComplyAdvantageClient",
