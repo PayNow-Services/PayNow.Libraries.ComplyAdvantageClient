@@ -1,9 +1,10 @@
-Warning: KiotaBuilder OpenAPI warning: #/ - The schema case-management_StageData is a polymorphic type but does not define a discriminator. This will result in serialization errors.
 Warning: KiotaBuilder OpenAPI warning: #/ - The schema ol_StepOutput is a polymorphic type but does not define a discriminator. This will result in serialization errors.
 Warning: KiotaBuilder OpenAPI warning: #/ - The schema case-management_CaseTransitionRequest is a polymorphic type but does not define a discriminator. This will result in serialization errors.
+Warning: KiotaBuilder OpenAPI warning: #/ - The schema case-management_StageData is a polymorphic type but does not define a discriminator. This will result in serialization errors.
 Warning: KiotaBuilder OpenAPI warning: #/ - The schema case-management_TransitionCaseBulkActionPayload is a polymorphic type but does not define a discriminator. This will result in serialization errors.
 Warning: KiotaBuilder OpenAPI warning: #/ - The schema case-management_PaymentSummaryResponse is a polymorphic type but does not define a discriminator. This will result in serialization errors.
 Warning: KiotaBuilder OpenAPI warning: #/ - The schema /v2/alerts/{alert_identifier}/risks is a polymorphic type but does not define a discriminator. This will result in serialization errors.
+Warning: KiotaBuilder OpenAPI warning: #/ - The schema /v2/iam/roles is a polymorphic type but does not define a discriminator. This will result in serialization errors.
 Warning: KiotaBuilder OpenAPI warning: #/ - The schema /v2/iam/roles/{role_identifier} is a polymorphic type but does not define a discriminator. This will result in serialization errors.
 Warning: KiotaBuilder OpenAPI warning: #/ - The schema /v2/iam/roles/{role_identifier} is a polymorphic type but does not define a discriminator. This will result in serialization errors.
 Warning: KiotaBuilder OpenAPI warning: #/components/schemas/TokenCreateRequestBody/properties/username - The format email is not supported by Kiota and the string type will be used.
@@ -82,10 +83,14 @@ Warning: KiotaBuilder Discriminator EnrichmentValueV3_TextEnrichmentValueV3 not 
 Warning: KiotaBuilder Discriminator EnrichmentValueV3_DecimalEnrichmentValueV3 not found in the OpenAPI document.
 Warning: KiotaBuilder Discriminator EnrichmentValueV3_BooleanEnrichmentValueV3 not found in the OpenAPI document.
 Warning: KiotaBuilder Discriminator TransactionClassificationDetailsV3_MonetaryTransactionClassificationDetailsV3 not found in the OpenAPI document.
-Warning: KiotaBuilder Discriminator case-management_CustomerSubject is not a valid model and points to a union type.
 Warning: KiotaBuilder Discriminator MonetaryTransactionTypeDetailsV3_BankPaymentMonetaryTransactionTypeDetailsV3 not found in the OpenAPI document.
 Warning: KiotaBuilder Discriminator MonetaryTransactionTypeDetailsV3_CardPaymentMonetaryTransactionTypeDetailsV3 not found in the OpenAPI document.
 Warning: KiotaBuilder Discriminator MonetaryTransactionTypeDetailsV3_RemittanceMonetaryTransactionTypeDetailsV3 not found in the OpenAPI document.
+Warning: KiotaBuilder Discriminator PartyIdentifierV3_CustomerPartyIdentifierV3 not found in the OpenAPI document.
+Warning: KiotaBuilder Discriminator PartyIdentifierV3_CounterpartyPartyIdentifierV3 not found in the OpenAPI document.
+Warning: KiotaBuilder Discriminator AddressV3_StructuredAddressV3 not found in the OpenAPI document.
+Warning: KiotaBuilder Discriminator AddressV3_UnstructuredAddressV3 not found in the OpenAPI document.
+Warning: KiotaBuilder Discriminator case-management_CustomerSubject is not a valid model and points to a union type.
 Warning: KiotaBuilder Discriminator case-management_TransactionSubject is not a valid model and points to a union type.
 Warning: KiotaBuilder Discriminator case-management_CompanySubject is not inherited from caseManagement_CustomerSubject.
 Warning: KiotaBuilder Discriminator case-management_PersonSubject is not inherited from caseManagement_CustomerSubject.
@@ -93,9 +98,5 @@ Warning: KiotaBuilder Discriminator case-management_UndefinedSubject is not inhe
 Warning: KiotaBuilder Discriminator case-management_BankPaymentSubject is not inherited from caseManagement_TransactionSubject.
 Warning: KiotaBuilder Discriminator case-management_CardPaymentSubject is not inherited from caseManagement_TransactionSubject.
 Warning: KiotaBuilder Discriminator case-management_RemittancePaymentSubject is not inherited from caseManagement_TransactionSubject.
-Warning: KiotaBuilder Discriminator PartyIdentifierV3_CustomerPartyIdentifierV3 not found in the OpenAPI document.
-Warning: KiotaBuilder Discriminator PartyIdentifierV3_CounterpartyPartyIdentifierV3 not found in the OpenAPI document.
-Warning: KiotaBuilder Discriminator AddressV3_StructuredAddressV3 not found in the OpenAPI document.
-Warning: KiotaBuilder Discriminator AddressV3_UnstructuredAddressV3 not found in the OpenAPI document.
 Warning: KiotaBuilder Discriminator case-management_CustomerSubject is not a valid model and points to a union type.
 Warning: KiotaBuilder Discriminator case-management_TransactionSubject is not a valid model and points to a union type.
