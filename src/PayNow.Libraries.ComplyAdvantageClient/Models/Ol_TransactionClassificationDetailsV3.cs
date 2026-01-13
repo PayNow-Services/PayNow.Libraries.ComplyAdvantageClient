@@ -32,12 +32,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         public static global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_TransactionClassificationDetailsV3 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("classification")?.GetStringValue();
-            return mappingValue switch
-            {
-                "MONETARY" => new global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_MonetaryTransactionClassificationDetailsV3(),
-                _ => new global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_TransactionClassificationDetailsV3(),
-            };
+            return new global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_TransactionClassificationDetailsV3();
         }
         /// <summary>
         /// The deserialization information for the current model

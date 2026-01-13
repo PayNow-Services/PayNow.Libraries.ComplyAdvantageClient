@@ -16,5 +16,9 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         #pragma warning disable CS1591
         UpdateAndRescore,
         #pragma warning restore CS1591
+        [EnumMember(Value = "rescreen-customer")]
+        #pragma warning disable CS1591
+        RescreenCustomer,
+        #pragma warning restore CS1591
     }
 }

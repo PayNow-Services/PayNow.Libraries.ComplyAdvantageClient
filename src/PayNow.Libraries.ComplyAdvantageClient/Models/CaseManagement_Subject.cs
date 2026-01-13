@@ -47,7 +47,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_Subject();
-            if("COUNTERPARTY".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.CaseManagementCounterpartySubject = new global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_CounterpartySubject();
             }

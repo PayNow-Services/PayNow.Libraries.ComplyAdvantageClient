@@ -70,7 +70,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Alerts.Mutes
             return await RequestAdapter.SendAsync<global::PayNow.Libraries.ComplyAdvantageClient.Models.Am_GetAlertMutesResponse>(requestInfo, global::PayNow.Libraries.ComplyAdvantageClient.Models.Am_GetAlertMutesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        ///             Allows muting future alerts about the same risk,            currently only support for customer scoped muting is provided        You need the &quot;Create and delete mutes&quot; permission to use this endpoint.
+        /// Allows muting future alerts about the same risk, currently only support for customer scoped muting is providedYou need the &quot;Create and delete mutes&quot; permission to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Am_AlertMuteDTO"/></returns>
         /// <param name="body">The request body</param>
@@ -116,7 +116,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Alerts.Mutes
             return requestInfo;
         }
         /// <summary>
-        ///             Allows muting future alerts about the same risk,            currently only support for customer scoped muting is provided        You need the &quot;Create and delete mutes&quot; permission to use this endpoint.
+        /// Allows muting future alerts about the same risk, currently only support for customer scoped muting is providedYou need the &quot;Create and delete mutes&quot; permission to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

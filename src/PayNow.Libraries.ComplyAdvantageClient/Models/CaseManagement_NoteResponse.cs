@@ -47,15 +47,15 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_NoteResponse();
-            if("CASE_ASSIGNMENT".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.CaseManagementCaseAssignmentNoteResponse = new global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_CaseAssignmentNoteResponse();
             }
-            else if("CASE".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.CaseManagementCaseNoteResponse = new global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_CaseNoteResponse();
             }
-            else if("CASE_TRANSITION".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.CaseManagementCaseTransitionNoteResponse = new global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_CaseTransitionNoteResponse();
             }

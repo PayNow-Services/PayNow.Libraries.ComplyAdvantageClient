@@ -5,6 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using PayNow.Libraries.ComplyAdvantageClient.Models;
 using PayNow.Libraries.ComplyAdvantageClient.V2.Customers.AcquisitionSources;
+using PayNow.Libraries.ComplyAdvantageClient.V2.Customers.CustomFields;
 using PayNow.Libraries.ComplyAdvantageClient.V2.Customers.External;
 using PayNow.Libraries.ComplyAdvantageClient.V2.Customers.Item;
 using System.Collections.Generic;
@@ -24,6 +25,11 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Customers
         public global::PayNow.Libraries.ComplyAdvantageClient.V2.Customers.AcquisitionSources.AcquisitionSourcesRequestBuilder AcquisitionSources
         {
             get => new global::PayNow.Libraries.ComplyAdvantageClient.V2.Customers.AcquisitionSources.AcquisitionSourcesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The customFields property</summary>
+        public global::PayNow.Libraries.ComplyAdvantageClient.V2.Customers.CustomFields.CustomFieldsRequestBuilder CustomFields
+        {
+            get => new global::PayNow.Libraries.ComplyAdvantageClient.V2.Customers.CustomFields.CustomFieldsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The external property</summary>
         public global::PayNow.Libraries.ComplyAdvantageClient.V2.Customers.External.ExternalRequestBuilder External

@@ -19,7 +19,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.CustomLists
     public partial class CustomListsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the PayNow.Libraries.ComplyAdvantageClient.v2.customLists.item collection</summary>
-        /// <param name="position">The identifier of the custom list you wish to retrieve.</param>
+        /// <param name="position">The identifier of the custom list you wish to delete.</param>
         /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.V2.CustomLists.Item.Custom_list_ItemRequestBuilder"/></returns>
         public global::PayNow.Libraries.ComplyAdvantageClient.V2.CustomLists.Item.Custom_list_ItemRequestBuilder this[Guid position]
         {
@@ -31,7 +31,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.CustomLists
             }
         }
         /// <summary>Gets an item from the PayNow.Libraries.ComplyAdvantageClient.v2.customLists.item collection</summary>
-        /// <param name="position">The identifier of the custom list you wish to retrieve.</param>
+        /// <param name="position">The identifier of the custom list you wish to delete.</param>
         /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.V2.CustomLists.Item.Custom_list_ItemRequestBuilder"/></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public global::PayNow.Libraries.ComplyAdvantageClient.V2.CustomLists.Item.Custom_list_ItemRequestBuilder this[string position]

@@ -103,11 +103,11 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("data_type")?.GetStringValue();
                 var result = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_CustomFieldV3.Ol_CustomFieldV3_value();
-                if("ol_DecimalValueV3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.OlDecimalValueV3 = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_DecimalValueV3();
                 }
-                else if("ol_TextValueV3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.OlTextValueV3 = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_TextValueV3();
                 }

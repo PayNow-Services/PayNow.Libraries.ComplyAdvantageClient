@@ -5,6 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using PayNow.Libraries.ComplyAdvantageClient.Models;
 using PayNow.Libraries.ComplyAdvantageClient.V2.Clients.Me.Accounts;
+using PayNow.Libraries.ComplyAdvantageClient.V2.Clients.Me.Users;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -22,6 +23,11 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Clients.Me
         public global::PayNow.Libraries.ComplyAdvantageClient.V2.Clients.Me.Accounts.AccountsRequestBuilder Accounts
         {
             get => new global::PayNow.Libraries.ComplyAdvantageClient.V2.Clients.Me.Accounts.AccountsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The users property</summary>
+        public global::PayNow.Libraries.ComplyAdvantageClient.V2.Clients.Me.Users.UsersRequestBuilder Users
+        {
+            get => new global::PayNow.Libraries.ComplyAdvantageClient.V2.Clients.Me.Users.UsersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::PayNow.Libraries.ComplyAdvantageClient.V2.Clients.Me.MeRequestBuilder"/> and sets the default values.

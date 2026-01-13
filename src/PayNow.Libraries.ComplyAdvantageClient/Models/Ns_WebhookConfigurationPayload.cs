@@ -14,7 +14,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>This flag sets whether the webhook is in use or not. If &apos;true&apos; Mesh sends updates when            the monitored events take place. If &apos;false&apos;, Mesh will not send any updates. If unset             default value will always be true.</summary>
+        /// <summary>This flag sets whether the webhook is in use or not. If &apos;true&apos; Mesh sends updates when the monitored events take place. If &apos;false&apos;, Mesh will not send any updates. If unset default value will always be true.</summary>
         public bool? IsActive { get; set; }
         /// <summary>The name of the webhook configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -20,6 +20,10 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         #pragma warning disable CS1591
         CustomerScreening,
         #pragma warning restore CS1591
+        [EnumMember(Value = "customer-rescreening")]
+        #pragma warning disable CS1591
+        CustomerRescreening,
+        #pragma warning restore CS1591
         [EnumMember(Value = "case-creation")]
         #pragma warning disable CS1591
         CaseCreation,

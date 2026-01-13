@@ -47,13 +47,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         public static global::PayNow.Libraries.ComplyAdvantageClient.Models.RiskScoring_Field CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
-            return mappingValue switch
-            {
-                "list_field" => new global::PayNow.Libraries.ComplyAdvantageClient.Models.RiskScoring_ListField(),
-                "value_field" => new global::PayNow.Libraries.ComplyAdvantageClient.Models.RiskScoring_ValueField(),
-                _ => new global::PayNow.Libraries.ComplyAdvantageClient.Models.RiskScoring_Field(),
-            };
+            return new global::PayNow.Libraries.ComplyAdvantageClient.Models.RiskScoring_Field();
         }
         /// <summary>
         /// The deserialization information for the current model

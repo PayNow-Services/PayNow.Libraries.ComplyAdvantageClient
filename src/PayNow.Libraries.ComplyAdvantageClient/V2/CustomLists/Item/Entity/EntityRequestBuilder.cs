@@ -19,7 +19,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.CustomLists.Item.Entity
     public partial class EntityRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the PayNow.Libraries.ComplyAdvantageClient.v2.customLists.item.entity.item collection</summary>
-        /// <param name="position">The identifier of the entity to retrieve</param>
+        /// <param name="position">The identifier of the entity to delete</param>
         /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.V2.CustomLists.Item.Entity.Item.EntityItemRequestBuilder"/></returns>
         public global::PayNow.Libraries.ComplyAdvantageClient.V2.CustomLists.Item.Entity.Item.EntityItemRequestBuilder this[string position]
         {

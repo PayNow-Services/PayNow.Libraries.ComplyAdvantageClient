@@ -35,6 +35,8 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         public global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_CaseAlertResponseV2_type? Type { get; set; }
         /// <summary>Alert last updated date and time.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
+        /// <summary>User identifier who last updated the alert.</summary>
+        public Guid? UpdatedBy { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_CaseAlertResponseV2"/> and sets the default values.
         /// </summary>
@@ -67,6 +69,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
                 { "title", n => { Title = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_CaseAlertResponseV2_type>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                { "updated_by", n => { UpdatedBy = n.GetGuidValue(); } },
             };
         }
         /// <summary>
@@ -83,6 +86,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             writer.WriteStringValue("title", Title);
             writer.WriteEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_CaseAlertResponseV2_type>("type", Type);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
+            writer.WriteGuidValue("updated_by", UpdatedBy);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

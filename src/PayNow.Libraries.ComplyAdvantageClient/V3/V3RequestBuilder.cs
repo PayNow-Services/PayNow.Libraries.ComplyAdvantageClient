@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using PayNow.Libraries.ComplyAdvantageClient.V3.Enrichment;
 using PayNow.Libraries.ComplyAdvantageClient.V3.Transactions;
 using System.Collections.Generic;
 using System.IO;
@@ -15,6 +16,11 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V3
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class V3RequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The enrichment property</summary>
+        public global::PayNow.Libraries.ComplyAdvantageClient.V3.Enrichment.EnrichmentRequestBuilder Enrichment
+        {
+            get => new global::PayNow.Libraries.ComplyAdvantageClient.V3.Enrichment.EnrichmentRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The transactions property</summary>
         public global::PayNow.Libraries.ComplyAdvantageClient.V3.Transactions.TransactionsRequestBuilder Transactions
         {

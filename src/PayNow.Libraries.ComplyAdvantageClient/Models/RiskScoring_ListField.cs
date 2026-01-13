@@ -81,7 +81,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             public static global::PayNow.Libraries.ComplyAdvantageClient.Models.RiskScoring_ListField.RiskScoring_ListField_attribute_results CreateFromDiscriminatorValue(IParseNode parseNode)
             {
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::PayNow.Libraries.ComplyAdvantageClient.Models.RiskScoring_ListField.RiskScoring_ListField_attribute_results();
                 if("risk-scoring_ListField".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {

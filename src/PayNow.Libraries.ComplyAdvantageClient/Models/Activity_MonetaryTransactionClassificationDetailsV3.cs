@@ -147,7 +147,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             public static global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_MonetaryTransactionClassificationDetailsV3.Activity_MonetaryTransactionClassificationDetailsV3_details CreateFromDiscriminatorValue(IParseNode parseNode)
             {
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_MonetaryTransactionClassificationDetailsV3.Activity_MonetaryTransactionClassificationDetailsV3_details();
                 if("activity_BankPaymentMonetaryTransactionTypeDetailsV3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {

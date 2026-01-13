@@ -32,13 +32,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         public static global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_PartyIdentifierV3 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
-            return mappingValue switch
-            {
-                "COUNTERPARTY" => new global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_CounterpartyPartyIdentifierV3(),
-                "CUSTOMER" => new global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_CustomerPartyIdentifierV3(),
-                _ => new global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_PartyIdentifierV3(),
-            };
+            return new global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_PartyIdentifierV3();
         }
         /// <summary>
         /// The deserialization information for the current model

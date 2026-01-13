@@ -25,7 +25,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Notifications.Configurations
             get => new global::PayNow.Libraries.ComplyAdvantageClient.V2.Notifications.Configurations.Email.Test.TestRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the PayNow.Libraries.ComplyAdvantageClient.v2.notifications.configurations.email.item collection</summary>
-        /// <param name="position">The identifier of the email configuration</param>
+        /// <param name="position">When you create an email config or run “Get list of email configs”, you’ll receive a unique configuration identifier for each email config. Supply that here for the email you wish to delete.</param>
         /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.V2.Notifications.Configurations.Email.Item.WithIdentifierItemRequestBuilder"/></returns>
         public global::PayNow.Libraries.ComplyAdvantageClient.V2.Notifications.Configurations.Email.Item.WithIdentifierItemRequestBuilder this[string position]
         {
