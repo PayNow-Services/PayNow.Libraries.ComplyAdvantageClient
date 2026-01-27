@@ -1,11 +1,11 @@
-Warning: KiotaBuilder OpenAPI warning: #/ - The schema case-management_CaseTransitionRequest is a polymorphic type but does not define a discriminator. This will result in serialization errors.
 Warning: KiotaBuilder OpenAPI warning: #/ - The schema ol_StepOutput is a polymorphic type but does not define a discriminator. This will result in serialization errors.
-Warning: KiotaBuilder OpenAPI warning: #/ - The schema case-management_PaymentSummaryResponse is a polymorphic type but does not define a discriminator. This will result in serialization errors.
 Warning: KiotaBuilder OpenAPI warning: #/ - The schema case-management_StageData is a polymorphic type but does not define a discriminator. This will result in serialization errors.
+Warning: KiotaBuilder OpenAPI warning: #/ - The schema case-management_CaseTransitionRequest is a polymorphic type but does not define a discriminator. This will result in serialization errors.
+Warning: KiotaBuilder OpenAPI warning: #/ - The schema case-management_PaymentSummaryResponse is a polymorphic type but does not define a discriminator. This will result in serialization errors.
 Warning: KiotaBuilder OpenAPI warning: #/ - The schema case-management_TransitionCaseBulkActionPayload is a polymorphic type but does not define a discriminator. This will result in serialization errors.
 Warning: KiotaBuilder OpenAPI warning: #/ - The schema /v2/alerts/{alert_identifier}/risks is a polymorphic type but does not define a discriminator. This will result in serialization errors.
 Warning: KiotaBuilder OpenAPI warning: #/ - The schema /v2/iam/roles/{role_identifier} is a polymorphic type but does not define a discriminator. This will result in serialization errors.
-Warning: KiotaBuilder OpenAPI warning: #/ - The schema /v2/iam/roles is a polymorphic type but does not define a discriminator. This will result in serialization errors.
+Warning: KiotaBuilder OpenAPI warning: #/ - The schema /v2/iam/roles/{role_identifier} is a polymorphic type but does not define a discriminator. This will result in serialization errors.
 Warning: KiotaBuilder OpenAPI warning: #/components/schemas/MonetaryValueV3/properties/currency - The format iso-4217 is not supported by Kiota for the type String and the string type will be used.
 Warning: KiotaBuilder OpenAPI warning: #/components/schemas/ProblemDetailErrorResponse/properties/instance - The format uri is not supported by Kiota and the string type will be used.
 Warning: KiotaBuilder OpenAPI warning: #/components/schemas/ProblemDetailErrorResponse/properties/type - The format uri is not supported by Kiota and the string type will be used.

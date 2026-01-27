@@ -5,7 +5,7 @@
   },
   "projects": {
     "/home/runner/work/PayNow.Libraries.ComplyAdvantageClient/PayNow.Libraries.ComplyAdvantageClient/src/PayNow.Libraries.ComplyAdvantageClient/PayNow.Libraries.ComplyAdvantageClient.csproj": {
-      "version": "0.0.24",
+      "version": "0.0.25",
       "restore": {
         "projectUniqueName": "/home/runner/work/PayNow.Libraries.ComplyAdvantageClient/PayNow.Libraries.ComplyAdvantageClient/src/PayNow.Libraries.ComplyAdvantageClient/PayNow.Libraries.ComplyAdvantageClient.csproj",
         "projectName": "PayNow.Libraries.ComplyAdvantageClient",
@@ -65,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/10.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/10.0.102/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
