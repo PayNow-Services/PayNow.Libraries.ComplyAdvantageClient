@@ -1,7 +1,27 @@
-Warning: KiotaBuilder OpenAPI warning: #/ - The schema ol_StepOutput is a polymorphic type but does not define a discriminator. This will result in serialization errors.
-Warning: KiotaBuilder OpenAPI warning: #/ - The schema case-management_StageData is a polymorphic type but does not define a discriminator. This will result in serialization errors.
+Warning: KiotaBuilder OpenAPI warning: #/components/schemas/case-management_CustomerSubject/discriminator/mapping/COMPANY/$ref - The schema reference '#/components/schemas/CompanySubject' does not point to an existing schema.
+Warning: KiotaBuilder OpenAPI warning: #/components/schemas/case-management_CustomerSubject/discriminator/mapping/PERSON/$ref - The schema reference '#/components/schemas/PersonSubject' does not point to an existing schema.
+Warning: KiotaBuilder OpenAPI warning: #/components/schemas/case-management_CustomerSubject/discriminator/mapping/UNDEFINED/$ref - The schema reference '#/components/schemas/UndefinedSubject' does not point to an existing schema.
+Warning: KiotaBuilder OpenAPI warning: #/components/schemas/case-management_NoteResponse/discriminator/mapping/CASE/$ref - The schema reference '#/components/schemas/CaseNoteResponse' does not point to an existing schema.
+Warning: KiotaBuilder OpenAPI warning: #/components/schemas/case-management_NoteResponse/discriminator/mapping/CASE_ASSIGNMENT/$ref - The schema reference '#/components/schemas/CaseAssignmentNoteResponse' does not point to an existing schema.
+Warning: KiotaBuilder OpenAPI warning: #/components/schemas/case-management_NoteResponse/discriminator/mapping/CASE_TRANSITION/$ref - The schema reference '#/components/schemas/CaseTransitionNoteResponse' does not point to an existing schema.
+Warning: KiotaBuilder OpenAPI warning: #/components/schemas/case-management_Subject/discriminator/mapping/COUNTERPARTY/$ref - The schema reference '#/components/schemas/CounterpartySubject' does not point to an existing schema.
+Warning: KiotaBuilder OpenAPI warning: #/components/schemas/case-management_Subject/discriminator/mapping/CUSTOMER/$ref - The schema reference '#/components/schemas/CustomerSubject' does not point to an existing schema.
+Warning: KiotaBuilder OpenAPI warning: #/components/schemas/case-management_Subject/discriminator/mapping/TRANSACTION/$ref - The schema reference '#/components/schemas/TransactionSubject' does not point to an existing schema.
+Warning: KiotaBuilder OpenAPI warning: #/components/schemas/case-management_TransactionSubject/discriminator/mapping/BANK_PAYMENT/$ref - The schema reference '#/components/schemas/BankPaymentSubject' does not point to an existing schema.
+Warning: KiotaBuilder OpenAPI warning: #/components/schemas/case-management_TransactionSubject/discriminator/mapping/CARD_PAYMENT/$ref - The schema reference '#/components/schemas/CardPaymentSubject' does not point to an existing schema.
+Warning: KiotaBuilder OpenAPI warning: #/components/schemas/case-management_TransactionSubject/discriminator/mapping/REMITTANCE/$ref - The schema reference '#/components/schemas/RemittancePaymentSubject' does not point to an existing schema.
+Warning: KiotaBuilder OpenAPI warning: #/components/schemas/customer-manager_CustomFieldInstance/properties/value/discriminator/mapping/DECIMAL/$ref - The schema reference '#/components/schemas/DecimalValue' does not point to an existing schema.
+Warning: KiotaBuilder OpenAPI warning: #/components/schemas/customer-manager_CustomFieldInstance/properties/value/discriminator/mapping/INTEGER/$ref - The schema reference '#/components/schemas/IntegerValue' does not point to an existing schema.
+Warning: KiotaBuilder OpenAPI warning: #/components/schemas/customer-manager_CustomFieldInstance/properties/value/discriminator/mapping/TEXT/$ref - The schema reference '#/components/schemas/TextValue' does not point to an existing schema.
+Warning: KiotaBuilder OpenAPI warning: #/components/schemas/ol_CustomFieldInstance/properties/value/discriminator/mapping/DECIMAL/$ref - The schema reference '#/components/schemas/DecimalValue' does not point to an existing schema.
+Warning: KiotaBuilder OpenAPI warning: #/components/schemas/ol_CustomFieldInstance/properties/value/discriminator/mapping/INTEGER/$ref - The schema reference '#/components/schemas/IntegerValue' does not point to an existing schema.
+Warning: KiotaBuilder OpenAPI warning: #/components/schemas/ol_CustomFieldInstance/properties/value/discriminator/mapping/TEXT/$ref - The schema reference '#/components/schemas/TextValue' does not point to an existing schema.
+Warning: KiotaBuilder OpenAPI warning: #/components/schemas/risk-scoring_CategoryResult/properties/attribute_results/items/discriminator/mapping/list_field/$ref - The schema reference '#/components/schemas/ListField' does not point to an existing schema.
+Warning: KiotaBuilder OpenAPI warning: #/components/schemas/risk-scoring_CategoryResult/properties/attribute_results/items/discriminator/mapping/value_field/$ref - The schema reference '#/components/schemas/ValueField' does not point to an existing schema.
 Warning: KiotaBuilder OpenAPI warning: #/ - The schema case-management_CaseTransitionRequest is a polymorphic type but does not define a discriminator. This will result in serialization errors.
 Warning: KiotaBuilder OpenAPI warning: #/ - The schema case-management_PaymentSummaryResponse is a polymorphic type but does not define a discriminator. This will result in serialization errors.
+Warning: KiotaBuilder OpenAPI warning: #/ - The schema case-management_StageData is a polymorphic type but does not define a discriminator. This will result in serialization errors.
+Warning: KiotaBuilder OpenAPI warning: #/ - The schema ol_StepOutput is a polymorphic type but does not define a discriminator. This will result in serialization errors.
 Warning: KiotaBuilder OpenAPI warning: #/ - The schema case-management_TransitionCaseBulkActionPayload is a polymorphic type but does not define a discriminator. This will result in serialization errors.
 Warning: KiotaBuilder OpenAPI warning: #/ - The schema /v2/alerts/{alert_identifier}/risks is a polymorphic type but does not define a discriminator. This will result in serialization errors.
 Warning: KiotaBuilder OpenAPI warning: #/ - The schema /v2/iam/roles/{role_identifier} is a polymorphic type but does not define a discriminator. This will result in serialization errors.
@@ -78,6 +98,7 @@ Warning: KiotaBuilder OpenAPI warning: #/components/schemas/sra_ProblemDetailErr
 Warning: KiotaBuilder OpenAPI warning: #/components/schemas/sra_ProblemDetailErrorResponse/properties/type - The format uri is not supported by Kiota and the string type will be used.
 Error: KiotaBuilder OpenAPI error: #/components/schemas/case-management_CustomerSubject/discriminator - Schema  must contain property specified in the discriminator detail.type in the required field list.
 Error: KiotaBuilder OpenAPI error: #/components/schemas/case-management_TransactionSubject/discriminator - Schema  must contain property specified in the discriminator detail.type in the required field list.
+Warning: KiotaBuilder API client was generated with version 1.29.0 and the current version is 1.30.0, it will be upgraded and you should upgrade dependencies
 Warning: KiotaBuilder Discriminator CounterpartySubject not found in the OpenAPI document.
 Warning: KiotaBuilder Discriminator CustomerSubject not found in the OpenAPI document.
 Warning: KiotaBuilder Discriminator TransactionSubject not found in the OpenAPI document.
@@ -96,8 +117,8 @@ Warning: KiotaBuilder Discriminator CaseTransitionNoteResponse not found in the 
 Warning: KiotaBuilder Discriminator CaseNoteResponse not found in the OpenAPI document.
 Warning: KiotaBuilder Discriminator CaseAssignmentNoteResponse not found in the OpenAPI document.
 Warning: KiotaBuilder Discriminator CaseTransitionNoteResponse not found in the OpenAPI document.
+Warning: KiotaBuilder Discriminator ListField not found in the OpenAPI document.
+Warning: KiotaBuilder Discriminator ValueField not found in the OpenAPI document.
 Warning: KiotaBuilder Discriminator DecimalValue not found in the OpenAPI document.
 Warning: KiotaBuilder Discriminator IntegerValue not found in the OpenAPI document.
 Warning: KiotaBuilder Discriminator TextValue not found in the OpenAPI document.
-Warning: KiotaBuilder Discriminator ListField not found in the OpenAPI document.
-Warning: KiotaBuilder Discriminator ValueField not found in the OpenAPI document.
