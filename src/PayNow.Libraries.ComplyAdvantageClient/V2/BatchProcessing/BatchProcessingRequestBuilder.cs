@@ -48,7 +48,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.BatchProcessing
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BatchProcessingRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/batch-processing?workflow_type={workflow_type}{&created_by*,page_number*,page_size*,sort*,status*}", pathParameters)
+        public BatchProcessingRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/batch-processing?workflow_type={workflow_type}{&created_by*,page_number*,page_size*,sort*,status*,target_identifier*}", pathParameters)
         {
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.BatchProcessing
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BatchProcessingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/batch-processing?workflow_type={workflow_type}{&created_by*,page_number*,page_size*,sort*,status*}", rawUrl)
+        public BatchProcessingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/batch-processing?workflow_type={workflow_type}{&created_by*,page_number*,page_size*,sort*,status*,target_identifier*}", rawUrl)
         {
         }
         /// <summary>
@@ -197,6 +197,9 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.BatchProcessing
             [QueryParameter("status")]
             public global::PayNow.Libraries.ComplyAdvantageClient.V2.BatchProcessing.GetStatusQueryParameterType[] StatusAsGetStatusQueryParameterType { get; set; }
 #endif
+            /// <summary>Filter by target identifier</summary>
+            [QueryParameter("target_identifier")]
+            public Guid? TargetIdentifier { get; set; }
             /// <summary>The workflow type for the batch process</summary>
             [Obsolete("This property is deprecated, use WorkflowTypeAsGetWorkflowTypeQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

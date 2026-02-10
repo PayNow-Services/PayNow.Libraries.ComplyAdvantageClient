@@ -32,7 +32,14 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         public static global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_CustomFieldValue CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_CustomFieldValue();
+            var mappingValue = parseNode.GetChildNode("data_type")?.GetStringValue();
+            return mappingValue switch
+            {
+                "DECIMAL" => new global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_DecimalValue(),
+                "INTEGER" => new global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_IntegerValue(),
+                "TEXT" => new global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_TextValue(),
+                _ => new global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_CustomFieldValue(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

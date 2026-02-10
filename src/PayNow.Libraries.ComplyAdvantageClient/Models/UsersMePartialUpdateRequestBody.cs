@@ -14,6 +14,8 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Whether the user consents to cookies.</summary>
+        public bool? CookieConsent { get; set; }
         /// <summary>User locale.</summary>
         public global::PayNow.Libraries.ComplyAdvantageClient.Models.UsersMePartialUpdateRequestBody_locale? Locale { get; set; }
         /// <summary>
@@ -41,6 +43,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "cookie_consent", n => { CookieConsent = n.GetBoolValue(); } },
                 { "locale", n => { Locale = n.GetEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.UsersMePartialUpdateRequestBody_locale>(); } },
             };
         }
@@ -51,6 +54,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("cookie_consent", CookieConsent);
             writer.WriteEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.UsersMePartialUpdateRequestBody_locale>("locale", Locale);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -108,11 +108,11 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
                 var result = new global::PayNow.Libraries.ComplyAdvantageClient.Models.RiskScoring_CategoryResult.RiskScoring_CategoryResult_attribute_results();
-                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                if("risk-scoring_ListField".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.RiskScoringListField = new global::PayNow.Libraries.ComplyAdvantageClient.Models.RiskScoring_ListField();
                 }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("risk-scoring_ValueField".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.RiskScoringValueField = new global::PayNow.Libraries.ComplyAdvantageClient.Models.RiskScoring_ValueField();
                 }

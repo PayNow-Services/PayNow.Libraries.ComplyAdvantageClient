@@ -34,7 +34,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Customers.External.Item
         {
         }
         /// <summary>
-        /// This endpoint returns a 308 Permanent Redirect response, directing you to the get [customer](https://docs.mesh.complyadvantage.com/reference/getcustomer) endpoint based on the provided external identifier.Many API libraries follow the automatic redirect but, in some programming languages it may requires an additional API call.You need the &quot;View customers&quot; permission to use this endpoint.
+        /// This endpoint returns a 308 Permanent Redirect response, directing you to the get [customer](https://docs.mesh.complyadvantage.com/reference/customergetcustomerv2) endpoint based on the provided external identifier.Many API libraries follow the automatic redirect but, in some programming languages it may requires an additional API call.You need the &quot;View customers&quot; permission to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -61,7 +61,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Customers.External.Item
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This endpoint returns a 308 Permanent Redirect response, directing you to the get [customer](https://docs.mesh.complyadvantage.com/reference/getcustomer) endpoint based on the provided external identifier.Many API libraries follow the automatic redirect but, in some programming languages it may requires an additional API call.You need the &quot;View customers&quot; permission to use this endpoint.
+        /// This endpoint returns a 308 Permanent Redirect response, directing you to the get [customer](https://docs.mesh.complyadvantage.com/reference/customergetcustomerv2) endpoint based on the provided external identifier.Many API libraries follow the automatic redirect but, in some programming languages it may requires an additional API call.You need the &quot;View customers&quot; permission to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

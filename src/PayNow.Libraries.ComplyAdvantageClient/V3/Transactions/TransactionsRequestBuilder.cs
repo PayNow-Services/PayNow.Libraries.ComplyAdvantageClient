@@ -60,7 +60,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V3.Transactions
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TransactionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v3/transactions{?base_value%2Eamount_from*,base_value%2Eamount_to*,base_value%2Ecurrency*,customer%2Eidentifier*,direction*,evaluation_outcome*,occurred_at_from*,occurred_at_to*,page_number*,page_size*,received_at_from*,received_at_to*,review_decision*,search*,sort*,type*}", pathParameters)
+        public TransactionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v3/transactions{?base_value%2Eamount_from*,base_value%2Eamount_to*,base_value%2Ecurrency*,customer%2Eidentifier*,direction*,evaluation_outcome*,identifier*,occurred_at_from*,occurred_at_to*,page_number*,page_size*,received_at_from*,received_at_to*,review_decision*,search*,sort*,type*}", pathParameters)
         {
         }
         /// <summary>
@@ -68,7 +68,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V3.Transactions
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TransactionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v3/transactions{?base_value%2Eamount_from*,base_value%2Eamount_to*,base_value%2Ecurrency*,customer%2Eidentifier*,direction*,evaluation_outcome*,occurred_at_from*,occurred_at_to*,page_number*,page_size*,received_at_from*,received_at_to*,review_decision*,search*,sort*,type*}", rawUrl)
+        public TransactionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v3/transactions{?base_value%2Eamount_from*,base_value%2Eamount_to*,base_value%2Ecurrency*,customer%2Eidentifier*,direction*,evaluation_outcome*,identifier*,occurred_at_from*,occurred_at_to*,page_number*,page_size*,received_at_from*,received_at_to*,review_decision*,search*,sort*,type*}", rawUrl)
         {
         }
         /// <summary>
@@ -194,6 +194,16 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V3.Transactions
 #else
             [QueryParameter("evaluation_outcome")]
             public global::PayNow.Libraries.ComplyAdvantageClient.V3.Transactions.GetEvaluation_outcomeQueryParameterType[] EvaluationOutcomeAsGetEvaluationOutcomeQueryParameterType { get; set; }
+#endif
+            /// <summary>Filter by specific transaction identifiers. Returns transactions matching any of the provided IDs (OR logic). Can be combined with other filters.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("identifier")]
+            public Guid?[]? Identifier { get; set; }
+#nullable restore
+#else
+            [QueryParameter("identifier")]
+            public Guid?[] Identifier { get; set; }
 #endif
             /// <summary>Filter by minimum occurred date/time (inclusive). ISO 8601 format.</summary>
             [QueryParameter("occurred_at_from")]

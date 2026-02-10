@@ -8,7 +8,7 @@ using System;
 namespace PayNow.Libraries.ComplyAdvantageClient.Models
 {
     /// <summary>
-    /// Details of the specific type of monetary transaction.
+    /// Details specific to the a Monetary Transaction.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Activity_MonetaryTransactionTypeDetailsV3 : IAdditionalDataHolder, IParsable
@@ -32,7 +32,14 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         public static global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_MonetaryTransactionTypeDetailsV3 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_MonetaryTransactionTypeDetailsV3();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            return mappingValue switch
+            {
+                "activity_BankPaymentMonetaryTransactionTypeDetailsV3" => new global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_BankPaymentMonetaryTransactionTypeDetailsV3(),
+                "activity_CardPaymentMonetaryTransactionTypeDetailsV3" => new global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_CardPaymentMonetaryTransactionTypeDetailsV3(),
+                "activity_RemittanceMonetaryTransactionTypeDetailsV3" => new global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_RemittanceMonetaryTransactionTypeDetailsV3(),
+                _ => new global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_MonetaryTransactionTypeDetailsV3(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

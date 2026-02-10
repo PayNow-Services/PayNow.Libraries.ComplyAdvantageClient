@@ -32,7 +32,13 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         public static global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_AddressV3 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_AddressV3();
+            var mappingValue = parseNode.GetChildNode("format")?.GetStringValue();
+            return mappingValue switch
+            {
+                "ol_StructuredAddressV3" => new global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_StructuredAddressV3(),
+                "ol_UnstructuredAddressV3" => new global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_UnstructuredAddressV3(),
+                _ => new global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_AddressV3(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

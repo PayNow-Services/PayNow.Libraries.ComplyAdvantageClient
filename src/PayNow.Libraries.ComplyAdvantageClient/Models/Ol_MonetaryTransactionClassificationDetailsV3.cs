@@ -147,17 +147,17 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             public static global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_MonetaryTransactionClassificationDetailsV3.Ol_MonetaryTransactionClassificationDetailsV3_details CreateFromDiscriminatorValue(IParseNode parseNode)
             {
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+                var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
                 var result = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_MonetaryTransactionClassificationDetailsV3.Ol_MonetaryTransactionClassificationDetailsV3_details();
-                if("ol_BankPaymentMonetaryTransactionTypeDetailsV3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.OlBankPaymentMonetaryTransactionTypeDetailsV3 = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_BankPaymentMonetaryTransactionTypeDetailsV3();
                 }
-                else if("ol_CardPaymentMonetaryTransactionTypeDetailsV3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.OlCardPaymentMonetaryTransactionTypeDetailsV3 = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_CardPaymentMonetaryTransactionTypeDetailsV3();
                 }
-                else if("ol_RemittanceMonetaryTransactionTypeDetailsV3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.OlRemittanceMonetaryTransactionTypeDetailsV3 = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_RemittanceMonetaryTransactionTypeDetailsV3();
                 }

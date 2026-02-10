@@ -14,6 +14,14 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The affected_rows property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<long?>? AffectedRows { get; set; }
+#nullable restore
+#else
+        public List<long?> AffectedRows { get; set; }
+#endif
         /// <summary>The column_names property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -90,6 +98,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "affected_rows", n => { AffectedRows = n.GetCollectionOfPrimitiveValues<long?>()?.AsList(); } },
                 { "column_names", n => { ColumnNames = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "column_options", n => { ColumnOptions = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "expected_range", n => { ExpectedRange = n.GetCollectionOfPrimitiveValues<long?>()?.AsList(); } },
@@ -106,6 +115,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfPrimitiveValues<long?>("affected_rows", AffectedRows);
             writer.WriteCollectionOfPrimitiveValues<string>("column_names", ColumnNames);
             writer.WriteObjectValue<UntypedNode>("column_options", ColumnOptions);
             writer.WriteCollectionOfPrimitiveValues<long?>("expected_range", ExpectedRange);

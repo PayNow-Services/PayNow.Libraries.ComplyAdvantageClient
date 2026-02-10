@@ -111,15 +111,15 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("data_type")?.GetStringValue();
                 var result = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_CustomFieldInstance.Ol_CustomFieldInstance_value();
-                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                if("ol_DecimalValue".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.OlDecimalValue = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_DecimalValue();
                 }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("ol_IntegerValue".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.OlIntegerValue = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_IntegerValue();
                 }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("ol_TextValue".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.OlTextValue = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_TextValue();
                 }

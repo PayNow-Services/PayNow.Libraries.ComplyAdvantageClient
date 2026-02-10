@@ -147,17 +147,17 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             public static global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_MonetaryTransactionClassificationDetailsV3.Activity_MonetaryTransactionClassificationDetailsV3_details CreateFromDiscriminatorValue(IParseNode parseNode)
             {
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+                var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
                 var result = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_MonetaryTransactionClassificationDetailsV3.Activity_MonetaryTransactionClassificationDetailsV3_details();
-                if("activity_BankPaymentMonetaryTransactionTypeDetailsV3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.ActivityBankPaymentMonetaryTransactionTypeDetailsV3 = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_BankPaymentMonetaryTransactionTypeDetailsV3();
                 }
-                else if("activity_CardPaymentMonetaryTransactionTypeDetailsV3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.ActivityCardPaymentMonetaryTransactionTypeDetailsV3 = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_CardPaymentMonetaryTransactionTypeDetailsV3();
                 }
-                else if("activity_RemittanceMonetaryTransactionTypeDetailsV3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.ActivityRemittanceMonetaryTransactionTypeDetailsV3 = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_RemittanceMonetaryTransactionTypeDetailsV3();
                 }

@@ -32,7 +32,14 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         public static global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_EnrichmentValueV3 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_EnrichmentValueV3();
+            var mappingValue = parseNode.GetChildNode("data_type")?.GetStringValue();
+            return mappingValue switch
+            {
+                "ol_BooleanEnrichmentValueV3" => new global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_BooleanEnrichmentValueV3(),
+                "ol_DecimalEnrichmentValueV3" => new global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_DecimalEnrichmentValueV3(),
+                "ol_TextEnrichmentValueV3" => new global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_TextEnrichmentValueV3(),
+                _ => new global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_EnrichmentValueV3(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

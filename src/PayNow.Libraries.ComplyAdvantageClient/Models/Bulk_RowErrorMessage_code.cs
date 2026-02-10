@@ -244,6 +244,10 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         #pragma warning disable CS1591
         CUSTOMER_EXTERNAL_IDENTIFIER_MISMATCH,
         #pragma warning restore CS1591
+        [EnumMember(Value = "MIXED_CUSTOMER_DATA_TYPES")]
+        #pragma warning disable CS1591
+        MIXED_CUSTOMER_DATA_TYPES,
+        #pragma warning restore CS1591
         [EnumMember(Value = "CARD_PARTY_CUSTOMER_IDENTIFIER_MISMATCH")]
         #pragma warning disable CS1591
         CARD_PARTY_CUSTOMER_IDENTIFIER_MISMATCH,
@@ -303,6 +307,10 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         [EnumMember(Value = "CUSTOM_LIST_IDENTIFIER_MISMATCH")]
         #pragma warning disable CS1591
         CUSTOM_LIST_IDENTIFIER_MISMATCH,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "COUNTERPARTY_NOT_ALLOWED_ON_ULTIMATE_PARTY")]
+        #pragma warning disable CS1591
+        COUNTERPARTY_NOT_ALLOWED_ON_ULTIMATE_PARTY,
         #pragma warning restore CS1591
     }
 }

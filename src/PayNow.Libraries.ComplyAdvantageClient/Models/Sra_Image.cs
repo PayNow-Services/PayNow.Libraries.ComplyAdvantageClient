@@ -23,21 +23,13 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
 #else
         public string Source { get; set; }
 #endif
-        /// <summary>The url property</summary>
+        /// <summary>Url of the image</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Url { get; set; }
 #nullable restore
 #else
         public string Url { get; set; }
-#endif
-        /// <summary>Url of the image</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Value { get; set; }
-#nullable restore
-#else
-        public string Value { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_Image"/> and sets the default values.
@@ -66,7 +58,6 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             {
                 { "source", n => { Source = n.GetStringValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
-                { "value", n => { Value = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -78,7 +69,6 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("source", Source);
             writer.WriteStringValue("url", Url);
-            writer.WriteStringValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
