@@ -208,6 +208,10 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         #pragma warning disable CS1591
         INVALID_REMITTANCE_SERVICE_PROVIDER_TYPE,
         #pragma warning restore CS1591
+        [EnumMember(Value = "INVALID_BLOCKCHAIN_NETWORK_TYPE")]
+        #pragma warning disable CS1591
+        INVALID_BLOCKCHAIN_NETWORK_TYPE,
+        #pragma warning restore CS1591
         [EnumMember(Value = "INVALID_CASH_PICKUP_METHOD_MISMATCH")]
         #pragma warning disable CS1591
         INVALID_CASH_PICKUP_METHOD_MISMATCH,
@@ -311,6 +315,18 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         [EnumMember(Value = "COUNTERPARTY_NOT_ALLOWED_ON_ULTIMATE_PARTY")]
         #pragma warning disable CS1591
         COUNTERPARTY_NOT_ALLOWED_ON_ULTIMATE_PARTY,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "INVALID_CAIP_19_IDENTIFIER")]
+        #pragma warning disable CS1591
+        INVALID_CAIP_19_IDENTIFIER,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "INVALID_LATITUDE")]
+        #pragma warning disable CS1591
+        INVALID_LATITUDE,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "INVALID_LONGITUDE")]
+        #pragma warning disable CS1591
+        INVALID_LONGITUDE,
         #pragma warning restore CS1591
     }
 }

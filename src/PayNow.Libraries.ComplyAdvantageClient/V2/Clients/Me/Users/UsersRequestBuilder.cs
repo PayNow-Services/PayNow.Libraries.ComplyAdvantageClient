@@ -36,20 +36,20 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Clients.Me.Users
         /// <summary>
         /// Retrieve list of users in the client.You need the &quot;View users&quot; permission to use this endpoint if no value is passed for the `identifier` query param.
         /// </summary>
-        /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.NoRolesUsersResponse"/></returns>
+        /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Identity_NoRolesUsersResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::PayNow.Libraries.ComplyAdvantageClient.Models.NoRolesUsersResponse?> GetAsync(Action<RequestConfiguration<global::PayNow.Libraries.ComplyAdvantageClient.V2.Clients.Me.Users.UsersRequestBuilder.UsersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::PayNow.Libraries.ComplyAdvantageClient.Models.Identity_NoRolesUsersResponse?> GetAsync(Action<RequestConfiguration<global::PayNow.Libraries.ComplyAdvantageClient.V2.Clients.Me.Users.UsersRequestBuilder.UsersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::PayNow.Libraries.ComplyAdvantageClient.Models.NoRolesUsersResponse> GetAsync(Action<RequestConfiguration<global::PayNow.Libraries.ComplyAdvantageClient.V2.Clients.Me.Users.UsersRequestBuilder.UsersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::PayNow.Libraries.ComplyAdvantageClient.Models.Identity_NoRolesUsersResponse> GetAsync(Action<RequestConfiguration<global::PayNow.Libraries.ComplyAdvantageClient.V2.Clients.Me.Users.UsersRequestBuilder.UsersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::PayNow.Libraries.ComplyAdvantageClient.Models.NoRolesUsersResponse>(requestInfo, global::PayNow.Libraries.ComplyAdvantageClient.Models.NoRolesUsersResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::PayNow.Libraries.ComplyAdvantageClient.Models.Identity_NoRolesUsersResponse>(requestInfo, global::PayNow.Libraries.ComplyAdvantageClient.Models.Identity_NoRolesUsersResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve list of users in the client.You need the &quot;View users&quot; permission to use this endpoint if no value is passed for the `identifier` query param.

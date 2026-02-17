@@ -14,6 +14,18 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The evaluation_result_delivery property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_EvaluationResultDeliveryResponseDTO? EvaluationResultDelivery { get; set; }
+#nullable restore
+#else
+        public global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_EvaluationResultDeliveryResponseDTO EvaluationResultDelivery { get; set; }
+#endif
+        /// <summary>The outcome property</summary>
+        public global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_ScenarioConfigurationEvaluationDTO_outcome? Outcome { get; set; }
+        /// <summary>The processing_method property</summary>
+        public global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_ScenarioConfigurationEvaluationDTO_processing_method? ProcessingMethod { get; set; }
         /// <summary>The results property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,6 +61,9 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "evaluation_result_delivery", n => { EvaluationResultDelivery = n.GetObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_EvaluationResultDeliveryResponseDTO>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_EvaluationResultDeliveryResponseDTO.CreateFromDiscriminatorValue); } },
+                { "outcome", n => { Outcome = n.GetEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_ScenarioConfigurationEvaluationDTO_outcome>(); } },
+                { "processing_method", n => { ProcessingMethod = n.GetEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_ScenarioConfigurationEvaluationDTO_processing_method>(); } },
                 { "results", n => { Results = n.GetCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_ScenarioEvaluationDTO>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_ScenarioEvaluationDTO.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "scenario_configuration_identifier", n => { ScenarioConfigurationIdentifier = n.GetGuidValue(); } },
             };
@@ -60,6 +75,9 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_EvaluationResultDeliveryResponseDTO>("evaluation_result_delivery", EvaluationResultDelivery);
+            writer.WriteEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_ScenarioConfigurationEvaluationDTO_outcome>("outcome", Outcome);
+            writer.WriteEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_ScenarioConfigurationEvaluationDTO_processing_method>("processing_method", ProcessingMethod);
             writer.WriteCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_ScenarioEvaluationDTO>("results", Results);
             writer.WriteGuidValue("scenario_configuration_identifier", ScenarioConfigurationIdentifier);
             writer.WriteAdditionalData(AdditionalData);

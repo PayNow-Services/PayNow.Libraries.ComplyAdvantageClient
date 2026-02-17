@@ -8,7 +8,7 @@ using System;
 namespace PayNow.Libraries.ComplyAdvantageClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_BankPaymentSummaryResponse"/>, <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_CardPaymentSummaryResponse"/>, <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_RemittancePaymentSummaryResponse"/>
+    /// Composed type wrapper for classes <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_BankPaymentSummaryResponse"/>, <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_CardPaymentSummaryResponse"/>, <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_CryptoPaymentSummaryResponse"/>, <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_RemittancePaymentSummaryResponse"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CaseManagement_PaymentSummaryResponse : IComposedTypeWrapper, IParsable
@@ -28,6 +28,14 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
 #nullable restore
 #else
         public global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_CardPaymentSummaryResponse CaseManagementCardPaymentSummaryResponse { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_CryptoPaymentSummaryResponse"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_CryptoPaymentSummaryResponse? CaseManagementCryptoPaymentSummaryResponse { get; set; }
+#nullable restore
+#else
+        public global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_CryptoPaymentSummaryResponse CaseManagementCryptoPaymentSummaryResponse { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_RemittancePaymentSummaryResponse"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,6 +63,10 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             {
                 result.CaseManagementCardPaymentSummaryResponse = new global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_CardPaymentSummaryResponse();
             }
+            else if("case-management_CryptoPaymentSummaryResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CaseManagementCryptoPaymentSummaryResponse = new global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_CryptoPaymentSummaryResponse();
+            }
             else if("case-management_RemittancePaymentSummaryResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.CaseManagementRemittancePaymentSummaryResponse = new global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_RemittancePaymentSummaryResponse();
@@ -74,6 +86,10 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             else if(CaseManagementCardPaymentSummaryResponse != null)
             {
                 return CaseManagementCardPaymentSummaryResponse.GetFieldDeserializers();
+            }
+            else if(CaseManagementCryptoPaymentSummaryResponse != null)
+            {
+                return CaseManagementCryptoPaymentSummaryResponse.GetFieldDeserializers();
             }
             else if(CaseManagementRemittancePaymentSummaryResponse != null)
             {
@@ -95,6 +111,10 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             else if(CaseManagementCardPaymentSummaryResponse != null)
             {
                 writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_CardPaymentSummaryResponse>(null, CaseManagementCardPaymentSummaryResponse);
+            }
+            else if(CaseManagementCryptoPaymentSummaryResponse != null)
+            {
+                writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_CryptoPaymentSummaryResponse>(null, CaseManagementCryptoPaymentSummaryResponse);
             }
             else if(CaseManagementRemittancePaymentSummaryResponse != null)
             {

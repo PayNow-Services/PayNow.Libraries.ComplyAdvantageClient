@@ -18,6 +18,8 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The unique identifier of the client.</summary>
         public Guid? ClientIdentifier { get; set; }
+        /// <summary>Whether the user has consented to cookies.</summary>
+        public bool? CookieConsent { get; set; }
         /// <summary>Date and time the user was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The unique identifier of who created the user.</summary>
@@ -48,6 +50,8 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>Whether to prompt the user about cookie consent.</summary>
+        public bool? PromptUserCookie { get; set; }
         /// <summary>Date and time the user was last updated.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>The unique identifier of who last updated the user.</summary>
@@ -66,7 +70,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::PayNow.Libraries.ComplyAdvantageClient.Models.Identity_OwnUserResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::PayNow.Libraries.ComplyAdvantageClient.Models.Identity_OwnUserResponse();
         }
         /// <summary>
@@ -79,6 +83,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             {
                 { "active", n => { Active = n.GetBoolValue(); } },
                 { "client_identifier", n => { ClientIdentifier = n.GetGuidValue(); } },
+                { "cookie_consent", n => { CookieConsent = n.GetBoolValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "created_by", n => { CreatedBy = n.GetGuidValue(); } },
                 { "deactivated_at", n => { DeactivatedAt = n.GetDateTimeOffsetValue(); } },
@@ -88,6 +93,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
                 { "is_default_locale", n => { IsDefaultLocale = n.GetBoolValue(); } },
                 { "locale", n => { Locale = n.GetEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Identity_OwnUserResponse_locale>(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "prompt_user_cookie", n => { PromptUserCookie = n.GetBoolValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "updated_by", n => { UpdatedBy = n.GetGuidValue(); } },
             };
@@ -98,9 +104,10 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("active", Active);
             writer.WriteGuidValue("client_identifier", ClientIdentifier);
+            writer.WriteBoolValue("cookie_consent", CookieConsent);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteGuidValue("created_by", CreatedBy);
             writer.WriteDateTimeOffsetValue("deactivated_at", DeactivatedAt);
@@ -110,6 +117,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             writer.WriteBoolValue("is_default_locale", IsDefaultLocale);
             writer.WriteEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Identity_OwnUserResponse_locale>("locale", Locale);
             writer.WriteStringValue("name", Name);
+            writer.WriteBoolValue("prompt_user_cookie", PromptUserCookie);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteGuidValue("updated_by", UpdatedBy);
             writer.WriteAdditionalData(AdditionalData);

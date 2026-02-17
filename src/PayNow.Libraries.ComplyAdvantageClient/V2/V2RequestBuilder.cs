@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using PayNow.Libraries.ComplyAdvantageClient.V2.Accounts;
 using PayNow.Libraries.ComplyAdvantageClient.V2.Alerts;
+using PayNow.Libraries.ComplyAdvantageClient.V2.Audit;
 using PayNow.Libraries.ComplyAdvantageClient.V2.BatchProcessing;
 using PayNow.Libraries.ComplyAdvantageClient.V2.Cases;
 using PayNow.Libraries.ComplyAdvantageClient.V2.Clients;
@@ -38,6 +39,11 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2
         public global::PayNow.Libraries.ComplyAdvantageClient.V2.Alerts.AlertsRequestBuilder Alerts
         {
             get => new global::PayNow.Libraries.ComplyAdvantageClient.V2.Alerts.AlertsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The audit property</summary>
+        public global::PayNow.Libraries.ComplyAdvantageClient.V2.Audit.AuditRequestBuilder Audit
+        {
+            get => new global::PayNow.Libraries.ComplyAdvantageClient.V2.Audit.AuditRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The batchProcessing property</summary>
         public global::PayNow.Libraries.ComplyAdvantageClient.V2.BatchProcessing.BatchProcessingRequestBuilder BatchProcessing

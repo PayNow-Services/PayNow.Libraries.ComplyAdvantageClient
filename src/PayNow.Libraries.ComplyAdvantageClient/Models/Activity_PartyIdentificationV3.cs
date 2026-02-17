@@ -113,11 +113,11 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("format")?.GetStringValue();
                 var result = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_PartyIdentificationV3.Activity_PartyIdentificationV3_address();
-                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                if("STRUCTURED".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.ActivityStructuredAddressV3 = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_StructuredAddressV3();
                 }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("UNSTRUCTURED".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.ActivityUnstructuredAddressV3 = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_UnstructuredAddressV3();
                 }
@@ -188,11 +188,11 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
                 var result = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_PartyIdentificationV3.Activity_PartyIdentificationV3_identifier();
-                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                if("COUNTERPARTY".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.ActivityCounterpartyPartyIdentifierV3 = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_CounterpartyPartyIdentifierV3();
                 }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("CUSTOMER".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.ActivityCustomerPartyIdentifierV3 = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_CustomerPartyIdentifierV3();
                 }

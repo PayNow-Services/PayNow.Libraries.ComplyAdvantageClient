@@ -36,20 +36,20 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Users.Me.Accounts
         /// <summary>
         /// Returns a list of accounts for your user.
         /// </summary>
-        /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.UserAccountRolesResponse"/></returns>
+        /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Identity_UserAccountRolesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::PayNow.Libraries.ComplyAdvantageClient.Models.UserAccountRolesResponse?> GetAsync(Action<RequestConfiguration<global::PayNow.Libraries.ComplyAdvantageClient.V2.Users.Me.Accounts.AccountsRequestBuilder.AccountsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::PayNow.Libraries.ComplyAdvantageClient.Models.Identity_UserAccountRolesResponse?> GetAsync(Action<RequestConfiguration<global::PayNow.Libraries.ComplyAdvantageClient.V2.Users.Me.Accounts.AccountsRequestBuilder.AccountsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::PayNow.Libraries.ComplyAdvantageClient.Models.UserAccountRolesResponse> GetAsync(Action<RequestConfiguration<global::PayNow.Libraries.ComplyAdvantageClient.V2.Users.Me.Accounts.AccountsRequestBuilder.AccountsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::PayNow.Libraries.ComplyAdvantageClient.Models.Identity_UserAccountRolesResponse> GetAsync(Action<RequestConfiguration<global::PayNow.Libraries.ComplyAdvantageClient.V2.Users.Me.Accounts.AccountsRequestBuilder.AccountsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::PayNow.Libraries.ComplyAdvantageClient.Models.UserAccountRolesResponse>(requestInfo, global::PayNow.Libraries.ComplyAdvantageClient.Models.UserAccountRolesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::PayNow.Libraries.ComplyAdvantageClient.Models.Identity_UserAccountRolesResponse>(requestInfo, global::PayNow.Libraries.ComplyAdvantageClient.Models.Identity_UserAccountRolesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a list of accounts for your user.

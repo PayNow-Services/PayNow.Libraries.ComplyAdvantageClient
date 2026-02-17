@@ -14,6 +14,14 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Optional array specifying sync/async processing configuration for Payment Screening and Transaction Monitoring.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_ConfigurationDTO>? Configurations { get; set; }
+#nullable restore
+#else
+        public List<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_ConfigurationDTO> Configurations { get; set; }
+#endif
         /// <summary>The list of customers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,6 +73,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "configurations", n => { Configurations = n.GetCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_ConfigurationDTO>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_ConfigurationDTO.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "customers", n => { Customers = n.GetCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_CustomerApi>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_CustomerApi.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "scenario_configuration_identifiers", n => { ScenarioConfigurationIdentifiers = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
                 { "screening_configuration_identifier", n => { ScreeningConfigurationIdentifier = n.GetGuidValue(); } },
@@ -78,6 +87,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_ConfigurationDTO>("configurations", Configurations);
             writer.WriteCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_CustomerApi>("customers", Customers);
             writer.WriteCollectionOfPrimitiveValues<Guid?>("scenario_configuration_identifiers", ScenarioConfigurationIdentifiers);
             writer.WriteGuidValue("screening_configuration_identifier", ScreeningConfigurationIdentifier);

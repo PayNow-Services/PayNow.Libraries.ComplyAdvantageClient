@@ -74,20 +74,20 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V3.Transactions
         /// <summary>
         /// Returns all transactions in an account with the ability to search, sort and filter.You need the &quot;View Transactions&quot; permission to use this endpoint.Additionally, you need either &quot;Access to base transaction monitoring functionality&quot; and/or &quot;Access to base payment screening functionality&quot; to use this endpoint. 
         /// </summary>
-        /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.PaginatedResponseTransactionV3"/></returns>
+        /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Search_PaginatedResponseTransactionV3"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::PayNow.Libraries.ComplyAdvantageClient.Models.PaginatedResponseTransactionV3?> GetAsync(Action<RequestConfiguration<global::PayNow.Libraries.ComplyAdvantageClient.V3.Transactions.TransactionsRequestBuilder.TransactionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::PayNow.Libraries.ComplyAdvantageClient.Models.Search_PaginatedResponseTransactionV3?> GetAsync(Action<RequestConfiguration<global::PayNow.Libraries.ComplyAdvantageClient.V3.Transactions.TransactionsRequestBuilder.TransactionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::PayNow.Libraries.ComplyAdvantageClient.Models.PaginatedResponseTransactionV3> GetAsync(Action<RequestConfiguration<global::PayNow.Libraries.ComplyAdvantageClient.V3.Transactions.TransactionsRequestBuilder.TransactionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::PayNow.Libraries.ComplyAdvantageClient.Models.Search_PaginatedResponseTransactionV3> GetAsync(Action<RequestConfiguration<global::PayNow.Libraries.ComplyAdvantageClient.V3.Transactions.TransactionsRequestBuilder.TransactionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::PayNow.Libraries.ComplyAdvantageClient.Models.PaginatedResponseTransactionV3>(requestInfo, global::PayNow.Libraries.ComplyAdvantageClient.Models.PaginatedResponseTransactionV3.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::PayNow.Libraries.ComplyAdvantageClient.Models.Search_PaginatedResponseTransactionV3>(requestInfo, global::PayNow.Libraries.ComplyAdvantageClient.Models.Search_PaginatedResponseTransactionV3.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns all transactions in an account with the ability to search, sort and filter.You need the &quot;View Transactions&quot; permission to use this endpoint.Additionally, you need either &quot;Access to base transaction monitoring functionality&quot; and/or &quot;Access to base payment screening functionality&quot; to use this endpoint. 

@@ -53,6 +53,8 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
 #endif
         /// <summary>Date and time the user was last updated.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
+        /// <summary>Specifies the type of the entity.</summary>
+        public global::PayNow.Libraries.ComplyAdvantageClient.Models.Identity_UserData_user_type? UserType { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Identity_UserData"/> and sets the default values.
         /// </summary>
@@ -67,7 +69,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::PayNow.Libraries.ComplyAdvantageClient.Models.Identity_UserData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::PayNow.Libraries.ComplyAdvantageClient.Models.Identity_UserData();
         }
         /// <summary>
@@ -88,6 +90,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "roles", n => { Roles = n.GetCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.Identity_StandardUserRole>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Identity_StandardUserRole.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                { "user_type", n => { UserType = n.GetEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Identity_UserData_user_type>(); } },
             };
         }
         /// <summary>
@@ -96,7 +99,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("active", Active);
             writer.WriteGuidValue("client_identifier", ClientIdentifier);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
@@ -107,6 +110,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.Identity_StandardUserRole>("roles", Roles);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
+            writer.WriteEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Identity_UserData_user_type>("user_type", UserType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

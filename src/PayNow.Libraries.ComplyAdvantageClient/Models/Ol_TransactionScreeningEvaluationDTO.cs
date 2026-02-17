@@ -26,6 +26,8 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         public global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_TransactionScreeningEvaluationDTO_outcome? Outcome { get; set; }
         /// <summary>The payment_screening_configuration_identifier property</summary>
         public Guid? PaymentScreeningConfigurationIdentifier { get; set; }
+        /// <summary>The processing_method property</summary>
+        public global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_TransactionScreeningEvaluationDTO_processing_method? ProcessingMethod { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_TransactionScreeningEvaluationDTO"/> and sets the default values.
         /// </summary>
@@ -54,6 +56,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
                 { "error", n => { Error = n.GetObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_EvaluationErrorDTO>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_EvaluationErrorDTO.CreateFromDiscriminatorValue); } },
                 { "outcome", n => { Outcome = n.GetEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_TransactionScreeningEvaluationDTO_outcome>(); } },
                 { "payment_screening_configuration_identifier", n => { PaymentScreeningConfigurationIdentifier = n.GetGuidValue(); } },
+                { "processing_method", n => { ProcessingMethod = n.GetEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_TransactionScreeningEvaluationDTO_processing_method>(); } },
             };
         }
         /// <summary>
@@ -66,6 +69,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_EvaluationErrorDTO>("error", Error);
             writer.WriteEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_TransactionScreeningEvaluationDTO_outcome>("outcome", Outcome);
             writer.WriteGuidValue("payment_screening_configuration_identifier", PaymentScreeningConfigurationIdentifier);
+            writer.WriteEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_TransactionScreeningEvaluationDTO_processing_method>("processing_method", ProcessingMethod);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

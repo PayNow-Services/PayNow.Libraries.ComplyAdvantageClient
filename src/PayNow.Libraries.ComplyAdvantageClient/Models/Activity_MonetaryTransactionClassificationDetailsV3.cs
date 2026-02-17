@@ -149,15 +149,15 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
                 var result = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_MonetaryTransactionClassificationDetailsV3.Activity_MonetaryTransactionClassificationDetailsV3_details();
-                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                if("BANK_PAYMENT".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.ActivityBankPaymentMonetaryTransactionTypeDetailsV3 = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_BankPaymentMonetaryTransactionTypeDetailsV3();
                 }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("CARD_PAYMENT".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.ActivityCardPaymentMonetaryTransactionTypeDetailsV3 = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_CardPaymentMonetaryTransactionTypeDetailsV3();
                 }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("REMITTANCE".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.ActivityRemittanceMonetaryTransactionTypeDetailsV3 = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_RemittanceMonetaryTransactionTypeDetailsV3();
                 }

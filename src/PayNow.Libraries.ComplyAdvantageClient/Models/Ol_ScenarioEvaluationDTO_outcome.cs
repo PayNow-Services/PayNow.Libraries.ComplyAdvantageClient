@@ -27,5 +27,9 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         #pragma warning disable CS1591
         ERROR,
         #pragma warning restore CS1591
+        [EnumMember(Value = "PENDING")]
+        #pragma warning disable CS1591
+        PENDING,
+        #pragma warning restore CS1591
     }
 }

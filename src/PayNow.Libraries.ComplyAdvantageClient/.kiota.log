@@ -1,28 +1,11 @@
-Warning: KiotaBuilder OpenAPI warning: #/components/schemas/AddressV3/discriminator/mapping/STRUCTURED/$ref - The schema reference '#/components/schemas/AddressV3_StructuredAddressV3' does not point to an existing schema.
-Warning: KiotaBuilder OpenAPI warning: #/components/schemas/AddressV3/discriminator/mapping/UNSTRUCTURED/$ref - The schema reference '#/components/schemas/AddressV3_UnstructuredAddressV3' does not point to an existing schema.
-Warning: KiotaBuilder OpenAPI warning: #/components/schemas/CustomFieldValueV3/discriminator/mapping/DECIMAL/$ref - The schema reference '#/components/schemas/CustomFieldValueV3_DecimalValueV3' does not point to an existing schema.
-Warning: KiotaBuilder OpenAPI warning: #/components/schemas/CustomFieldValueV3/discriminator/mapping/TEXT/$ref - The schema reference '#/components/schemas/CustomFieldValueV3_TextValueV3' does not point to an existing schema.
-Warning: KiotaBuilder OpenAPI warning: #/components/schemas/EnrichmentValueV3/discriminator/mapping/BOOLEAN/$ref - The schema reference '#/components/schemas/EnrichmentValueV3_BooleanEnrichmentValueV3' does not point to an existing schema.
-Warning: KiotaBuilder OpenAPI warning: #/components/schemas/EnrichmentValueV3/discriminator/mapping/DECIMAL/$ref - The schema reference '#/components/schemas/EnrichmentValueV3_DecimalEnrichmentValueV3' does not point to an existing schema.
-Warning: KiotaBuilder OpenAPI warning: #/components/schemas/EnrichmentValueV3/discriminator/mapping/TEXT/$ref - The schema reference '#/components/schemas/EnrichmentValueV3_TextEnrichmentValueV3' does not point to an existing schema.
-Warning: KiotaBuilder OpenAPI warning: #/components/schemas/MonetaryTransactionTypeDetailsV3/discriminator/mapping/BANK_PAYMENT/$ref - The schema reference '#/components/schemas/MonetaryTransactionTypeDetailsV3_BankPaymentMonetaryTransactionTypeDetailsV3' does not point to an existing schema.
-Warning: KiotaBuilder OpenAPI warning: #/components/schemas/MonetaryTransactionTypeDetailsV3/discriminator/mapping/CARD_PAYMENT/$ref - The schema reference '#/components/schemas/MonetaryTransactionTypeDetailsV3_CardPaymentMonetaryTransactionTypeDetailsV3' does not point to an existing schema.
-Warning: KiotaBuilder OpenAPI warning: #/components/schemas/MonetaryTransactionTypeDetailsV3/discriminator/mapping/REMITTANCE/$ref - The schema reference '#/components/schemas/MonetaryTransactionTypeDetailsV3_RemittanceMonetaryTransactionTypeDetailsV3' does not point to an existing schema.
-Warning: KiotaBuilder OpenAPI warning: #/components/schemas/PartyIdentifierV3/discriminator/mapping/COUNTERPARTY/$ref - The schema reference '#/components/schemas/PartyIdentifierV3_CounterpartyPartyIdentifierV3' does not point to an existing schema.
-Warning: KiotaBuilder OpenAPI warning: #/components/schemas/PartyIdentifierV3/discriminator/mapping/CUSTOMER/$ref - The schema reference '#/components/schemas/PartyIdentifierV3_CustomerPartyIdentifierV3' does not point to an existing schema.
-Warning: KiotaBuilder OpenAPI warning: #/components/schemas/TransactionClassificationDetailsV3/discriminator/mapping/MONETARY/$ref - The schema reference '#/components/schemas/TransactionClassificationDetailsV3_MonetaryTransactionClassificationDetailsV3' does not point to an existing schema.
-Warning: KiotaBuilder OpenAPI warning: #/ - The schema case-management_CaseTransitionRequest is a polymorphic type but does not define a discriminator. This will result in serialization errors.
-Warning: KiotaBuilder OpenAPI warning: #/ - The schema case-management_PaymentSummaryResponse is a polymorphic type but does not define a discriminator. This will result in serialization errors.
-Warning: KiotaBuilder OpenAPI warning: #/ - The schema case-management_StageData is a polymorphic type but does not define a discriminator. This will result in serialization errors.
 Warning: KiotaBuilder OpenAPI warning: #/ - The schema ol_StepOutput is a polymorphic type but does not define a discriminator. This will result in serialization errors.
+Warning: KiotaBuilder OpenAPI warning: #/ - The schema case-management_StageData is a polymorphic type but does not define a discriminator. This will result in serialization errors.
+Warning: KiotaBuilder OpenAPI warning: #/ - The schema case-management_PaymentSummaryResponse is a polymorphic type but does not define a discriminator. This will result in serialization errors.
+Warning: KiotaBuilder OpenAPI warning: #/ - The schema case-management_CaseTransitionRequest is a polymorphic type but does not define a discriminator. This will result in serialization errors.
 Warning: KiotaBuilder OpenAPI warning: #/ - The schema case-management_TransitionCaseBulkActionPayload is a polymorphic type but does not define a discriminator. This will result in serialization errors.
 Warning: KiotaBuilder OpenAPI warning: #/ - The schema /v2/alerts/{alert_identifier}/risks is a polymorphic type but does not define a discriminator. This will result in serialization errors.
 Warning: KiotaBuilder OpenAPI warning: #/ - The schema /v2/iam/roles/{role_identifier} is a polymorphic type but does not define a discriminator. This will result in serialization errors.
-Warning: KiotaBuilder OpenAPI warning: #/ - The schema /v2/iam/roles is a polymorphic type but does not define a discriminator. This will result in serialization errors.
-Warning: KiotaBuilder OpenAPI warning: #/components/schemas/MonetaryValueV3/properties/currency - The format iso-4217 is not supported by Kiota for the type String and the string type will be used.
-Warning: KiotaBuilder OpenAPI warning: #/components/schemas/ProblemDetailErrorResponse/properties/instance - The format uri is not supported by Kiota and the string type will be used.
-Warning: KiotaBuilder OpenAPI warning: #/components/schemas/ProblemDetailErrorResponse/properties/type - The format uri is not supported by Kiota and the string type will be used.
-Warning: KiotaBuilder OpenAPI warning: #/components/schemas/StructuredAddressV3/allOf/1/properties/country - The format iso-3166-alpha-2 is not supported by Kiota for the type String and the string type will be used.
+Warning: KiotaBuilder OpenAPI warning: #/ - The schema /v2/iam/roles/{role_identifier} is a polymorphic type but does not define a discriminator. This will result in serialization errors.
 Warning: KiotaBuilder OpenAPI warning: #/components/schemas/TokenCreateRequestBody/properties/username - The format email is not supported by Kiota and the string type will be used.
 Warning: KiotaBuilder OpenAPI warning: #/components/schemas/activity_MonetaryValueV3/properties/currency - The format iso-4217 is not supported by Kiota for the type String and the string type will be used.
 Warning: KiotaBuilder OpenAPI warning: #/components/schemas/activity_ProblemDetailErrorResponse/properties/instance - The format uri is not supported by Kiota and the string type will be used.
@@ -30,6 +13,8 @@ Warning: KiotaBuilder OpenAPI warning: #/components/schemas/activity_ProblemDeta
 Warning: KiotaBuilder OpenAPI warning: #/components/schemas/activity_StructuredAddressV3/allOf/1/properties/country - The format iso-3166-alpha-2 is not supported by Kiota for the type String and the string type will be used.
 Warning: KiotaBuilder OpenAPI warning: #/components/schemas/am_ProblemDetailErrorResponse/properties/instance - The format uri is not supported by Kiota and the string type will be used.
 Warning: KiotaBuilder OpenAPI warning: #/components/schemas/am_ProblemDetailErrorResponse/properties/type - The format uri is not supported by Kiota and the string type will be used.
+Warning: KiotaBuilder OpenAPI warning: #/components/schemas/audit_ProblemDetailErrorResponse/properties/instance - The format uri is not supported by Kiota and the string type will be used.
+Warning: KiotaBuilder OpenAPI warning: #/components/schemas/audit_ProblemDetailErrorResponse/properties/type - The format uri is not supported by Kiota and the string type will be used.
 Warning: KiotaBuilder OpenAPI warning: #/components/schemas/bulk_BatchReport/properties/workflows_download_link - The format url is not supported by Kiota for the type String and the string type will be used.
 Warning: KiotaBuilder OpenAPI warning: #/components/schemas/case-management_ProblemDetailErrorResponse/properties/instance - The format uri is not supported by Kiota and the string type will be used.
 Warning: KiotaBuilder OpenAPI warning: #/components/schemas/case-management_ProblemDetailErrorResponse/properties/type - The format uri is not supported by Kiota and the string type will be used.
@@ -55,6 +40,8 @@ Warning: KiotaBuilder OpenAPI warning: #/components/schemas/customlist_ProblemDe
 Warning: KiotaBuilder OpenAPI warning: #/components/schemas/customlist_ProblemDetailErrorResponse/properties/type - The format uri is not supported by Kiota and the string type will be used.
 Warning: KiotaBuilder OpenAPI warning: #/components/schemas/exports_ProblemDetailErrorResponse/properties/instance - The format uri is not supported by Kiota and the string type will be used.
 Warning: KiotaBuilder OpenAPI warning: #/components/schemas/exports_ProblemDetailErrorResponse/properties/type - The format uri is not supported by Kiota and the string type will be used.
+Warning: KiotaBuilder OpenAPI warning: #/components/schemas/identity_ProblemDetailErrorResponse/properties/instance - The format uri is not supported by Kiota and the string type will be used.
+Warning: KiotaBuilder OpenAPI warning: #/components/schemas/identity_ProblemDetailErrorResponse/properties/type - The format uri is not supported by Kiota and the string type will be used.
 Warning: KiotaBuilder OpenAPI warning: #/components/schemas/label_ProblemDetailErrorResponse/properties/instance - The format uri is not supported by Kiota and the string type will be used.
 Warning: KiotaBuilder OpenAPI warning: #/components/schemas/label_ProblemDetailErrorResponse/properties/type - The format uri is not supported by Kiota and the string type will be used.
 Warning: KiotaBuilder OpenAPI warning: #/components/schemas/mes_ProblemDetailErrorResponse/properties/instance - The format uri is not supported by Kiota and the string type will be used.
@@ -86,21 +73,13 @@ Warning: KiotaBuilder OpenAPI warning: #/components/schemas/ps_ProblemDetailErro
 Warning: KiotaBuilder OpenAPI warning: #/components/schemas/ps_ProblemDetailErrorResponse/properties/type - The format uri is not supported by Kiota and the string type will be used.
 Warning: KiotaBuilder OpenAPI warning: #/components/schemas/risk-scoring_ProblemDetailErrorResponse/properties/instance - The format uri is not supported by Kiota and the string type will be used.
 Warning: KiotaBuilder OpenAPI warning: #/components/schemas/risk-scoring_ProblemDetailErrorResponse/properties/type - The format uri is not supported by Kiota and the string type will be used.
+Warning: KiotaBuilder OpenAPI warning: #/components/schemas/search_MonetaryValueV3/properties/currency - The format iso-4217 is not supported by Kiota for the type String and the string type will be used.
+Warning: KiotaBuilder OpenAPI warning: #/components/schemas/search_StructuredAddressV3/allOf/1/properties/country - The format iso-3166-alpha-2 is not supported by Kiota for the type String and the string type will be used.
 Warning: KiotaBuilder OpenAPI warning: #/components/schemas/sra_Configuration/properties/country_filters/items - The format ISO 3166-1 Alpha-2 is not supported by Kiota for the type String and the string type will be used.
 Warning: KiotaBuilder OpenAPI warning: #/components/schemas/sra_ProblemDetailErrorResponse/properties/instance - The format uri is not supported by Kiota and the string type will be used.
 Warning: KiotaBuilder OpenAPI warning: #/components/schemas/sra_ProblemDetailErrorResponse/properties/type - The format uri is not supported by Kiota and the string type will be used.
 Error: KiotaBuilder OpenAPI error: #/components/schemas/case-management_CustomerSubject/discriminator - Schema  must contain property specified in the discriminator detail.type in the required field list.
 Error: KiotaBuilder OpenAPI error: #/components/schemas/case-management_TransactionSubject/discriminator - Schema  must contain property specified in the discriminator detail.type in the required field list.
-Warning: KiotaBuilder Discriminator CustomFieldValueV3_DecimalValueV3 not found in the OpenAPI document.
-Warning: KiotaBuilder Discriminator CustomFieldValueV3_TextValueV3 not found in the OpenAPI document.
-Warning: KiotaBuilder Discriminator TransactionClassificationDetailsV3_MonetaryTransactionClassificationDetailsV3 not found in the OpenAPI document.
-Warning: KiotaBuilder Discriminator MonetaryTransactionTypeDetailsV3_BankPaymentMonetaryTransactionTypeDetailsV3 not found in the OpenAPI document.
-Warning: KiotaBuilder Discriminator MonetaryTransactionTypeDetailsV3_CardPaymentMonetaryTransactionTypeDetailsV3 not found in the OpenAPI document.
-Warning: KiotaBuilder Discriminator MonetaryTransactionTypeDetailsV3_RemittanceMonetaryTransactionTypeDetailsV3 not found in the OpenAPI document.
-Warning: KiotaBuilder Discriminator AddressV3_StructuredAddressV3 not found in the OpenAPI document.
-Warning: KiotaBuilder Discriminator AddressV3_UnstructuredAddressV3 not found in the OpenAPI document.
-Warning: KiotaBuilder Discriminator PartyIdentifierV3_CounterpartyPartyIdentifierV3 not found in the OpenAPI document.
-Warning: KiotaBuilder Discriminator PartyIdentifierV3_CustomerPartyIdentifierV3 not found in the OpenAPI document.
 Warning: KiotaBuilder Discriminator case-management_CustomerSubject is not a valid model and points to a union type.
 Warning: KiotaBuilder Discriminator case-management_TransactionSubject is not a valid model and points to a union type.
 Warning: KiotaBuilder Discriminator case-management_CompanySubject is not inherited from caseManagement_CustomerSubject.
@@ -108,9 +87,7 @@ Warning: KiotaBuilder Discriminator case-management_PersonSubject is not inherit
 Warning: KiotaBuilder Discriminator case-management_UndefinedSubject is not inherited from caseManagement_CustomerSubject.
 Warning: KiotaBuilder Discriminator case-management_BankPaymentSubject is not inherited from caseManagement_TransactionSubject.
 Warning: KiotaBuilder Discriminator case-management_CardPaymentSubject is not inherited from caseManagement_TransactionSubject.
+Warning: KiotaBuilder Discriminator case-management_CryptoPaymentSubject is not inherited from caseManagement_TransactionSubject.
 Warning: KiotaBuilder Discriminator case-management_RemittancePaymentSubject is not inherited from caseManagement_TransactionSubject.
-Warning: KiotaBuilder Discriminator EnrichmentValueV3_BooleanEnrichmentValueV3 not found in the OpenAPI document.
-Warning: KiotaBuilder Discriminator EnrichmentValueV3_DecimalEnrichmentValueV3 not found in the OpenAPI document.
-Warning: KiotaBuilder Discriminator EnrichmentValueV3_TextEnrichmentValueV3 not found in the OpenAPI document.
 Warning: KiotaBuilder Discriminator case-management_CustomerSubject is not a valid model and points to a union type.
 Warning: KiotaBuilder Discriminator case-management_TransactionSubject is not a valid model and points to a union type.
