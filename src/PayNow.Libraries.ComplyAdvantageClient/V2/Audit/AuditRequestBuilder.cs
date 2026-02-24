@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using PayNow.Libraries.ComplyAdvantageClient.V2.Audit.Cases;
 using PayNow.Libraries.ComplyAdvantageClient.V2.Audit.Customers;
+using PayNow.Libraries.ComplyAdvantageClient.V2.Audit.Transactions;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -25,6 +26,11 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Audit
         public global::PayNow.Libraries.ComplyAdvantageClient.V2.Audit.Customers.CustomersRequestBuilder Customers
         {
             get => new global::PayNow.Libraries.ComplyAdvantageClient.V2.Audit.Customers.CustomersRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The transactions property</summary>
+        public global::PayNow.Libraries.ComplyAdvantageClient.V2.Audit.Transactions.TransactionsRequestBuilder Transactions
+        {
+            get => new global::PayNow.Libraries.ComplyAdvantageClient.V2.Audit.Transactions.TransactionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::PayNow.Libraries.ComplyAdvantageClient.V2.Audit.AuditRequestBuilder"/> and sets the default values.

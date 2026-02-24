@@ -9,45 +9,45 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace PayNow.Libraries.ComplyAdvantageClient.V2.Audit.Cases.Item
+namespace PayNow.Libraries.ComplyAdvantageClient.V2.Audit.Transactions.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \v2\audit\cases\{case_identifier}
+    /// Builds and executes requests for operations under \v2\audit\transactions\{transaction_identifier}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WithCase_identifierItemRequestBuilder : BaseRequestBuilder
+    public partial class WithTransaction_identifierItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="global::PayNow.Libraries.ComplyAdvantageClient.V2.Audit.Cases.Item.WithCase_identifierItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::PayNow.Libraries.ComplyAdvantageClient.V2.Audit.Transactions.Item.WithTransaction_identifierItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithCase_identifierItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/audit/cases/{case_identifier}{?page_number*,page_size*,sort*}", pathParameters)
+        public WithTransaction_identifierItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/audit/transactions/{transaction_identifier}{?page_number*,page_size*,sort*}", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::PayNow.Libraries.ComplyAdvantageClient.V2.Audit.Cases.Item.WithCase_identifierItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::PayNow.Libraries.ComplyAdvantageClient.V2.Audit.Transactions.Item.WithTransaction_identifierItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithCase_identifierItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/audit/cases/{case_identifier}{?page_number*,page_size*,sort*}", rawUrl)
+        public WithTransaction_identifierItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/audit/transactions/{transaction_identifier}{?page_number*,page_size*,sort*}", rawUrl)
         {
         }
         /// <summary>
-        /// Returns the audit log trail for a case.You need the &quot;View cases&quot; permission to use this endpoint.
+        /// Returns the audit log trail for a transaction.You need the &quot;View transactions&quot; permission to use this endpoint.
         /// </summary>
-        /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_CaseAuditLogsPageV2"/></returns>
+        /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_TransactionAuditLogsPageV2"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_ProblemDetailErrorResponse">When receiving a 400 status code</exception>
         /// <exception cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_ProblemDetailErrorResponse">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_CaseAuditLogsPageV2?> GetAsync(Action<RequestConfiguration<global::PayNow.Libraries.ComplyAdvantageClient.V2.Audit.Cases.Item.WithCase_identifierItemRequestBuilder.WithCase_identifierItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_TransactionAuditLogsPageV2?> GetAsync(Action<RequestConfiguration<global::PayNow.Libraries.ComplyAdvantageClient.V2.Audit.Transactions.Item.WithTransaction_identifierItemRequestBuilder.WithTransaction_identifierItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_CaseAuditLogsPageV2> GetAsync(Action<RequestConfiguration<global::PayNow.Libraries.ComplyAdvantageClient.V2.Audit.Cases.Item.WithCase_identifierItemRequestBuilder.WithCase_identifierItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_TransactionAuditLogsPageV2> GetAsync(Action<RequestConfiguration<global::PayNow.Libraries.ComplyAdvantageClient.V2.Audit.Transactions.Item.WithTransaction_identifierItemRequestBuilder.WithTransaction_identifierItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -56,20 +56,20 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Audit.Cases.Item
                 { "400", global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_ProblemDetailErrorResponse.CreateFromDiscriminatorValue },
                 { "404", global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_ProblemDetailErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_CaseAuditLogsPageV2>(requestInfo, global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_CaseAuditLogsPageV2.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_TransactionAuditLogsPageV2>(requestInfo, global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_TransactionAuditLogsPageV2.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns the audit log trail for a case.You need the &quot;View cases&quot; permission to use this endpoint.
+        /// Returns the audit log trail for a transaction.You need the &quot;View transactions&quot; permission to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::PayNow.Libraries.ComplyAdvantageClient.V2.Audit.Cases.Item.WithCase_identifierItemRequestBuilder.WithCase_identifierItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::PayNow.Libraries.ComplyAdvantageClient.V2.Audit.Transactions.Item.WithTransaction_identifierItemRequestBuilder.WithTransaction_identifierItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::PayNow.Libraries.ComplyAdvantageClient.V2.Audit.Cases.Item.WithCase_identifierItemRequestBuilder.WithCase_identifierItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::PayNow.Libraries.ComplyAdvantageClient.V2.Audit.Transactions.Item.WithTransaction_identifierItemRequestBuilder.WithTransaction_identifierItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -80,17 +80,17 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Audit.Cases.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.V2.Audit.Cases.Item.WithCase_identifierItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.V2.Audit.Transactions.Item.WithTransaction_identifierItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::PayNow.Libraries.ComplyAdvantageClient.V2.Audit.Cases.Item.WithCase_identifierItemRequestBuilder WithUrl(string rawUrl)
+        public global::PayNow.Libraries.ComplyAdvantageClient.V2.Audit.Transactions.Item.WithTransaction_identifierItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::PayNow.Libraries.ComplyAdvantageClient.V2.Audit.Cases.Item.WithCase_identifierItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::PayNow.Libraries.ComplyAdvantageClient.V2.Audit.Transactions.Item.WithTransaction_identifierItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns the audit log trail for a case.You need the &quot;View cases&quot; permission to use this endpoint.
+        /// Returns the audit log trail for a transaction.You need the &quot;View transactions&quot; permission to use this endpoint.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithCase_identifierItemRequestBuilderGetQueryParameters 
+        public partial class WithTransaction_identifierItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Page index</summary>
             [QueryParameter("page_number")]
@@ -114,7 +114,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Audit.Cases.Item
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithCase_identifierItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::PayNow.Libraries.ComplyAdvantageClient.V2.Audit.Cases.Item.WithCase_identifierItemRequestBuilder.WithCase_identifierItemRequestBuilderGetQueryParameters>
+        public partial class WithTransaction_identifierItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::PayNow.Libraries.ComplyAdvantageClient.V2.Audit.Transactions.Item.WithTransaction_identifierItemRequestBuilder.WithTransaction_identifierItemRequestBuilderGetQueryParameters>
         {
         }
     }

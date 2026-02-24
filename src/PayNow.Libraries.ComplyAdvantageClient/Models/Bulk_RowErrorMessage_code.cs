@@ -316,6 +316,10 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         #pragma warning disable CS1591
         COUNTERPARTY_NOT_ALLOWED_ON_ULTIMATE_PARTY,
         #pragma warning restore CS1591
+        [EnumMember(Value = "INVALID_CAIP_2_IDENTIFIER")]
+        #pragma warning disable CS1591
+        INVALID_CAIP_2_IDENTIFIER,
+        #pragma warning restore CS1591
         [EnumMember(Value = "INVALID_CAIP_19_IDENTIFIER")]
         #pragma warning disable CS1591
         INVALID_CAIP_19_IDENTIFIER,
@@ -327,6 +331,10 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         [EnumMember(Value = "INVALID_LONGITUDE")]
         #pragma warning disable CS1591
         INVALID_LONGITUDE,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "INVALID_CLEARING_IDENTIFIER_TYPE")]
+        #pragma warning disable CS1591
+        INVALID_CLEARING_IDENTIFIER_TYPE,
         #pragma warning restore CS1591
     }
 }

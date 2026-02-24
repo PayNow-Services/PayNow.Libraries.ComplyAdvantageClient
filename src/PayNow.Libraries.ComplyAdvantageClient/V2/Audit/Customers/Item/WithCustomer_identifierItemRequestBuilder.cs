@@ -34,7 +34,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Audit.Customers.Item
         {
         }
         /// <summary>
-        /// Returns the audit log trail for a customer.You need one of the &quot;View customers&quot; permission to use this endpoint.
+        /// Returns the audit log trail for a customer.You need the &quot;View customers&quot; permission to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_CustomerAuditLogsPageV2"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +59,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Audit.Customers.Item
             return await RequestAdapter.SendAsync<global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_CustomerAuditLogsPageV2>(requestInfo, global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_CustomerAuditLogsPageV2.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns the audit log trail for a customer.You need one of the &quot;View customers&quot; permission to use this endpoint.
+        /// Returns the audit log trail for a customer.You need the &quot;View customers&quot; permission to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -87,7 +87,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Audit.Customers.Item
             return new global::PayNow.Libraries.ComplyAdvantageClient.V2.Audit.Customers.Item.WithCustomer_identifierItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns the audit log trail for a customer.You need one of the &quot;View customers&quot; permission to use this endpoint.
+        /// Returns the audit log trail for a customer.You need the &quot;View customers&quot; permission to use this endpoint.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithCustomer_identifierItemRequestBuilderGetQueryParameters 
