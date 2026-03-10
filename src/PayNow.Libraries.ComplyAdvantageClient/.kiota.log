@@ -1,7 +1,7 @@
-Warning: KiotaBuilder OpenAPI warning: #/ - The schema case-management_CaseTransitionRequest is a polymorphic type but does not define a discriminator. This will result in serialization errors.
-Warning: KiotaBuilder OpenAPI warning: #/ - The schema case-management_StageData is a polymorphic type but does not define a discriminator. This will result in serialization errors.
 Warning: KiotaBuilder OpenAPI warning: #/ - The schema case-management_PaymentSummaryResponse is a polymorphic type but does not define a discriminator. This will result in serialization errors.
 Warning: KiotaBuilder OpenAPI warning: #/ - The schema ol_StepOutput is a polymorphic type but does not define a discriminator. This will result in serialization errors.
+Warning: KiotaBuilder OpenAPI warning: #/ - The schema case-management_StageData is a polymorphic type but does not define a discriminator. This will result in serialization errors.
+Warning: KiotaBuilder OpenAPI warning: #/ - The schema case-management_CaseTransitionRequest is a polymorphic type but does not define a discriminator. This will result in serialization errors.
 Warning: KiotaBuilder OpenAPI warning: #/ - The schema case-management_TransitionCaseBulkActionPayload is a polymorphic type but does not define a discriminator. This will result in serialization errors.
 Warning: KiotaBuilder OpenAPI warning: #/ - The schema /v2/alerts/{alert_identifier}/risks is a polymorphic type but does not define a discriminator. This will result in serialization errors.
 Warning: KiotaBuilder OpenAPI warning: #/ - The schema /v2/iam/roles is a polymorphic type but does not define a discriminator. This will result in serialization errors.
@@ -92,3 +92,6 @@ Warning: KiotaBuilder Discriminator case-management_CryptoPaymentSubject is not 
 Warning: KiotaBuilder Discriminator case-management_RemittancePaymentSubject is not inherited from caseManagement_TransactionSubject.
 Warning: KiotaBuilder Discriminator case-management_CustomerSubject is not a valid model and points to a union type.
 Warning: KiotaBuilder Discriminator case-management_TransactionSubject is not a valid model and points to a union type.
+Warning: KiotaBuilder Discriminator customer-manager_Company is not inherited from customerManager_Party.
+Warning: KiotaBuilder Discriminator customer-manager_Person is not inherited from customerManager_Party.
+Warning: KiotaBuilder Discriminator customer-manager_CustomerTypeUndefined is not inherited from customerManager_Party.

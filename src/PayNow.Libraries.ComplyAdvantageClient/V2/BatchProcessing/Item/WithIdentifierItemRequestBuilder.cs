@@ -40,7 +40,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.BatchProcessing.Item
         {
         }
         /// <summary>
-        /// Given an `identifier`, this endpoint will delete a file that has failed validation. Files that were successful cannot be deleted using this endpoint.You need &quot;Access to base transaction monitoring functionality&quot; enabled and one of the &quot;Create and screen customers&quot; permission to use this endpoint.
+        /// Given an `identifier`, this endpoint will delete a file that has failed validation. Files that were successful cannot be deleted using this endpoint.You need &quot;Access to base transaction monitoring functionality&quot; enabled and the &quot;Create and screen customers&quot; permission to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Bulk_DeletedBatch"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -76,7 +76,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.BatchProcessing.Item
             return await RequestAdapter.SendAsync<global::PayNow.Libraries.ComplyAdvantageClient.Models.Bulk_Batch>(requestInfo, global::PayNow.Libraries.ComplyAdvantageClient.Models.Bulk_Batch.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Given an `identifier`, this endpoint will delete a file that has failed validation. Files that were successful cannot be deleted using this endpoint.You need &quot;Access to base transaction monitoring functionality&quot; enabled and one of the &quot;Create and screen customers&quot; permission to use this endpoint.
+        /// Given an `identifier`, this endpoint will delete a file that has failed validation. Files that were successful cannot be deleted using this endpoint.You need &quot;Access to base transaction monitoring functionality&quot; enabled and the &quot;Create and screen customers&quot; permission to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

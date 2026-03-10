@@ -148,7 +148,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.EntityScreening.Risks.Item.N
             /// <summary>If true, retrieves all notes attached to the profile associated with the requested risk</summary>
             [QueryParameter("related_notes")]
             public bool? RelatedNotes { get; set; }
-            /// <summary>Sorting criteria in the format of: `[-]property` (`-` descending modifier).* Default sort order is ascending (without `-`).* Multiple sort criteria are supported.</summary>
+            /// <summary>Sort notes by created_at. Prefix with &apos;-&apos; for descending order (e.g. -created_at), or omit the prefix for ascending order (e.g. created_at).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort")]
