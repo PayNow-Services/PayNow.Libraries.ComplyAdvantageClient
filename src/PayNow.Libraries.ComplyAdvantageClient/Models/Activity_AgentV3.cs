@@ -51,6 +51,14 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
 #endif
         /// <summary>The roles an agent may take within a financial transaction.</summary>
         public global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_AgentRoleV3? Role { get; set; }
+        /// <summary>Type for storing VASP details.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_VirtualAssetServiceProviderV3? VirtualAssetServiceProvider { get; set; }
+#nullable restore
+#else
+        public global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_VirtualAssetServiceProviderV3 VirtualAssetServiceProvider { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_AgentV3"/> and sets the default values.
         /// </summary>
@@ -82,6 +90,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
                 { "online_remittance_platform", n => { OnlineRemittancePlatform = n.GetObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_OnlineRemittancePlatformV3>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_OnlineRemittancePlatformV3.CreateFromDiscriminatorValue); } },
                 { "reference_text", n => { ReferenceText = n.GetStringValue(); } },
                 { "role", n => { Role = n.GetEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_AgentRoleV3>(); } },
+                { "virtual_asset_service_provider", n => { VirtualAssetServiceProvider = n.GetObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_VirtualAssetServiceProviderV3>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_VirtualAssetServiceProviderV3.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -97,6 +106,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_OnlineRemittancePlatformV3>("online_remittance_platform", OnlineRemittancePlatform);
             writer.WriteStringValue("reference_text", ReferenceText);
             writer.WriteEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_AgentRoleV3>("role", Role);
+            writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_VirtualAssetServiceProviderV3>("virtual_asset_service_provider", VirtualAssetServiceProvider);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

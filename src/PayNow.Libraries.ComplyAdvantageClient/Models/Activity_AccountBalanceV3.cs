@@ -23,6 +23,14 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
 #else
         public global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_MonetaryValueV3 CurrentBalance { get; set; }
 #endif
+        /// <summary>Represents a combination of a decimal amount with a currency.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_MonetaryValueV3? CurrentBaseBalance { get; set; }
+#nullable restore
+#else
+        public global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_MonetaryValueV3 CurrentBaseBalance { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_AccountBalanceV3"/> and sets the default values.
         /// </summary>
@@ -49,6 +57,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "current_balance", n => { CurrentBalance = n.GetObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_MonetaryValueV3>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_MonetaryValueV3.CreateFromDiscriminatorValue); } },
+                { "current_base_balance", n => { CurrentBaseBalance = n.GetObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_MonetaryValueV3>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_MonetaryValueV3.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -59,6 +68,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_MonetaryValueV3>("current_balance", CurrentBalance);
+            writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_MonetaryValueV3>("current_base_balance", CurrentBaseBalance);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

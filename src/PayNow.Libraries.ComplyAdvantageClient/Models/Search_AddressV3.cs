@@ -8,7 +8,7 @@ using System;
 namespace PayNow.Libraries.ComplyAdvantageClient.Models
 {
     /// <summary>
-    /// The address of the party.
+    /// Address of the ATM.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Search_AddressV3 : IAdditionalDataHolder, IParsable

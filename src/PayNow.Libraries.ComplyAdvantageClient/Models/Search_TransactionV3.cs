@@ -61,6 +61,14 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
 #endif
         /// <summary>Our unique identifier for your Transaction. We generate this when we process your Transaction and you are not able to specify it.</summary>
         public Guid? Identifier { get; private set; }
+        /// <summary>The initiating_channel property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::PayNow.Libraries.ComplyAdvantageClient.Models.Search_TransactionV3.Search_TransactionV3_initiating_channel? InitiatingChannel { get; set; }
+#nullable restore
+#else
+        public global::PayNow.Libraries.ComplyAdvantageClient.Models.Search_TransactionV3.Search_TransactionV3_initiating_channel InitiatingChannel { get; set; }
+#endif
         /// <summary>The timestamp of the Transaction. This is the timestamp you want us to use as this transactions position in time for the purposes of risk analysis. This timestamp can contain offset information.</summary>
         public DateTimeOffset? OccurredAt { get; set; }
         /// <summary>The timestamp the Transaction event was received by us.</summary>
@@ -108,6 +116,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
                 { "evaluation_outcome", n => { EvaluationOutcome = n.GetEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Search_TransactionV3_evaluation_outcome>(); } },
                 { "external_identifier", n => { ExternalIdentifier = n.GetStringValue(); } },
                 { "identifier", n => { Identifier = n.GetGuidValue(); } },
+                { "initiating_channel", n => { InitiatingChannel = n.GetObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Search_TransactionV3.Search_TransactionV3_initiating_channel>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Search_TransactionV3.Search_TransactionV3_initiating_channel.CreateFromDiscriminatorValue); } },
                 { "occurred_at", n => { OccurredAt = n.GetDateTimeOffsetValue(); } },
                 { "received_at", n => { ReceivedAt = n.GetDateTimeOffsetValue(); } },
                 { "regulatory_reporting_details", n => { RegulatoryReportingDetails = n.GetObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Search_RegulatoryReportDetailsV3>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Search_RegulatoryReportDetailsV3.CreateFromDiscriminatorValue); } },
@@ -125,9 +134,85 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             writer.WriteCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.Search_CustomFieldV3>("custom_fields", CustomFields);
             writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Search_MonetaryTransactionClassificationDetailsV3>("details", Details);
             writer.WriteStringValue("external_identifier", ExternalIdentifier);
+            writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Search_TransactionV3.Search_TransactionV3_initiating_channel>("initiating_channel", InitiatingChannel);
             writer.WriteDateTimeOffsetValue("occurred_at", OccurredAt);
             writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Search_RegulatoryReportDetailsV3>("regulatory_reporting_details", RegulatoryReportingDetails);
             writer.WriteAdditionalData(AdditionalData);
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Search_AtmChannelV3"/>, <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Search_DeviceChannelV3"/>
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class Search_TransactionV3_initiating_channel : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Search_AtmChannelV3"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::PayNow.Libraries.ComplyAdvantageClient.Models.Search_AtmChannelV3? SearchAtmChannelV3 { get; set; }
+#nullable restore
+#else
+            public global::PayNow.Libraries.ComplyAdvantageClient.Models.Search_AtmChannelV3 SearchAtmChannelV3 { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Search_DeviceChannelV3"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::PayNow.Libraries.ComplyAdvantageClient.Models.Search_DeviceChannelV3? SearchDeviceChannelV3 { get; set; }
+#nullable restore
+#else
+            public global::PayNow.Libraries.ComplyAdvantageClient.Models.Search_DeviceChannelV3 SearchDeviceChannelV3 { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Search_TransactionV3.Search_TransactionV3_initiating_channel"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::PayNow.Libraries.ComplyAdvantageClient.Models.Search_TransactionV3.Search_TransactionV3_initiating_channel CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+                var result = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Search_TransactionV3.Search_TransactionV3_initiating_channel();
+                if("search_AtmChannelV3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.SearchAtmChannelV3 = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Search_AtmChannelV3();
+                }
+                else if("search_DeviceChannelV3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.SearchDeviceChannelV3 = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Search_DeviceChannelV3();
+                }
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(SearchAtmChannelV3 != null)
+                {
+                    return SearchAtmChannelV3.GetFieldDeserializers();
+                }
+                else if(SearchDeviceChannelV3 != null)
+                {
+                    return SearchDeviceChannelV3.GetFieldDeserializers();
+                }
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                if(SearchAtmChannelV3 != null)
+                {
+                    writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Search_AtmChannelV3>(null, SearchAtmChannelV3);
+                }
+                else if(SearchDeviceChannelV3 != null)
+                {
+                    writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Search_DeviceChannelV3>(null, SearchDeviceChannelV3);
+                }
+            }
         }
     }
 }

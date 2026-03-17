@@ -20,5 +20,9 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V3.Transactions
         #pragma warning disable CS1591
         REMITTANCE,
         #pragma warning restore CS1591
+        [EnumMember(Value = "CRYPTO")]
+        #pragma warning disable CS1591
+        CRYPTO,
+        #pragma warning restore CS1591
     }
 }

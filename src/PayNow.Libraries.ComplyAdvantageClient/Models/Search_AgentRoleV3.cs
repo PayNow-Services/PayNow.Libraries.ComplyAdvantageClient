@@ -15,5 +15,13 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         #pragma warning disable CS1591
         INTERMEDIARY,
         #pragma warning restore CS1591
+        [EnumMember(Value = "DEBTOR_AGENT")]
+        #pragma warning disable CS1591
+        DEBTOR_AGENT,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CREDITOR_AGENT")]
+        #pragma warning disable CS1591
+        CREDITOR_AGENT,
+        #pragma warning restore CS1591
     }
 }

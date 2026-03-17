@@ -17,13 +17,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         /// <summary>The method property</summary>
         public global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_EvaluationResultDeliveryDTO_method? Method { get; set; }
         /// <summary>The webhook_identifier property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? WebhookIdentifier { get; set; }
-#nullable restore
-#else
-        public string WebhookIdentifier { get; set; }
-#endif
+        public Guid? WebhookIdentifier { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_EvaluationResultDeliveryDTO"/> and sets the default values.
         /// </summary>
@@ -50,7 +44,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "method", n => { Method = n.GetEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_EvaluationResultDeliveryDTO_method>(); } },
-                { "webhook_identifier", n => { WebhookIdentifier = n.GetStringValue(); } },
+                { "webhook_identifier", n => { WebhookIdentifier = n.GetGuidValue(); } },
             };
         }
         /// <summary>
@@ -61,7 +55,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_EvaluationResultDeliveryDTO_method>("method", Method);
-            writer.WriteStringValue("webhook_identifier", WebhookIdentifier);
+            writer.WriteGuidValue("webhook_identifier", WebhookIdentifier);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

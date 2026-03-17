@@ -8,7 +8,7 @@ using System;
 namespace PayNow.Libraries.ComplyAdvantageClient.Models
 {
     /// <summary>
-    /// Represents a list of products. They can be either a bank account or a crypto wallet.
+    /// Represents a list of products to update if present will update the customer with this object if not present will not update the customer products. They can be either a bank account or a crypto wallet.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Ol_ProductApi : IAdditionalDataHolder, IParsable

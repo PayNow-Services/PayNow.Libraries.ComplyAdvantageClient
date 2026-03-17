@@ -13,6 +13,14 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Ol_CounterpartyPartyIdentifierV3 : global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_PartyIdentifierV3, IParsable
     {
+        /// <summary>Represent bank account details</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_BankAccountV3? BankAccount { get; set; }
+#nullable restore
+#else
+        public global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_BankAccountV3 BankAccount { get; set; }
+#endif
         /// <summary>Your unique identifier for Counterparty to which this Party is linked.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,6 +47,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "bank_account", n => { BankAccount = n.GetObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_BankAccountV3>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_BankAccountV3.CreateFromDiscriminatorValue); } },
                 { "external_identifier", n => { ExternalIdentifier = n.GetStringValue(); } },
             };
         }
@@ -50,6 +59,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_BankAccountV3>("bank_account", BankAccount);
             writer.WriteStringValue("external_identifier", ExternalIdentifier);
         }
     }

@@ -39,6 +39,14 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
 #endif
         /// <summary>Defines the direction of the flow of value in the transaction in relation to the primary Customer in a Monetary Transaction.</summary>
         public global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_MonetaryTransactionDirectionV3? Direction { get; private set; }
+        /// <summary>Represents a combination of a decimal amount with a currency.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_MonetaryValueV3? LocalValue { get; set; }
+#nullable restore
+#else
+        public global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_MonetaryValueV3 LocalValue { get; set; }
+#endif
         /// <summary>The channel used for a payment.</summary>
         public global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_PaymentChannelV3? PaymentChannel { get; set; }
         /// <summary>The freeform name of the product being used to perform the financial transaction.</summary>
@@ -87,6 +95,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
                 { "customer_account_balance", n => { CustomerAccountBalance = n.GetObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_AccountBalanceV3>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_AccountBalanceV3.CreateFromDiscriminatorValue); } },
                 { "details", n => { Details = n.GetObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_MonetaryTransactionClassificationDetailsV3.Ol_MonetaryTransactionClassificationDetailsV3_details>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_MonetaryTransactionClassificationDetailsV3.Ol_MonetaryTransactionClassificationDetailsV3_details.CreateFromDiscriminatorValue); } },
                 { "direction", n => { Direction = n.GetEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_MonetaryTransactionDirectionV3>(); } },
+                { "local_value", n => { LocalValue = n.GetObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_MonetaryValueV3>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_MonetaryValueV3.CreateFromDiscriminatorValue); } },
                 { "payment_channel", n => { PaymentChannel = n.GetEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_PaymentChannelV3>(); } },
                 { "product_name", n => { ProductName = n.GetStringValue(); } },
                 { "reference_text", n => { ReferenceText = n.GetStringValue(); } },
@@ -104,13 +113,14 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_MonetaryValueV3>("base_value", BaseValue);
             writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_AccountBalanceV3>("customer_account_balance", CustomerAccountBalance);
             writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_MonetaryTransactionClassificationDetailsV3.Ol_MonetaryTransactionClassificationDetailsV3_details>("details", Details);
+            writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_MonetaryValueV3>("local_value", LocalValue);
             writer.WriteEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_PaymentChannelV3>("payment_channel", PaymentChannel);
             writer.WriteStringValue("product_name", ProductName);
             writer.WriteStringValue("reference_text", ReferenceText);
             writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_MonetaryValueV3>("value", Value);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_BankPaymentMonetaryTransactionTypeDetailsV3"/>, <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_CardPaymentMonetaryTransactionTypeDetailsV3"/>, <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_RemittanceMonetaryTransactionTypeDetailsV3"/>
+        /// Composed type wrapper for classes <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_BankPaymentMonetaryTransactionTypeDetailsV3"/>, <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_CardPaymentMonetaryTransactionTypeDetailsV3"/>, <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_CryptoMonetaryTransactionTypeDetailsV3"/>, <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_RemittanceMonetaryTransactionTypeDetailsV3"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Ol_MonetaryTransactionClassificationDetailsV3_details : IComposedTypeWrapper, IParsable
@@ -130,6 +140,14 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
 #nullable restore
 #else
             public global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_CardPaymentMonetaryTransactionTypeDetailsV3 OlCardPaymentMonetaryTransactionTypeDetailsV3 { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_CryptoMonetaryTransactionTypeDetailsV3"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_CryptoMonetaryTransactionTypeDetailsV3? OlCryptoMonetaryTransactionTypeDetailsV3 { get; set; }
+#nullable restore
+#else
+            public global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_CryptoMonetaryTransactionTypeDetailsV3 OlCryptoMonetaryTransactionTypeDetailsV3 { get; set; }
 #endif
             /// <summary>Composed type representation for type <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_RemittanceMonetaryTransactionTypeDetailsV3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -157,6 +175,10 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
                 {
                     result.OlCardPaymentMonetaryTransactionTypeDetailsV3 = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_CardPaymentMonetaryTransactionTypeDetailsV3();
                 }
+                else if("CRYPTO".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.OlCryptoMonetaryTransactionTypeDetailsV3 = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_CryptoMonetaryTransactionTypeDetailsV3();
+                }
                 else if("REMITTANCE".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.OlRemittanceMonetaryTransactionTypeDetailsV3 = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_RemittanceMonetaryTransactionTypeDetailsV3();
@@ -176,6 +198,10 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
                 else if(OlCardPaymentMonetaryTransactionTypeDetailsV3 != null)
                 {
                     return OlCardPaymentMonetaryTransactionTypeDetailsV3.GetFieldDeserializers();
+                }
+                else if(OlCryptoMonetaryTransactionTypeDetailsV3 != null)
+                {
+                    return OlCryptoMonetaryTransactionTypeDetailsV3.GetFieldDeserializers();
                 }
                 else if(OlRemittanceMonetaryTransactionTypeDetailsV3 != null)
                 {
@@ -197,6 +223,10 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
                 else if(OlCardPaymentMonetaryTransactionTypeDetailsV3 != null)
                 {
                     writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_CardPaymentMonetaryTransactionTypeDetailsV3>(null, OlCardPaymentMonetaryTransactionTypeDetailsV3);
+                }
+                else if(OlCryptoMonetaryTransactionTypeDetailsV3 != null)
+                {
+                    writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_CryptoMonetaryTransactionTypeDetailsV3>(null, OlCryptoMonetaryTransactionTypeDetailsV3);
                 }
                 else if(OlRemittanceMonetaryTransactionTypeDetailsV3 != null)
                 {

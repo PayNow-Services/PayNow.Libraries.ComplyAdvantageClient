@@ -17,6 +17,14 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The decimal amount/value.</summary>
         public double? Amount { get; set; }
+        /// <summary>The asset that was transacted.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::PayNow.Libraries.ComplyAdvantageClient.Models.Search_CryptoAssetV3? CryptoAsset { get; set; }
+#nullable restore
+#else
+        public global::PayNow.Libraries.ComplyAdvantageClient.Models.Search_CryptoAssetV3 CryptoAsset { get; set; }
+#endif
         /// <summary>3 letter currency code as defined by ISO-4217.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -51,6 +59,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "amount", n => { Amount = n.GetDoubleValue(); } },
+                { "crypto_asset", n => { CryptoAsset = n.GetObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Search_CryptoAssetV3>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Search_CryptoAssetV3.CreateFromDiscriminatorValue); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
             };
         }
@@ -62,6 +71,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("amount", Amount);
+            writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Search_CryptoAssetV3>("crypto_asset", CryptoAsset);
             writer.WriteStringValue("currency", Currency);
             writer.WriteAdditionalData(AdditionalData);
         }

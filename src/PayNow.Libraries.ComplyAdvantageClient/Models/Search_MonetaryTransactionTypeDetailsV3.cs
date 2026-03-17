@@ -37,6 +37,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             {
                 "search_BankPaymentMonetaryTransactionTypeDetailsV3" => new global::PayNow.Libraries.ComplyAdvantageClient.Models.Search_BankPaymentMonetaryTransactionTypeDetailsV3(),
                 "search_CardPaymentMonetaryTransactionTypeDetailsV3" => new global::PayNow.Libraries.ComplyAdvantageClient.Models.Search_CardPaymentMonetaryTransactionTypeDetailsV3(),
+                "search_CryptoMonetaryTransactionTypeDetailsV3" => new global::PayNow.Libraries.ComplyAdvantageClient.Models.Search_CryptoMonetaryTransactionTypeDetailsV3(),
                 "search_RemittanceMonetaryTransactionTypeDetailsV3" => new global::PayNow.Libraries.ComplyAdvantageClient.Models.Search_RemittanceMonetaryTransactionTypeDetailsV3(),
                 _ => new global::PayNow.Libraries.ComplyAdvantageClient.Models.Search_MonetaryTransactionTypeDetailsV3(),
             };
