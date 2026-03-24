@@ -33,10 +33,10 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         /// <summary>The transaction property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_TransactionWithType? Transaction { get; set; }
+        public global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_VersionedTransactionWithType? Transaction { get; set; }
 #nullable restore
 #else
-        public global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_TransactionWithType Transaction { get; set; }
+        public global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_VersionedTransactionWithType Transaction { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_PaymentScreenedDetailV2"/> and sets the default values.
@@ -65,7 +65,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             {
                 { "case", n => { Case = n.GetObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_Case>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_Case.CreateFromDiscriminatorValue); } },
                 { "risk_identifiers", n => { RiskIdentifiers = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
-                { "transaction", n => { Transaction = n.GetObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_TransactionWithType>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_TransactionWithType.CreateFromDiscriminatorValue); } },
+                { "transaction", n => { Transaction = n.GetObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_VersionedTransactionWithType>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_VersionedTransactionWithType.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -77,7 +77,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_Case>("case", Case);
             writer.WriteCollectionOfPrimitiveValues<Guid?>("risk_identifiers", RiskIdentifiers);
-            writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_TransactionWithType>("transaction", Transaction);
+            writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_VersionedTransactionWithType>("transaction", Transaction);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

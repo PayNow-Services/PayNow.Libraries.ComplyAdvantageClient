@@ -39,5 +39,17 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         #pragma warning disable CS1591
         TRANSACTION_REVIEWED,
         #pragma warning restore CS1591
+        [EnumMember(Value = "CUSTOMER_RISK_SCORE_CHANGED")]
+        #pragma warning disable CS1591
+        CUSTOMER_RISK_SCORE_CHANGED,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CUSTOMER_RISK_LEVEL_INCREASED")]
+        #pragma warning disable CS1591
+        CUSTOMER_RISK_LEVEL_INCREASED,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CUSTOMER_RISK_LEVEL_DECREASED")]
+        #pragma warning disable CS1591
+        CUSTOMER_RISK_LEVEL_DECREASED,
+        #pragma warning restore CS1591
     }
 }

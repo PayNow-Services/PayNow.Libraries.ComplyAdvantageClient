@@ -19,10 +19,10 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         /// <summary>The transaction property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_Transaction? Transaction { get; set; }
+        public global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_VersionedTransaction? Transaction { get; set; }
 #nullable restore
 #else
-        public global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_Transaction Transaction { get; set; }
+        public global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_VersionedTransaction Transaction { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_TransactionReleaseDecisionDetailV2"/> and sets the default values.
@@ -50,7 +50,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "review_decision", n => { ReviewDecision = n.GetEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_TransactionReleaseDecisionDetailV2_review_decision>(); } },
-                { "transaction", n => { Transaction = n.GetObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_Transaction>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_Transaction.CreateFromDiscriminatorValue); } },
+                { "transaction", n => { Transaction = n.GetObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_VersionedTransaction>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_VersionedTransaction.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_TransactionReleaseDecisionDetailV2_review_decision>("review_decision", ReviewDecision);
-            writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_Transaction>("transaction", Transaction);
+            writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_VersionedTransaction>("transaction", Transaction);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

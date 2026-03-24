@@ -332,9 +332,17 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         #pragma warning disable CS1591
         INVALID_LONGITUDE,
         #pragma warning restore CS1591
+        [EnumMember(Value = "INVALID_LOAN_TYPE")]
+        #pragma warning disable CS1591
+        INVALID_LOAN_TYPE,
+        #pragma warning restore CS1591
         [EnumMember(Value = "INVALID_CLEARING_IDENTIFIER_TYPE")]
         #pragma warning disable CS1591
         INVALID_CLEARING_IDENTIFIER_TYPE,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "INVALID_FINCEN_CASH_TRANSACTION_SUBTYPE")]
+        #pragma warning disable CS1591
+        INVALID_FINCEN_CASH_TRANSACTION_SUBTYPE,
         #pragma warning restore CS1591
     }
 }

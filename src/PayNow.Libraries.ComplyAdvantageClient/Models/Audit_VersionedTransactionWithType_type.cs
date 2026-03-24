@@ -3,25 +3,26 @@ using System.Runtime.Serialization;
 using System;
 namespace PayNow.Libraries.ComplyAdvantageClient.Models
 {
-    /// <summary>Customer type.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum CaseManagement_CaseCustomerSummaryResponse_type
+    #pragma warning disable CS1591
+    public enum Audit_VersionedTransactionWithType_type
+    #pragma warning restore CS1591
     {
-        [EnumMember(Value = "PERSON")]
+        [EnumMember(Value = "BANK_PAYMENT")]
         #pragma warning disable CS1591
-        PERSON,
+        BANK_PAYMENT,
         #pragma warning restore CS1591
-        [EnumMember(Value = "COMPANY")]
+        [EnumMember(Value = "CARD_PAYMENT")]
         #pragma warning disable CS1591
-        COMPANY,
+        CARD_PAYMENT,
         #pragma warning restore CS1591
-        [EnumMember(Value = "VESSEL")]
+        [EnumMember(Value = "REMITTANCE")]
         #pragma warning disable CS1591
-        VESSEL,
+        REMITTANCE,
         #pragma warning restore CS1591
-        [EnumMember(Value = "UNDEFINED")]
+        [EnumMember(Value = "CRYPTO")]
         #pragma warning disable CS1591
-        UNDEFINED,
+        CRYPTO,
         #pragma warning restore CS1591
     }
 }

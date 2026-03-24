@@ -9,35 +9,33 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Audit_TransactionReceivedDetailV2 : IAdditionalDataHolder, IParsable
+    public partial class Audit_VersionedTransactionWithType : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The transaction property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_VersionedTransactionWithTypeAndReceivedAt? Transaction { get; set; }
-#nullable restore
-#else
-        public global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_VersionedTransactionWithTypeAndReceivedAt Transaction { get; set; }
-#endif
+        /// <summary>The identifier property</summary>
+        public Guid? Identifier { get; set; }
+        /// <summary>The type property</summary>
+        public global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_VersionedTransactionWithType_type? Type { get; set; }
+        /// <summary>The version property</summary>
+        public int? Version { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_TransactionReceivedDetailV2"/> and sets the default values.
+        /// Instantiates a new <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_VersionedTransactionWithType"/> and sets the default values.
         /// </summary>
-        public Audit_TransactionReceivedDetailV2()
+        public Audit_VersionedTransactionWithType()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_TransactionReceivedDetailV2"/></returns>
+        /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_VersionedTransactionWithType"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_TransactionReceivedDetailV2 CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_VersionedTransactionWithType CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_TransactionReceivedDetailV2();
+            return new global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_VersionedTransactionWithType();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -47,7 +45,9 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "transaction", n => { Transaction = n.GetObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_VersionedTransactionWithTypeAndReceivedAt>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_VersionedTransactionWithTypeAndReceivedAt.CreateFromDiscriminatorValue); } },
+                { "identifier", n => { Identifier = n.GetGuidValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_VersionedTransactionWithType_type>(); } },
+                { "version", n => { Version = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -57,7 +57,9 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_VersionedTransactionWithTypeAndReceivedAt>("transaction", Transaction);
+            writer.WriteGuidValue("identifier", Identifier);
+            writer.WriteEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_VersionedTransactionWithType_type>("type", Type);
+            writer.WriteIntValue("version", Version);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

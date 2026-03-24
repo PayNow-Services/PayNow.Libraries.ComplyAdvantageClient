@@ -35,10 +35,10 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         /// <summary>The transaction property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_TransactionWithType? Transaction { get; set; }
+        public global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_VersionedTransactionWithType? Transaction { get; set; }
 #nullable restore
 #else
-        public global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_TransactionWithType Transaction { get; set; }
+        public global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_VersionedTransactionWithType Transaction { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_TransactionMonitoredDetailV2"/> and sets the default values.
@@ -68,7 +68,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
                 { "risk_identifiers", n => { RiskIdentifiers = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
                 { "risk_source", n => { RiskSource = n.GetEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_TransactionMonitoredDetailV2_risk_source>(); } },
                 { "scenario_evaluations", n => { ScenarioEvaluations = n.GetObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_ScenarioEvaluations>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_ScenarioEvaluations.CreateFromDiscriminatorValue); } },
-                { "transaction", n => { Transaction = n.GetObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_TransactionWithType>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_TransactionWithType.CreateFromDiscriminatorValue); } },
+                { "transaction", n => { Transaction = n.GetObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_VersionedTransactionWithType>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_VersionedTransactionWithType.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -81,7 +81,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             writer.WriteCollectionOfPrimitiveValues<Guid?>("risk_identifiers", RiskIdentifiers);
             writer.WriteEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_TransactionMonitoredDetailV2_risk_source>("risk_source", RiskSource);
             writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_ScenarioEvaluations>("scenario_evaluations", ScenarioEvaluations);
-            writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_TransactionWithType>("transaction", Transaction);
+            writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_VersionedTransactionWithType>("transaction", Transaction);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
