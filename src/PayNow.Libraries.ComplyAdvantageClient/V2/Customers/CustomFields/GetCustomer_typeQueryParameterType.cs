@@ -16,9 +16,5 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Customers.CustomFields
         #pragma warning disable CS1591
         COMPANY,
         #pragma warning restore CS1591
-        [EnumMember(Value = "VESSEL")]
-        #pragma warning disable CS1591
-        VESSEL,
-        #pragma warning restore CS1591
     }
 }

@@ -15,7 +15,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Customer to be updated and re-scored. It can be either a person, a company or undefined.</summary>
+        /// <summary>Customer to be updated and re-scored. It can be either a person, a company, a vessel or undefined.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_UpdateCustomerApi? Customer { get; set; }

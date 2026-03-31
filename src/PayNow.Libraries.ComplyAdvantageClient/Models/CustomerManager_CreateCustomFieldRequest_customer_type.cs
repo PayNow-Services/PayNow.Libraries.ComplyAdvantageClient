@@ -16,10 +16,6 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         #pragma warning disable CS1591
         COMPANY,
         #pragma warning restore CS1591
-        [EnumMember(Value = "VESSEL")]
-        #pragma warning disable CS1591
-        VESSEL,
-        #pragma warning restore CS1591
         [EnumMember(Value = "UNDEFINED")]
         #pragma warning disable CS1591
         UNDEFINED,

@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using PayNow.Libraries.ComplyAdvantageClient.V2.Customers.Item.Workflows.Sync.Rescreen;
 using PayNow.Libraries.ComplyAdvantageClient.V2.Customers.Item.Workflows.Sync.UpdateAndRescore;
 using System.Collections.Generic;
 using System.IO;
@@ -15,6 +16,11 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Customers.Item.Workflows.Syn
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SyncRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The rescreen property</summary>
+        public global::PayNow.Libraries.ComplyAdvantageClient.V2.Customers.Item.Workflows.Sync.Rescreen.RescreenRequestBuilder Rescreen
+        {
+            get => new global::PayNow.Libraries.ComplyAdvantageClient.V2.Customers.Item.Workflows.Sync.Rescreen.RescreenRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The updateAndRescore property</summary>
         public global::PayNow.Libraries.ComplyAdvantageClient.V2.Customers.Item.Workflows.Sync.UpdateAndRescore.UpdateAndRescoreRequestBuilder UpdateAndRescore
         {

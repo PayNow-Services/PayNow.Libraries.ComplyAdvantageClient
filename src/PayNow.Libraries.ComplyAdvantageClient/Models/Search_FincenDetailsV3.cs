@@ -17,6 +17,14 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Defines the subtype of FinCEN transactions.</summary>
         public global::PayNow.Libraries.ComplyAdvantageClient.Models.Search_FincenCashTransactionSubtype? FincenCashTransactionSubtype { get; set; }
+        /// <summary>List of GTO type codes associated with the transaction.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? GtoTypeCodes { get; set; }
+#nullable restore
+#else
+        public List<string> GtoTypeCodes { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Search_FincenDetailsV3"/> and sets the default values.
         /// </summary>
@@ -43,6 +51,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "fincen_cash_transaction_subtype", n => { FincenCashTransactionSubtype = n.GetEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Search_FincenCashTransactionSubtype>(); } },
+                { "gto_type_codes", n => { GtoTypeCodes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -53,6 +62,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Search_FincenCashTransactionSubtype>("fincen_cash_transaction_subtype", FincenCashTransactionSubtype);
+            writer.WriteCollectionOfPrimitiveValues<string>("gto_type_codes", GtoTypeCodes);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

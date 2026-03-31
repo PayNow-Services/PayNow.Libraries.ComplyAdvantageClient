@@ -8,7 +8,7 @@ using System;
 namespace PayNow.Libraries.ComplyAdvantageClient.Models
 {
     /// <summary>
-    /// Customer to be created and screened. It can be either a person, a company or undefined.
+    /// Customer to be created and screened. It can be either a person, a company, a vessel or undefined.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Ol_CustomerApi : IAdditionalDataHolder, IParsable

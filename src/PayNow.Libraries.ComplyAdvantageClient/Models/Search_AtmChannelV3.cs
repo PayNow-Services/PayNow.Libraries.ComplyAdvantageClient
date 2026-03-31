@@ -114,11 +114,11 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("format")?.GetStringValue();
                 var result = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Search_AtmChannelV3.Search_AtmChannelV3_address();
-                if("search_StructuredAddressV3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                if("STRUCTURED".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.SearchStructuredAddressV3 = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Search_StructuredAddressV3();
                 }
-                else if("search_UnstructuredAddressV3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.SearchUnstructuredAddressV3 = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Search_UnstructuredAddressV3();
                 }

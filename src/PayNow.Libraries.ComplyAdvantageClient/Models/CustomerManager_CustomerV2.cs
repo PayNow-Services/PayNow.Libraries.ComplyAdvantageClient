@@ -72,14 +72,6 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>The version property</summary>
         public int? Version { get; set; }
-        /// <summary>The vessel property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::PayNow.Libraries.ComplyAdvantageClient.Models.CustomerManager_Vessel? Vessel { get; set; }
-#nullable restore
-#else
-        public global::PayNow.Libraries.ComplyAdvantageClient.Models.CustomerManager_Vessel Vessel { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.CustomerManager_CustomerV2"/> and sets the default values.
         /// </summary>
@@ -116,7 +108,6 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
                 { "undefined", n => { Undefined = n.GetObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.CustomerManager_CustomerTypeUndefined>(global::PayNow.Libraries.ComplyAdvantageClient.Models.CustomerManager_CustomerTypeUndefined.CreateFromDiscriminatorValue); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "version", n => { Version = n.GetIntValue(); } },
-                { "vessel", n => { Vessel = n.GetObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.CustomerManager_Vessel>(global::PayNow.Libraries.ComplyAdvantageClient.Models.CustomerManager_Vessel.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -137,7 +128,6 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.CustomerManager_CustomerTypeUndefined>("undefined", Undefined);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteIntValue("version", Version);
-            writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.CustomerManager_Vessel>("vessel", Vessel);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

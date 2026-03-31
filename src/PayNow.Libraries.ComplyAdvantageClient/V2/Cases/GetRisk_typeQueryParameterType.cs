@@ -140,5 +140,9 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Cases
         #pragma warning disable CS1591
         WARNING,
         #pragma warning restore CS1591
+        [EnumMember(Value = "CUSTOM")]
+        #pragma warning disable CS1591
+        CUSTOM,
+        #pragma warning restore CS1591
     }
 }

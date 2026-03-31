@@ -115,15 +115,15 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("data_type")?.GetStringValue();
                 var result = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Search_EnrichmentV3.Search_EnrichmentV3_value();
-                if("search_BooleanEnrichmentValueV3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                if("BOOLEAN".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.SearchBooleanEnrichmentValueV3 = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Search_BooleanEnrichmentValueV3();
                 }
-                else if("search_DecimalEnrichmentValueV3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("DECIMAL".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.SearchDecimalEnrichmentValueV3 = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Search_DecimalEnrichmentValueV3();
                 }
-                else if("search_TextEnrichmentValueV3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("TEXT".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.SearchTextEnrichmentValueV3 = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Search_TextEnrichmentValueV3();
                 }

@@ -1000,6 +1000,14 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         #pragma warning disable CS1591
         XK,
         #pragma warning restore CS1591
+        [EnumMember(Value = "XT")]
+        #pragma warning disable CS1591
+        XT,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "XX")]
+        #pragma warning disable CS1591
+        XX,
+        #pragma warning restore CS1591
         [EnumMember(Value = "YE")]
         #pragma warning disable CS1591
         YE,

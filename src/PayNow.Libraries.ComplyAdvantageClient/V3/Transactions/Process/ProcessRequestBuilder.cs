@@ -34,7 +34,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V3.Transactions.Process
         {
         }
         /// <summary>
-        /// Creates a transaction and executes our payment screening and transaction monitoring processes.The response will indicate whether the transaction should be held or processed.This endpoint requires PAYMENT_SCREENING_BASE and/or TRANSACTION_MONITORING_BASE account permission depending on the configuration identifies supplied with the payload.
+        /// Creates a transaction and executes our payment screening and transaction monitoring processes. The response will indicate whether the transaction should be held or processed. This endpoint requires PAYMENT_SCREENING_BASE and/or TRANSACTION_MONITORING_BASE account permission depending on the configuration identifies supplied with the payload.
         /// </summary>
         /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_TransactionResponseDTO"/></returns>
         /// <param name="body">The request body</param>
@@ -61,7 +61,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V3.Transactions.Process
             return await RequestAdapter.SendAsync<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_TransactionResponseDTO>(requestInfo, global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_TransactionResponseDTO.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a transaction and executes our payment screening and transaction monitoring processes.The response will indicate whether the transaction should be held or processed.This endpoint requires PAYMENT_SCREENING_BASE and/or TRANSACTION_MONITORING_BASE account permission depending on the configuration identifies supplied with the payload.
+        /// Creates a transaction and executes our payment screening and transaction monitoring processes. The response will indicate whether the transaction should be held or processed. This endpoint requires PAYMENT_SCREENING_BASE and/or TRANSACTION_MONITORING_BASE account permission depending on the configuration identifies supplied with the payload.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

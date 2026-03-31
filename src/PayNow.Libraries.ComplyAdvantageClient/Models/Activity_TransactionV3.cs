@@ -71,6 +71,14 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
 #endif
         /// <summary>The timestamp of the Transaction. This is the timestamp you want us to use as this transactions position in time for the purposes of risk analysis. This timestamp can contain offset information.</summary>
         public DateTimeOffset? OccurredAt { get; set; }
+        /// <summary>The product property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_LoanProductV3? Product { get; set; }
+#nullable restore
+#else
+        public global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_LoanProductV3 Product { get; set; }
+#endif
         /// <summary>The timestamp the Transaction event was received by us.</summary>
         public DateTimeOffset? ReceivedAt { get; private set; }
         /// <summary>Regulatory reporting transaction details.</summary>
@@ -83,6 +91,8 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
 #endif
         /// <summary>Represents the states of review decision</summary>
         public global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_TransactionV3_review_decision? ReviewDecision { get; private set; }
+        /// <summary>The version of the transaction.</summary>
+        public int? Version { get; private set; }
         /// <summary>
         /// Instantiates a new <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_TransactionV3"/> and sets the default values.
         /// </summary>
@@ -118,9 +128,11 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
                 { "identifier", n => { Identifier = n.GetGuidValue(); } },
                 { "initiating_channel", n => { InitiatingChannel = n.GetObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_TransactionV3.Activity_TransactionV3_initiating_channel>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_TransactionV3.Activity_TransactionV3_initiating_channel.CreateFromDiscriminatorValue); } },
                 { "occurred_at", n => { OccurredAt = n.GetDateTimeOffsetValue(); } },
+                { "product", n => { Product = n.GetObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_LoanProductV3>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_LoanProductV3.CreateFromDiscriminatorValue); } },
                 { "received_at", n => { ReceivedAt = n.GetDateTimeOffsetValue(); } },
                 { "regulatory_reporting_details", n => { RegulatoryReportingDetails = n.GetObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_RegulatoryReportDetailsV3>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_RegulatoryReportDetailsV3.CreateFromDiscriminatorValue); } },
                 { "review_decision", n => { ReviewDecision = n.GetEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_TransactionV3_review_decision>(); } },
+                { "version", n => { Version = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -136,6 +148,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             writer.WriteStringValue("external_identifier", ExternalIdentifier);
             writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_TransactionV3.Activity_TransactionV3_initiating_channel>("initiating_channel", InitiatingChannel);
             writer.WriteDateTimeOffsetValue("occurred_at", OccurredAt);
+            writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_LoanProductV3>("product", Product);
             writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_RegulatoryReportDetailsV3>("regulatory_reporting_details", RegulatoryReportingDetails);
             writer.WriteAdditionalData(AdditionalData);
         }

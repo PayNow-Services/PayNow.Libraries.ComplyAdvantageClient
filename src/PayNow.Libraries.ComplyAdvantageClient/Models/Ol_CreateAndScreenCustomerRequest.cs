@@ -23,7 +23,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
 #else
         public global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_CustomerConfigData Configuration { get; set; }
 #endif
-        /// <summary>Customer to be created and screened. It can be either a person, a company or undefined.</summary>
+        /// <summary>Customer to be created and screened. It can be either a person, a company, a vessel or undefined.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_CustomerApi? Customer { get; set; }

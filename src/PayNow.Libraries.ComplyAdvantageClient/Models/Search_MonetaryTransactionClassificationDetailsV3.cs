@@ -167,19 +167,19 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
                 var result = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Search_MonetaryTransactionClassificationDetailsV3.Search_MonetaryTransactionClassificationDetailsV3_details();
-                if("search_BankPaymentMonetaryTransactionTypeDetailsV3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                if("BANK_PAYMENT".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.SearchBankPaymentMonetaryTransactionTypeDetailsV3 = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Search_BankPaymentMonetaryTransactionTypeDetailsV3();
                 }
-                else if("search_CardPaymentMonetaryTransactionTypeDetailsV3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("CARD_PAYMENT".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.SearchCardPaymentMonetaryTransactionTypeDetailsV3 = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Search_CardPaymentMonetaryTransactionTypeDetailsV3();
                 }
-                else if("search_CryptoMonetaryTransactionTypeDetailsV3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("CRYPTO".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.SearchCryptoMonetaryTransactionTypeDetailsV3 = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Search_CryptoMonetaryTransactionTypeDetailsV3();
                 }
-                else if("search_RemittanceMonetaryTransactionTypeDetailsV3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("REMITTANCE".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.SearchRemittanceMonetaryTransactionTypeDetailsV3 = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Search_RemittanceMonetaryTransactionTypeDetailsV3();
                 }

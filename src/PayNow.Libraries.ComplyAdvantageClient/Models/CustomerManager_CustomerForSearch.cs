@@ -78,14 +78,6 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
 #endif
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>The vessel property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::PayNow.Libraries.ComplyAdvantageClient.Models.CustomerManager_VesselForSearch? Vessel { get; set; }
-#nullable restore
-#else
-        public global::PayNow.Libraries.ComplyAdvantageClient.Models.CustomerManager_VesselForSearch Vessel { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.CustomerManager_CustomerForSearch"/> and sets the default values.
         /// </summary>
@@ -122,7 +114,6 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
                 { "status", n => { Status = n.GetEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.CustomerManager_CustomerForSearch_status>(); } },
                 { "undefined_customer_type", n => { UndefinedCustomerType = n.GetObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.CustomerManager_UndefinedForSearch>(global::PayNow.Libraries.ComplyAdvantageClient.Models.CustomerManager_UndefinedForSearch.CreateFromDiscriminatorValue); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
-                { "vessel", n => { Vessel = n.GetObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.CustomerManager_VesselForSearch>(global::PayNow.Libraries.ComplyAdvantageClient.Models.CustomerManager_VesselForSearch.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -143,7 +134,6 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             writer.WriteEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.CustomerManager_CustomerForSearch_status>("status", Status);
             writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.CustomerManager_UndefinedForSearch>("undefined_customer_type", UndefinedCustomerType);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
-            writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.CustomerManager_VesselForSearch>("vessel", Vessel);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

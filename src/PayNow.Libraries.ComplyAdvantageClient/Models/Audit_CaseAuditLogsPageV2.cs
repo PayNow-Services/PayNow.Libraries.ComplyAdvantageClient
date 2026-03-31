@@ -105,7 +105,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_AlertAddedToCaseLogV2"/>, <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_AlertStateUpdatedLogV2"/>, <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_CaseAssignedLogV2"/>, <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_CaseCreatedLogV2"/>, <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_CaseTransitionedLogV2"/>, <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_CustomerScreenedLogV2"/>, <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_NoteCreatedToCaseActionLogV2"/>, <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_NoteToCaseObjectLogV2"/>, <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_NoteToRiskLogV2"/>, <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_RiskSignalTransitionedLogV2"/>
+        /// Composed type wrapper for classes <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_AlertAddedToCaseLogV2"/>, <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_AlertStateUpdatedLogV2"/>, <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_CaseAssignedLogV2"/>, <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_CaseCreatedLogV2"/>, <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_CaseTransitionedLogV2"/>, <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_CustomerScreenedLogV2"/>, <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_NoteCreatedToCaseActionLogV2"/>, <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_NoteToCaseObjectLogV2"/>, <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_NoteToRiskLogV2"/>, <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_RiskCodeMutedForEntityDetailV2"/>, <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_RiskCodeUnmutedForEntityLogV2"/>, <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_RiskSignalTransitionedLogV2"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Audit_CaseAuditLogsPageV2_audit_logs : IComposedTypeWrapper, IParsable
@@ -182,6 +182,22 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
 #else
             public global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_NoteToRiskLogV2 AuditNoteToRiskLogV2 { get; set; }
 #endif
+            /// <summary>Composed type representation for type <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_RiskCodeMutedForEntityDetailV2"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_RiskCodeMutedForEntityDetailV2? AuditRiskCodeMutedForEntityDetailV2 { get; set; }
+#nullable restore
+#else
+            public global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_RiskCodeMutedForEntityDetailV2 AuditRiskCodeMutedForEntityDetailV2 { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_RiskCodeUnmutedForEntityLogV2"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_RiskCodeUnmutedForEntityLogV2? AuditRiskCodeUnmutedForEntityLogV2 { get; set; }
+#nullable restore
+#else
+            public global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_RiskCodeUnmutedForEntityLogV2 AuditRiskCodeUnmutedForEntityLogV2 { get; set; }
+#endif
             /// <summary>Composed type representation for type <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_RiskSignalTransitionedLogV2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -236,6 +252,14 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
                 {
                     result.AuditNoteToRiskLogV2 = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_NoteToRiskLogV2();
                 }
+                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.AuditRiskCodeMutedForEntityDetailV2 = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_RiskCodeMutedForEntityDetailV2();
+                }
+                else if("RISK_CODE_UNMUTED_FOR_ENTITY".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.AuditRiskCodeUnmutedForEntityLogV2 = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_RiskCodeUnmutedForEntityLogV2();
+                }
                 else if("RISK_STATUS_UPDATED".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.AuditRiskSignalTransitionedLogV2 = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_RiskSignalTransitionedLogV2();
@@ -283,6 +307,14 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
                 else if(AuditNoteToRiskLogV2 != null)
                 {
                     return AuditNoteToRiskLogV2.GetFieldDeserializers();
+                }
+                else if(AuditRiskCodeMutedForEntityDetailV2 != null)
+                {
+                    return AuditRiskCodeMutedForEntityDetailV2.GetFieldDeserializers();
+                }
+                else if(AuditRiskCodeUnmutedForEntityLogV2 != null)
+                {
+                    return AuditRiskCodeUnmutedForEntityLogV2.GetFieldDeserializers();
                 }
                 else if(AuditRiskSignalTransitionedLogV2 != null)
                 {
@@ -332,6 +364,14 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
                 else if(AuditNoteToRiskLogV2 != null)
                 {
                     writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_NoteToRiskLogV2>(null, AuditNoteToRiskLogV2);
+                }
+                else if(AuditRiskCodeMutedForEntityDetailV2 != null)
+                {
+                    writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_RiskCodeMutedForEntityDetailV2>(null, AuditRiskCodeMutedForEntityDetailV2);
+                }
+                else if(AuditRiskCodeUnmutedForEntityLogV2 != null)
+                {
+                    writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_RiskCodeUnmutedForEntityLogV2>(null, AuditRiskCodeUnmutedForEntityLogV2);
                 }
                 else if(AuditRiskSignalTransitionedLogV2 != null)
                 {
