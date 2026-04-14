@@ -14,6 +14,14 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Supply CUSTOMER and your customer will not be screened.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ps_NameSettings_ignored_parties?>? IgnoredParties { get; set; }
+#nullable restore
+#else
+        public List<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ps_NameSettings_ignored_parties?> IgnoredParties { get; set; }
+#endif
         /// <summary>A search fuzziness score between 0 and 1 by 0.1 increments, where 0 is a narrow search and 1 is a broad search. If provided, this value overrides the overall source collection fuzziness.</summary>
         public float? NameFuzziness { get; set; }
         /// <summary>Choose one or more of these options to use them in name searches.</summary>
@@ -49,6 +57,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "ignored_parties", n => { IgnoredParties = n.GetCollectionOfEnumValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ps_NameSettings_ignored_parties>()?.AsList(); } },
                 { "name_fuzziness", n => { NameFuzziness = n.GetFloatValue(); } },
                 { "options", n => { Options = n.GetCollectionOfEnumValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ps_NameSettings_options>()?.AsList(); } },
             };
@@ -60,6 +69,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfEnumValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ps_NameSettings_ignored_parties>("ignored_parties", IgnoredParties);
             writer.WriteFloatValue("name_fuzziness", NameFuzziness);
             writer.WriteCollectionOfEnumValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ps_NameSettings_options>("options", Options);
             writer.WriteAdditionalData(AdditionalData);

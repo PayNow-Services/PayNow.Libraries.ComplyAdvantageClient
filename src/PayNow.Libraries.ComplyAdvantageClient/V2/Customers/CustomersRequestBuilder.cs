@@ -66,7 +66,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Customers
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CustomersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/customers{?acquisition_source*,created_at_from*,created_at_to*,labels*,monitoring_enabled*,page_number*,page_size*,risk_level*,search*,segments*,sort*,status*,type*,updated_at_from*,updated_at_to*}", pathParameters)
+        public CustomersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/customers{?acquisition_source*,created_at_from*,created_at_to*,industry_code*,industry_code_description*,labels*,monitoring_enabled*,page_number*,page_size*,risk_level*,search*,segments*,sort*,status*,type*,updated_at_from*,updated_at_to*}", pathParameters)
         {
         }
         /// <summary>
@@ -74,7 +74,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Customers
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CustomersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/customers{?acquisition_source*,created_at_from*,created_at_to*,labels*,monitoring_enabled*,page_number*,page_size*,risk_level*,search*,segments*,sort*,status*,type*,updated_at_from*,updated_at_to*}", rawUrl)
+        public CustomersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/customers{?acquisition_source*,created_at_from*,created_at_to*,industry_code*,industry_code_description*,labels*,monitoring_enabled*,page_number*,page_size*,risk_level*,search*,segments*,sort*,status*,type*,updated_at_from*,updated_at_to*}", rawUrl)
         {
         }
         /// <summary>
@@ -151,6 +151,24 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Customers
             public DateTimeOffset? CreatedAtFrom { get; set; }
             [QueryParameter("created_at_to")]
             public DateTimeOffset? CreatedAtTo { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("industry_code")]
+            public string[]? IndustryCode { get; set; }
+#nullable restore
+#else
+            [QueryParameter("industry_code")]
+            public string[] IndustryCode { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("industry_code_description")]
+            public string[]? IndustryCodeDescription { get; set; }
+#nullable restore
+#else
+            [QueryParameter("industry_code_description")]
+            public string[] IndustryCodeDescription { get; set; }
+#endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("labels")]

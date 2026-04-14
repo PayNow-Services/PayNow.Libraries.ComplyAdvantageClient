@@ -56,12 +56,15 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
 #else
         public List<string> SourceIdentifiers { get; set; }
 #endif
+        /// <summary>The type of sources in this collection. CUSTOM_LIST collections may only be used with name_screening_settings.</summary>
+        public global::PayNow.Libraries.ComplyAdvantageClient.Models.Ps_SourceCollection_source_type? SourceType { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Ps_SourceCollection"/> and sets the default values.
         /// </summary>
         public Ps_SourceCollection()
         {
             AdditionalData = new Dictionary<string, object>();
+            SourceType = global::PayNow.Libraries.ComplyAdvantageClient.Models.Ps_SourceCollection_source_type.SANCTION;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -87,6 +90,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
                 { "name_settings", n => { NameSettings = n.GetObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ps_NameSettings>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Ps_NameSettings.CreateFromDiscriminatorValue); } },
                 { "reference_text_settings", n => { ReferenceTextSettings = n.GetObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ps_ReferenceTextSettings>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Ps_ReferenceTextSettings.CreateFromDiscriminatorValue); } },
                 { "source_identifiers", n => { SourceIdentifiers = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "source_type", n => { SourceType = n.GetEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ps_SourceCollection_source_type>(); } },
             };
         }
         /// <summary>
@@ -102,6 +106,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ps_NameSettings>("name_settings", NameSettings);
             writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ps_ReferenceTextSettings>("reference_text_settings", ReferenceTextSettings);
             writer.WriteCollectionOfPrimitiveValues<string>("source_identifiers", SourceIdentifiers);
+            writer.WriteEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ps_SourceCollection_source_type>("source_type", SourceType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

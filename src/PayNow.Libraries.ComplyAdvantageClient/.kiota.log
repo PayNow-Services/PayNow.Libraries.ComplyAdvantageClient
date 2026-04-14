@@ -1,6 +1,6 @@
 Warning: KiotaBuilder OpenAPI warning: #/ - The schema case-management_CaseTransitionRequest is a polymorphic type but does not define a discriminator. This will result in serialization errors.
-Warning: KiotaBuilder OpenAPI warning: #/ - The schema case-management_StageData is a polymorphic type but does not define a discriminator. This will result in serialization errors.
 Warning: KiotaBuilder OpenAPI warning: #/ - The schema ol_StepOutput is a polymorphic type but does not define a discriminator. This will result in serialization errors.
+Warning: KiotaBuilder OpenAPI warning: #/ - The schema case-management_StageData is a polymorphic type but does not define a discriminator. This will result in serialization errors.
 Warning: KiotaBuilder OpenAPI warning: #/ - The schema case-management_TransitionCaseBulkActionPayload is a polymorphic type but does not define a discriminator. This will result in serialization errors.
 Warning: KiotaBuilder OpenAPI warning: #/ - The schema case-management_PaymentSummaryResponse is a polymorphic type but does not define a discriminator. This will result in serialization errors.
 Warning: KiotaBuilder OpenAPI warning: #/ - The schema /v2/alerts/{alert_identifier}/risks is a polymorphic type but does not define a discriminator. This will result in serialization errors.
@@ -24,6 +24,10 @@ Warning: KiotaBuilder OpenAPI warning: #/components/schemas/cert_ProblemDetailEr
 Warning: KiotaBuilder OpenAPI warning: #/components/schemas/cert_ProblemDetailErrorResponse/properties/type - The format uri is not supported by Kiota and the string type will be used.
 Warning: KiotaBuilder OpenAPI warning: #/components/schemas/customer-manager_Address/properties/country - The format iso-3166-alpha-2 is not supported by Kiota for the type String and the string type will be used.
 Warning: KiotaBuilder OpenAPI warning: #/components/schemas/customer-manager_Company/allOf/0/properties/place_of_registration - The format iso-3166-2 is not supported by Kiota for the type String and the string type will be used.
+Warning: KiotaBuilder OpenAPI warning: #/components/schemas/customer-manager_ContactInformation/properties/email_address - The format email is not supported by Kiota and the string type will be used.
+Warning: KiotaBuilder OpenAPI warning: #/components/schemas/customer-manager_ContactInformation/properties/email_address/items - The format email is not supported by Kiota and the string type will be used.
+Warning: KiotaBuilder OpenAPI warning: #/components/schemas/customer-manager_ContactInformation/properties/url - The format uri is not supported by Kiota and the string type will be used.
+Warning: KiotaBuilder OpenAPI warning: #/components/schemas/customer-manager_ContactInformation/properties/url/items - The format uri is not supported by Kiota and the string type will be used.
 Warning: KiotaBuilder OpenAPI warning: #/components/schemas/customer-manager_CustomerTypeUndefined/allOf/0/properties/country/items - The format iso-3166-alpha-2 is not supported by Kiota for the type String and the string type will be used.
 Warning: KiotaBuilder OpenAPI warning: #/components/schemas/customer-manager_NetWorth/properties/currency - The format iso-4217 is not supported by Kiota for the type String and the string type will be used.
 Warning: KiotaBuilder OpenAPI warning: #/components/schemas/customer-manager_Person/allOf/0/properties/country_of_birth - The format iso-3166-alpha-2 is not supported by Kiota for the type String and the string type will be used.
@@ -84,6 +88,7 @@ Warning: KiotaBuilder OpenAPI warning: #/components/schemas/sra_ProblemDetailErr
 Warning: KiotaBuilder OpenAPI warning: #/components/schemas/sra_ProblemDetailErrorResponse/properties/type - The format uri is not supported by Kiota and the string type will be used.
 Error: KiotaBuilder OpenAPI error: #/components/schemas/case-management_CustomerSubject/discriminator - Schema  must contain property specified in the discriminator detail.type in the required field list.
 Error: KiotaBuilder OpenAPI error: #/components/schemas/case-management_TransactionSubject/discriminator - Schema  must contain property specified in the discriminator detail.type in the required field list.
+Warning: KiotaBuilder API client was generated with version 1.30.0 and the current version is 1.31.1, it will be upgraded and you should upgrade dependencies
 Warning: KiotaBuilder Discriminator case-management_CustomerSubject is not a valid model and points to a union type.
 Warning: KiotaBuilder Discriminator case-management_TransactionSubject is not a valid model and points to a union type.
 Warning: KiotaBuilder Discriminator case-management_CompanySubject is not inherited from caseManagement_CustomerSubject.
