@@ -40,6 +40,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Alerts.Mutes.Item.Customer.I
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Am_ProblemDetailErrorResponse">When receiving a 400 status code</exception>
         /// <exception cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Am_ProblemDetailErrorResponse">When receiving a 404 status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -62,6 +63,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Alerts.Mutes.Item.Customer.I
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -81,6 +83,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Alerts.Mutes.Item.Customer.I
         /// </summary>
         /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.V2.Alerts.Mutes.Item.Customer.Item.WithCustomer_identifierItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::PayNow.Libraries.ComplyAdvantageClient.V2.Alerts.Mutes.Item.Customer.Item.WithCustomer_identifierItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::PayNow.Libraries.ComplyAdvantageClient.V2.Alerts.Mutes.Item.Customer.Item.WithCustomer_identifierItemRequestBuilder(rawUrl, RequestAdapter);

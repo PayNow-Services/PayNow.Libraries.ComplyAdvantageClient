@@ -38,6 +38,8 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
 #endif
         /// <summary>Timestamp when the configuration was last updated</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
+        /// <summary>Last updated by the user</summary>
+        public Guid? UpdatedBy { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Ns_EmailConfigurationLog"/> and sets the default values.
         /// </summary>
@@ -69,6 +71,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
                 { "identifier", n => { Identifier = n.GetGuidValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                { "updated_by", n => { UpdatedBy = n.GetGuidValue(); } },
             };
         }
         /// <summary>
@@ -84,6 +87,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             writer.WriteGuidValue("identifier", Identifier);
             writer.WriteStringValue("type", Type);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
+            writer.WriteGuidValue("updated_by", UpdatedBy);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

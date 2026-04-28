@@ -1,11 +1,12 @@
+Warning: KiotaBuilder OpenAPI warning: #/ - The schema case-management_PaymentSummaryResponse is a polymorphic type but does not define a discriminator. This will result in serialization errors.
+Warning: KiotaBuilder OpenAPI warning: #/ - The schema case-management_CaseTransitionRequest is a polymorphic type but does not define a discriminator. This will result in serialization errors.
 Warning: KiotaBuilder OpenAPI warning: #/ - The schema ol_StepOutput is a polymorphic type but does not define a discriminator. This will result in serialization errors.
 Warning: KiotaBuilder OpenAPI warning: #/ - The schema case-management_StageData is a polymorphic type but does not define a discriminator. This will result in serialization errors.
-Warning: KiotaBuilder OpenAPI warning: #/ - The schema case-management_CaseTransitionRequest is a polymorphic type but does not define a discriminator. This will result in serialization errors.
 Warning: KiotaBuilder OpenAPI warning: #/ - The schema case-management_TransitionCaseBulkActionPayload is a polymorphic type but does not define a discriminator. This will result in serialization errors.
-Warning: KiotaBuilder OpenAPI warning: #/ - The schema case-management_PaymentSummaryResponse is a polymorphic type but does not define a discriminator. This will result in serialization errors.
 Warning: KiotaBuilder OpenAPI warning: #/ - The schema /v2/alerts/{alert_identifier}/risks is a polymorphic type but does not define a discriminator. This will result in serialization errors.
 Warning: KiotaBuilder OpenAPI warning: #/ - The schema /v2/iam/roles/{role_identifier} is a polymorphic type but does not define a discriminator. This will result in serialization errors.
 Warning: KiotaBuilder OpenAPI warning: #/ - The schema /v2/iam/roles is a polymorphic type but does not define a discriminator. This will result in serialization errors.
+Warning: KiotaBuilder OpenAPI warning: #/ - The schema /v2/iam/roles/{role_identifier} is a polymorphic type but does not define a discriminator. This will result in serialization errors.
 Warning: KiotaBuilder OpenAPI warning: #/components/schemas/TokenCreateRequestBody/properties/username - The format email is not supported by Kiota and the string type will be used.
 Warning: KiotaBuilder OpenAPI warning: #/components/schemas/activity_ChannelNetworkDetailsV3/properties/country - The format iso-3166-alpha-2 is not supported by Kiota for the type String and the string type will be used.
 Warning: KiotaBuilder OpenAPI warning: #/components/schemas/activity_MonetaryValueV3/properties/currency - The format iso-4217 is not supported by Kiota for the type String and the string type will be used.
@@ -61,6 +62,10 @@ Warning: KiotaBuilder OpenAPI warning: #/components/schemas/ns_WebhookConfigurat
 Warning: KiotaBuilder OpenAPI warning: #/components/schemas/ol_Address/properties/country - The format iso-3166-alpha-2 is not supported by Kiota for the type String and the string type will be used.
 Warning: KiotaBuilder OpenAPI warning: #/components/schemas/ol_ChannelNetworkDetailsV3/properties/country - The format iso-3166-alpha-2 is not supported by Kiota for the type String and the string type will be used.
 Warning: KiotaBuilder OpenAPI warning: #/components/schemas/ol_Company/properties/place_of_registration - The format iso-3166-2 is not supported by Kiota for the type String and the string type will be used.
+Warning: KiotaBuilder OpenAPI warning: #/components/schemas/ol_ContactInformation/properties/email_address - The format email is not supported by Kiota and the string type will be used.
+Warning: KiotaBuilder OpenAPI warning: #/components/schemas/ol_ContactInformation/properties/email_address/items - The format email is not supported by Kiota and the string type will be used.
+Warning: KiotaBuilder OpenAPI warning: #/components/schemas/ol_ContactInformation/properties/url - The format uri is not supported by Kiota and the string type will be used.
+Warning: KiotaBuilder OpenAPI warning: #/components/schemas/ol_ContactInformation/properties/url/items - The format uri is not supported by Kiota and the string type will be used.
 Warning: KiotaBuilder OpenAPI warning: #/components/schemas/ol_CustomerTypeUndefined/properties/country - The format iso-3166-alpha-2 is not supported by Kiota for the type Array and the string type will be used.
 Warning: KiotaBuilder OpenAPI warning: #/components/schemas/ol_CustomerTypeUndefined/properties/country/items - The format iso-3166-alpha-2 is not supported by Kiota for the type String and the string type will be used.
 Warning: KiotaBuilder OpenAPI warning: #/components/schemas/ol_MonetaryValueV3/properties/currency - The format iso-4217 is not supported by Kiota for the type String and the string type will be used.

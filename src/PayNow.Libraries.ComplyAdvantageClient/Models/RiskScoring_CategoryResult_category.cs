@@ -28,5 +28,9 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         #pragma warning disable CS1591
         SCREENING,
         #pragma warning restore CS1591
+        [EnumMember(Value = "CUSTOM_FIELDS")]
+        #pragma warning disable CS1591
+        CUSTOM_FIELDS,
+        #pragma warning restore CS1591
     }
 }

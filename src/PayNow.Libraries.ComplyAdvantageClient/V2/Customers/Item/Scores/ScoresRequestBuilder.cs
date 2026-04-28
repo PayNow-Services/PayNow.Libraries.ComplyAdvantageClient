@@ -59,6 +59,35 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Customers.Item.Scores
             return await RequestAdapter.SendAsync<global::PayNow.Libraries.ComplyAdvantageClient.Models.RiskScoring_RiskScore>(requestInfo, global::PayNow.Libraries.ComplyAdvantageClient.Models.RiskScoring_RiskScore.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
+        /// Manually override the overall risk score level for a customer. Once overridden, the risk score type is set to MANUAL and will not be automatically recalculated by the system. The manual override persists until explicitly changed again through this endpoint or removed. You need the &quot;Update customers&quot; permission to use this endpoint.
+        /// </summary>
+        /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.RiskScoring_RiskScore"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.RiskScoring_ProblemDetailErrorResponse">When receiving a 400 status code</exception>
+        /// <exception cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.RiskScoring_ProblemDetailErrorResponse">When receiving a 403 status code</exception>
+        /// <exception cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.RiskScoring_ProblemDetailErrorResponse">When receiving a 404 status code</exception>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::PayNow.Libraries.ComplyAdvantageClient.Models.RiskScoring_RiskScore?> PatchAsync(global::PayNow.Libraries.ComplyAdvantageClient.Models.RiskScoring_RiskScoreOverrideRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::PayNow.Libraries.ComplyAdvantageClient.Models.RiskScoring_RiskScore> PatchAsync(global::PayNow.Libraries.ComplyAdvantageClient.Models.RiskScoring_RiskScoreOverrideRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::PayNow.Libraries.ComplyAdvantageClient.Models.RiskScoring_ProblemDetailErrorResponse.CreateFromDiscriminatorValue },
+                { "403", global::PayNow.Libraries.ComplyAdvantageClient.Models.RiskScoring_ProblemDetailErrorResponse.CreateFromDiscriminatorValue },
+                { "404", global::PayNow.Libraries.ComplyAdvantageClient.Models.RiskScoring_ProblemDetailErrorResponse.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::PayNow.Libraries.ComplyAdvantageClient.Models.RiskScoring_RiskScore>(requestInfo, global::PayNow.Libraries.ComplyAdvantageClient.Models.RiskScoring_RiskScore.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
         /// This endpoint returns the latest risk score for a customer. It includes the overall score and level as well as a breakdown of the score by category.You need the &quot;View customers&quot; permission to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
@@ -75,6 +104,28 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Customers.Item.Scores
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
+            return requestInfo;
+        }
+        /// <summary>
+        /// Manually override the overall risk score level for a customer. Once overridden, the risk score type is set to MANUAL and will not be automatically recalculated by the system. The manual override persists until explicitly changed again through this endpoint or removed. You need the &quot;Update customers&quot; permission to use this endpoint.
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToPatchRequestInformation(global::PayNow.Libraries.ComplyAdvantageClient.Models.RiskScoring_RiskScoreOverrideRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToPatchRequestInformation(global::PayNow.Libraries.ComplyAdvantageClient.Models.RiskScoring_RiskScoreOverrideRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -109,6 +160,14 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Customers.Item.Scores
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ScoresRequestBuilderGetRequestConfiguration : RequestConfiguration<global::PayNow.Libraries.ComplyAdvantageClient.V2.Customers.Item.Scores.ScoresRequestBuilder.ScoresRequestBuilderGetQueryParameters>
+        {
+        }
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
+        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class ScoresRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

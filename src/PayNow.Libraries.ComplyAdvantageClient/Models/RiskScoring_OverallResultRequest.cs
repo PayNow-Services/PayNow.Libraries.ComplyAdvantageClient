@@ -7,41 +7,31 @@ using System.IO;
 using System;
 namespace PayNow.Libraries.ComplyAdvantageClient.Models
 {
-    /// <summary>
-    /// The value of the custom field.
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class Ol_CustomFieldValue : IAdditionalDataHolder, IParsable
+    #pragma warning disable CS1591
+    public partial class RiskScoring_OverallResultRequest : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The type of data stored in a custom field.</summary>
-        public global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_CustomFieldDataType? DataType { get; set; }
+        /// <summary>The level property</summary>
+        public global::PayNow.Libraries.ComplyAdvantageClient.Models.RiskScoring_OverallResultRequest_level? Level { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_CustomFieldValue"/> and sets the default values.
+        /// Instantiates a new <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.RiskScoring_OverallResultRequest"/> and sets the default values.
         /// </summary>
-        public Ol_CustomFieldValue()
+        public RiskScoring_OverallResultRequest()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_CustomFieldValue"/></returns>
+        /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.RiskScoring_OverallResultRequest"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_CustomFieldValue CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::PayNow.Libraries.ComplyAdvantageClient.Models.RiskScoring_OverallResultRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("data_type")?.GetStringValue();
-            return mappingValue switch
-            {
-                "DATE" => new global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_DateValue(),
-                "DATETIME" => new global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_DatetimeValue(),
-                "DECIMAL" => new global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_DecimalValue(),
-                "INTEGER" => new global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_IntegerValue(),
-                "TEXT" => new global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_TextValue(),
-                _ => new global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_CustomFieldValue(),
-            };
+            return new global::PayNow.Libraries.ComplyAdvantageClient.Models.RiskScoring_OverallResultRequest();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -51,7 +41,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "data_type", n => { DataType = n.GetEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_CustomFieldDataType>(); } },
+                { "level", n => { Level = n.GetEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.RiskScoring_OverallResultRequest_level>(); } },
             };
         }
         /// <summary>
@@ -61,7 +51,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_CustomFieldDataType>("data_type", DataType);
+            writer.WriteEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.RiskScoring_OverallResultRequest_level>("level", Level);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

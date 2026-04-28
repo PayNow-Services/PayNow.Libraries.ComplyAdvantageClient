@@ -34,7 +34,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Cases.Notes.Bulk
         {
         }
         /// <summary>
-        /// This endpoint creates a note for multiple cases. Up to 100 cases.
+        /// This endpoint creates a note for multiple cases. Up to 100 cases.You need the &quot;Update cases&quot; permission to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">Add note to multiple cases (bulk action).</param>
@@ -59,7 +59,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Cases.Notes.Bulk
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This endpoint creates a note for multiple cases. Up to 100 cases.
+        /// This endpoint creates a note for multiple cases. Up to 100 cases.You need the &quot;Update cases&quot; permission to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Add note to multiple cases (bulk action).</param>

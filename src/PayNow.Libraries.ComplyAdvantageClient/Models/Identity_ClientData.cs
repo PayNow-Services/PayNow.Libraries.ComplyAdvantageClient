@@ -20,6 +20,8 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         public bool? AllowPasswordLogin { get; set; }
         /// <summary>If SSO login is enabled or disabled.</summary>
         public bool? AllowSsoLogin { get; set; }
+        /// <summary>Indicates whether the client has access to self-serve subscription management</summary>
+        public bool? CanManageSubscription { get; set; }
         /// <summary>Date and time the client was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>Date and time the client was deactivated.</summary>
@@ -72,6 +74,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
                 { "active", n => { Active = n.GetBoolValue(); } },
                 { "allow_password_login", n => { AllowPasswordLogin = n.GetBoolValue(); } },
                 { "allow_sso_login", n => { AllowSsoLogin = n.GetBoolValue(); } },
+                { "can_manage_subscription", n => { CanManageSubscription = n.GetBoolValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "deactivated_at", n => { DeactivatedAt = n.GetDateTimeOffsetValue(); } },
                 { "identifier", n => { Identifier = n.GetGuidValue(); } },
@@ -90,6 +93,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             writer.WriteBoolValue("active", Active);
             writer.WriteBoolValue("allow_password_login", AllowPasswordLogin);
             writer.WriteBoolValue("allow_sso_login", AllowSsoLogin);
+            writer.WriteBoolValue("can_manage_subscription", CanManageSubscription);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteDateTimeOffsetValue("deactivated_at", DeactivatedAt);
             writer.WriteGuidValue("identifier", Identifier);

@@ -3,29 +3,26 @@ using System.Runtime.Serialization;
 using System;
 namespace PayNow.Libraries.ComplyAdvantageClient.Models
 {
-    /// <summary>The type of data stored in a custom field.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum Ol_CustomFieldDataType
+    #pragma warning disable CS1591
+    public enum RiskScoring_OverallResultRequest_level
+    #pragma warning restore CS1591
     {
-        [EnumMember(Value = "TEXT")]
+        [EnumMember(Value = "LOW")]
         #pragma warning disable CS1591
-        TEXT,
+        LOW,
         #pragma warning restore CS1591
-        [EnumMember(Value = "INTEGER")]
+        [EnumMember(Value = "MEDIUM")]
         #pragma warning disable CS1591
-        INTEGER,
+        MEDIUM,
         #pragma warning restore CS1591
-        [EnumMember(Value = "DECIMAL")]
+        [EnumMember(Value = "HIGH")]
         #pragma warning disable CS1591
-        DECIMAL,
+        HIGH,
         #pragma warning restore CS1591
-        [EnumMember(Value = "DATE")]
+        [EnumMember(Value = "PROHIBITED")]
         #pragma warning disable CS1591
-        DATE,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "DATETIME")]
-        #pragma warning disable CS1591
-        DATETIME,
+        PROHIBITED,
         #pragma warning restore CS1591
     }
 }

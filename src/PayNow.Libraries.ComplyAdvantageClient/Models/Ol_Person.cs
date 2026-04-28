@@ -48,7 +48,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
 #else
         public global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_Date DateOfBirth { get; set; }
 #endif
-        /// <summary>The fathers_name property</summary>
+        /// <summary>Field to capture the patronymic name of the customer</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FathersName { get; set; }
@@ -98,7 +98,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
 #else
         public string MiddleName { get; set; }
 #endif
-        /// <summary>The mothers_name property</summary>
+        /// <summary>Field to capture the matronymic name of the customer</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MothersName { get; set; }

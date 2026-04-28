@@ -53,6 +53,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Alerts.Mutes
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Am_ProblemDetailErrorResponse">When receiving a 400 status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::PayNow.Libraries.ComplyAdvantageClient.Models.Am_GetAlertMutesResponse?> GetAsync(Action<RequestConfiguration<global::PayNow.Libraries.ComplyAdvantageClient.V2.Alerts.Mutes.MutesRequestBuilder.MutesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -78,6 +79,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Alerts.Mutes
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Am_ProblemDetailErrorResponse">When receiving a 400 status code</exception>
         /// <exception cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Am_ProblemDetailErrorResponse">When receiving a 409 status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::PayNow.Libraries.ComplyAdvantageClient.Models.Am_AlertMuteDTO?> PostAsync(global::PayNow.Libraries.ComplyAdvantageClient.Models.Am_CreateAlertMuteRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -101,6 +103,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Alerts.Mutes
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::PayNow.Libraries.ComplyAdvantageClient.V2.Alerts.Mutes.MutesRequestBuilder.MutesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -121,6 +124,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Alerts.Mutes
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::PayNow.Libraries.ComplyAdvantageClient.Models.Am_CreateAlertMuteRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -142,6 +146,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Alerts.Mutes
         /// </summary>
         /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.V2.Alerts.Mutes.MutesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::PayNow.Libraries.ComplyAdvantageClient.V2.Alerts.Mutes.MutesRequestBuilder WithUrl(string rawUrl)
         {
             return new global::PayNow.Libraries.ComplyAdvantageClient.V2.Alerts.Mutes.MutesRequestBuilder(rawUrl, RequestAdapter);

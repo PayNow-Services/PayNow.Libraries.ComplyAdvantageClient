@@ -18,6 +18,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Alerts.Mutes.Item.Customer
         /// <summary>Gets an item from the PayNow.Libraries.ComplyAdvantageClient.v2.alerts.mutes.item.customer.item collection</summary>
         /// <param name="position">UUID Identifier for the Customer</param>
         /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.V2.Alerts.Mutes.Item.Customer.Item.WithCustomer_identifierItemRequestBuilder"/></returns>
+        [Obsolete("")]
         public global::PayNow.Libraries.ComplyAdvantageClient.V2.Alerts.Mutes.Item.Customer.Item.WithCustomer_identifierItemRequestBuilder this[Guid position]
         {
             get
