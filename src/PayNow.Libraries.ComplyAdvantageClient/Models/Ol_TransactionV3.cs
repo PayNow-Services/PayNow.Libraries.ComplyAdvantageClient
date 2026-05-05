@@ -184,11 +184,11 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
                 var result = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_TransactionV3.Ol_TransactionV3_initiating_channel();
-                if("ATM".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                if("ol_AtmChannelV3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.OlAtmChannelV3 = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_AtmChannelV3();
                 }
-                else if("DEVICE".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("ol_DeviceChannelV3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.OlDeviceChannelV3 = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_DeviceChannelV3();
                 }

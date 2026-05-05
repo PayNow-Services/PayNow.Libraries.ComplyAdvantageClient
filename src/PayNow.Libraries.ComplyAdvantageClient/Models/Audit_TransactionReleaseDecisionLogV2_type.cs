@@ -8,9 +8,9 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
     public enum Audit_TransactionReleaseDecisionLogV2_type
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "TRANSACTION_RELEASE_DECISION")]
+        [EnumMember(Value = "TRANSACTION_DECISION")]
         #pragma warning disable CS1591
-        TRANSACTION_RELEASE_DECISION,
+        TRANSACTION_DECISION,
         #pragma warning restore CS1591
     }
 }

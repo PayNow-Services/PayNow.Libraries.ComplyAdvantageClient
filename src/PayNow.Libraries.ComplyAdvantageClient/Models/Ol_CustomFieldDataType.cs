@@ -19,13 +19,5 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         #pragma warning disable CS1591
         DECIMAL,
         #pragma warning restore CS1591
-        [EnumMember(Value = "DATE")]
-        #pragma warning disable CS1591
-        DATE,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "DATETIME")]
-        #pragma warning disable CS1591
-        DATETIME,
-        #pragma warning restore CS1591
     }
 }

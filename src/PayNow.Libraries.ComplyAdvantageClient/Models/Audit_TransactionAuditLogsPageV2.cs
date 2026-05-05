@@ -212,7 +212,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
                 {
                     result.AuditTransactionReceivedLogV2 = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_TransactionReceivedLogV2();
                 }
-                else if("TRANSACTION_RELEASE_DECISION".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("TRANSACTION_DECISION".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.AuditTransactionReleaseDecisionLogV2 = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_TransactionReleaseDecisionLogV2();
                 }

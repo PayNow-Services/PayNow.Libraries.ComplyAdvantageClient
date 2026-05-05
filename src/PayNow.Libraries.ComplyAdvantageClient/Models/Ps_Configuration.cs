@@ -22,14 +22,6 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>Supply CUSTOMER and your customer will not be screened.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ps_Configuration_ignored_parties?>? IgnoredParties { get; set; }
-#nullable restore
-#else
-        public List<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ps_Configuration_ignored_parties?> IgnoredParties { get; set; }
-#endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -72,7 +64,6 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "ignored_parties", n => { IgnoredParties = n.GetCollectionOfEnumValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ps_Configuration_ignored_parties>()?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "source_collections", n => { SourceCollections = n.GetCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ps_SourceCollection>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Ps_SourceCollection.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -85,7 +76,6 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("description", Description);
-            writer.WriteCollectionOfEnumValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ps_Configuration_ignored_parties>("ignored_parties", IgnoredParties);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ps_SourceCollection>("source_collections", SourceCollections);
             writer.WriteAdditionalData(AdditionalData);

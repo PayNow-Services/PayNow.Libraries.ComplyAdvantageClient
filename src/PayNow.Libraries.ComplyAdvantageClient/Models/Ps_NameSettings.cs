@@ -22,7 +22,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
 #else
         public List<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ps_NameSettings_ignored_parties?> IgnoredParties { get; set; }
 #endif
-        /// <summary>A search fuzziness score between 0 and 1 by 0.1 increments, where 0 is a narrow search and 1 is a broad search. If provided, this value overrides the overall source collection fuzziness.</summary>
+        /// <summary>A search fuzziness score between 0 and 1 by 0.1 increments, where 0 is a narrow search and 1 is a broad search.</summary>
         public float? NameFuzziness { get; set; }
         /// <summary>Choose one or more of these options to use them in name searches.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

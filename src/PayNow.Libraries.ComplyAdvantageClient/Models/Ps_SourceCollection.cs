@@ -22,8 +22,6 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
 #else
         public global::PayNow.Libraries.ComplyAdvantageClient.Models.Ps_BicSettings BicSettings { get; set; }
 #endif
-        /// <summary>A search fuzziness score between 0 and 1 by 0.1 increments, where 0 is a narrow search and 1 is a broad search.</summary>
-        public float? Fuzziness { get; set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -85,7 +83,6 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "bic_settings", n => { BicSettings = n.GetObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ps_BicSettings>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Ps_BicSettings.CreateFromDiscriminatorValue); } },
-                { "fuzziness", n => { Fuzziness = n.GetFloatValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "name_settings", n => { NameSettings = n.GetObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ps_NameSettings>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Ps_NameSettings.CreateFromDiscriminatorValue); } },
                 { "reference_text_settings", n => { ReferenceTextSettings = n.GetObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ps_ReferenceTextSettings>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Ps_ReferenceTextSettings.CreateFromDiscriminatorValue); } },
@@ -101,7 +98,6 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ps_BicSettings>("bic_settings", BicSettings);
-            writer.WriteFloatValue("fuzziness", Fuzziness);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ps_NameSettings>("name_settings", NameSettings);
             writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ps_ReferenceTextSettings>("reference_text_settings", ReferenceTextSettings);

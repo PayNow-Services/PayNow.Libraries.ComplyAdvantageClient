@@ -72,27 +72,11 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_DatetimeValue"/>, <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_DateValue"/>, <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_DecimalValue"/>, <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_IntegerValue"/>, <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_TextValue"/>
+        /// Composed type wrapper for classes <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_DecimalValue"/>, <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_IntegerValue"/>, <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_TextValue"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Ol_CustomFieldInstance_value : IComposedTypeWrapper, IParsable
         {
-            /// <summary>Composed type representation for type <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_DatetimeValue"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_DatetimeValue? OlDatetimeValue { get; set; }
-#nullable restore
-#else
-            public global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_DatetimeValue OlDatetimeValue { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_DateValue"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_DateValue? OlDateValue { get; set; }
-#nullable restore
-#else
-            public global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_DateValue OlDateValue { get; set; }
-#endif
             /// <summary>Composed type representation for type <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_DecimalValue"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -127,15 +111,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("data_type")?.GetStringValue();
                 var result = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_CustomFieldInstance.Ol_CustomFieldInstance_value();
-                if("DATE".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.OlDateValue = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_DateValue();
-                }
-                else if("DATETIME".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.OlDatetimeValue = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_DatetimeValue();
-                }
-                else if("DECIMAL".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                if("DECIMAL".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.OlDecimalValue = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_DecimalValue();
                 }
@@ -155,15 +131,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
             public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
             {
-                if(OlDatetimeValue != null)
-                {
-                    return OlDatetimeValue.GetFieldDeserializers();
-                }
-                else if(OlDateValue != null)
-                {
-                    return OlDateValue.GetFieldDeserializers();
-                }
-                else if(OlDecimalValue != null)
+                if(OlDecimalValue != null)
                 {
                     return OlDecimalValue.GetFieldDeserializers();
                 }
@@ -184,15 +152,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             public virtual void Serialize(ISerializationWriter writer)
             {
                 if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(OlDatetimeValue != null)
-                {
-                    writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_DatetimeValue>(null, OlDatetimeValue);
-                }
-                else if(OlDateValue != null)
-                {
-                    writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_DateValue>(null, OlDateValue);
-                }
-                else if(OlDecimalValue != null)
+                if(OlDecimalValue != null)
                 {
                     writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_DecimalValue>(null, OlDecimalValue);
                 }

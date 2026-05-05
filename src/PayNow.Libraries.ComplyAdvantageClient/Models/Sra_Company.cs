@@ -23,6 +23,14 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
 #else
         public List<global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_Associate> Associates { get; set; }
 #endif
+        /// <summary>List of relevant information from the profile</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_Field>? Fields { get; set; }
+#nullable restore
+#else
+        public List<global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_Field> Fields { get; set; }
+#endif
         /// <summary>List of known names</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,6 +65,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "associates", n => { Associates = n.GetCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_Associate>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_Associate.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "fields", n => { Fields = n.GetCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_Field>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_Field.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "names", n => { Names = n.GetCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_Name>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_Name.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -68,6 +77,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_Associate>("associates", Associates);
+            writer.WriteCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_Field>("fields", Fields);
             writer.WriteCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_Name>("names", Names);
             writer.WriteAdditionalData(AdditionalData);
         }

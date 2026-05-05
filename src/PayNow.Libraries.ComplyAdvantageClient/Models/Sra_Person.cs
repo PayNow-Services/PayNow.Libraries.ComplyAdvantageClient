@@ -39,6 +39,14 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
 #else
         public List<global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_DateOfDeath> DatesOfDeath { get; set; }
 #endif
+        /// <summary>List of relevant information from the profile</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_Field>? Fields { get; set; }
+#nullable restore
+#else
+        public List<global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_Field> Fields { get; set; }
+#endif
         /// <summary>List of images</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -91,6 +99,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
                 { "associates", n => { Associates = n.GetCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_Associate>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_Associate.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "dates_of_birth", n => { DatesOfBirth = n.GetCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_DateOfBirth>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_DateOfBirth.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "dates_of_death", n => { DatesOfDeath = n.GetCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_DateOfDeath>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_DateOfDeath.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "fields", n => { Fields = n.GetCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_Field>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_Field.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "images", n => { Images = n.GetCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_Image>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_Image.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "names", n => { Names = n.GetCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_Name>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_Name.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "places_of_birth", n => { PlacesOfBirth = n.GetCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_PlaceOfBirth>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_PlaceOfBirth.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -106,6 +115,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             writer.WriteCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_Associate>("associates", Associates);
             writer.WriteCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_DateOfBirth>("dates_of_birth", DatesOfBirth);
             writer.WriteCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_DateOfDeath>("dates_of_death", DatesOfDeath);
+            writer.WriteCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_Field>("fields", Fields);
             writer.WriteCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_Image>("images", Images);
             writer.WriteCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_Name>("names", Names);
             writer.WriteCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.Sra_PlaceOfBirth>("places_of_birth", PlacesOfBirth);

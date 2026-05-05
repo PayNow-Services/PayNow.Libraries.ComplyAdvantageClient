@@ -8,14 +8,6 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
     public enum Audit_TransactionReleaseDecisionDetailV2_review_decision
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "NOT_APPLICABLE")]
-        #pragma warning disable CS1591
-        NOT_APPLICABLE,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "NOT_REVIEWED")]
-        #pragma warning disable CS1591
-        NOT_REVIEWED,
-        #pragma warning restore CS1591
         [EnumMember(Value = "RELEASE")]
         #pragma warning disable CS1591
         RELEASE,
