@@ -35,6 +35,8 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             var mappingValue = parseNode.GetChildNode("data_type")?.GetStringValue();
             return mappingValue switch
             {
+                "DATE" => new global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_DateValue(),
+                "DATETIME" => new global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_DatetimeValue(),
                 "DECIMAL" => new global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_DecimalValue(),
                 "INTEGER" => new global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_IntegerValue(),
                 "TEXT" => new global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_TextValue(),

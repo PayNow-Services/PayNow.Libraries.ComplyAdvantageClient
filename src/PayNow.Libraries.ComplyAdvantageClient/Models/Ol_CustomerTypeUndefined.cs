@@ -24,6 +24,14 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
 #else
         public List<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_CustomerTypeUndefined_country?> Country { get; set; }
 #endif
+        /// <summary>The custom_fields property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_CustomFieldInstance>? CustomFields { get; set; }
+#nullable restore
+#else
+        public List<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_CustomFieldInstance> CustomFields { get; set; }
+#endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -59,6 +67,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             {
                 { "birth_year", n => { BirthYear = n.GetIntValue(); } },
                 { "country", n => { Country = n.GetCollectionOfEnumValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_CustomerTypeUndefined_country>()?.AsList(); } },
+                { "custom_fields", n => { CustomFields = n.GetCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_CustomFieldInstance>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_CustomFieldInstance.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
             };
         }
@@ -71,6 +80,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("birth_year", BirthYear);
             writer.WriteCollectionOfEnumValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_CustomerTypeUndefined_country>("country", Country);
+            writer.WriteCollectionOfObjectValues<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_CustomFieldInstance>("custom_fields", CustomFields);
             writer.WriteStringValue("name", Name);
             writer.WriteAdditionalData(AdditionalData);
         }

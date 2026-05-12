@@ -34,7 +34,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Customers.Item.Cases
         {
         }
         /// <summary>
-        /// Returns a paginated list of cases associated with a customer.You need one of the &quot;View cases&quot;, &quot;View cases (customer onboarding)&quot;, &quot;View cases (customer monitoring)&quot;, &quot;View cases (payment screening)&quot; or &quot;View cases (transaction monitoring)&quot; permissions to use this endpoint.
+        /// Returns a paginated list of cases associated with a customer.You need one of the &quot;View cases (customer onboarding)&quot;, &quot;View cases (customer monitoring)&quot;, &quot;View cases (payment screening)&quot; or &quot;View cases (transaction monitoring)&quot; permissions to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_PaginatedResponseCaseResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Customers.Item.Cases
             return await RequestAdapter.SendAsync<global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_PaginatedResponseCaseResponse>(requestInfo, global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_PaginatedResponseCaseResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns a paginated list of cases associated with a customer.You need one of the &quot;View cases&quot;, &quot;View cases (customer onboarding)&quot;, &quot;View cases (customer monitoring)&quot;, &quot;View cases (payment screening)&quot; or &quot;View cases (transaction monitoring)&quot; permissions to use this endpoint.
+        /// Returns a paginated list of cases associated with a customer.You need one of the &quot;View cases (customer onboarding)&quot;, &quot;View cases (customer monitoring)&quot;, &quot;View cases (payment screening)&quot; or &quot;View cases (transaction monitoring)&quot; permissions to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Customers.Item.Cases
             return new global::PayNow.Libraries.ComplyAdvantageClient.V2.Customers.Item.Cases.CasesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns a paginated list of cases associated with a customer.You need one of the &quot;View cases&quot;, &quot;View cases (customer onboarding)&quot;, &quot;View cases (customer monitoring)&quot;, &quot;View cases (payment screening)&quot; or &quot;View cases (transaction monitoring)&quot; permissions to use this endpoint.
+        /// Returns a paginated list of cases associated with a customer.You need one of the &quot;View cases (customer onboarding)&quot;, &quot;View cases (customer monitoring)&quot;, &quot;View cases (payment screening)&quot; or &quot;View cases (transaction monitoring)&quot; permissions to use this endpoint.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CasesRequestBuilderGetQueryParameters 

@@ -34,7 +34,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Audit.Cases.Item
         {
         }
         /// <summary>
-        /// Returns the audit log trail for a case.You need the &quot;View cases&quot; permission to use this endpoint.
+        /// Returns the audit log trail for a case.You need one of the &quot;View cases&quot;, &quot;View cases (customer onboarding)&quot;, &quot;View cases (customer monitoring)&quot;, &quot;View cases (payment screening)&quot; or &quot;View cases (transaction monitoring)&quot; permissions to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_CaseAuditLogsPageV2"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +59,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Audit.Cases.Item
             return await RequestAdapter.SendAsync<global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_CaseAuditLogsPageV2>(requestInfo, global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_CaseAuditLogsPageV2.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns the audit log trail for a case.You need the &quot;View cases&quot; permission to use this endpoint.
+        /// Returns the audit log trail for a case.You need one of the &quot;View cases&quot;, &quot;View cases (customer onboarding)&quot;, &quot;View cases (customer monitoring)&quot;, &quot;View cases (payment screening)&quot; or &quot;View cases (transaction monitoring)&quot; permissions to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -87,7 +87,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Audit.Cases.Item
             return new global::PayNow.Libraries.ComplyAdvantageClient.V2.Audit.Cases.Item.WithCase_identifierItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns the audit log trail for a case.You need the &quot;View cases&quot; permission to use this endpoint.
+        /// Returns the audit log trail for a case.You need one of the &quot;View cases&quot;, &quot;View cases (customer onboarding)&quot;, &quot;View cases (customer monitoring)&quot;, &quot;View cases (payment screening)&quot; or &quot;View cases (transaction monitoring)&quot; permissions to use this endpoint.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithCase_identifierItemRequestBuilderGetQueryParameters 

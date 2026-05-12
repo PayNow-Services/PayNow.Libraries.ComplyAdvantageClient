@@ -40,5 +40,17 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         #pragma warning disable CS1591
         RiskScoring,
         #pragma warning restore CS1591
+        [EnumMember(Value = "payment-screening")]
+        #pragma warning disable CS1591
+        PaymentScreening,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "store-transaction")]
+        #pragma warning disable CS1591
+        StoreTransaction,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "transaction-monitoring")]
+        #pragma warning disable CS1591
+        TransactionMonitoring,
+        #pragma warning restore CS1591
     }
 }

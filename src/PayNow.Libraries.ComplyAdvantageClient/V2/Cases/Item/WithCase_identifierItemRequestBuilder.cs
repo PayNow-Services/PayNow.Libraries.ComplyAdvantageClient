@@ -58,7 +58,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Cases.Item
         {
         }
         /// <summary>
-        /// This endpoint returns a single case by ID.You need one of the &quot;View cases&quot;, &quot;View cases (customer onboarding)&quot;, &quot;View cases (customer monitoring)&quot;, &quot;View cases (payment screening)&quot; or &quot;View cases (transaction monitoring)&quot; permissions to use this endpoint.
+        /// This endpoint returns a single case by ID.You need one of the &quot;View cases (customer onboarding)&quot;, &quot;View cases (customer monitoring)&quot;, &quot;View cases (payment screening)&quot; or &quot;View cases (transaction monitoring)&quot; permissions to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_CaseResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -76,7 +76,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Cases.Item
             return await RequestAdapter.SendAsync<global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_CaseResponse>(requestInfo, global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_CaseResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This endpoint returns a single case by ID.You need one of the &quot;View cases&quot;, &quot;View cases (customer onboarding)&quot;, &quot;View cases (customer monitoring)&quot;, &quot;View cases (payment screening)&quot; or &quot;View cases (transaction monitoring)&quot; permissions to use this endpoint.
+        /// This endpoint returns a single case by ID.You need one of the &quot;View cases (customer onboarding)&quot;, &quot;View cases (customer monitoring)&quot;, &quot;View cases (payment screening)&quot; or &quot;View cases (transaction monitoring)&quot; permissions to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

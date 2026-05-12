@@ -14,7 +14,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The email_address property</summary>
+        /// <summary>Valid email format: local-part@domain.tld (e.g., &apos;user@example.com&apos;). TLD must be 2+ letters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? EmailAddress { get; set; }
@@ -38,7 +38,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
 #else
         public List<string> PhoneNumber { get; set; }
 #endif
-        /// <summary>The url property</summary>
+        /// <summary>Max 256 characters. Protocol (http/https) is optional. Must have a valid domain with 2+ character TLD. Allowed path characters: letters, numbers, hyphens, dots, slashes. Allowed query param characters: letters, numbers, hyphens, &apos;=&apos;, &apos;&amp;&apos;, &apos;%&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Url { get; set; }
