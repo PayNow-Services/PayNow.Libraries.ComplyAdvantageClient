@@ -11,5 +11,9 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         #pragma warning disable CS1591
         LOOKUP_LIST,
         #pragma warning restore CS1591
+        [EnumMember(Value = "REGEX_BOOLEAN")]
+        #pragma warning disable CS1591
+        REGEX_BOOLEAN,
+        #pragma warning restore CS1591
     }
 }

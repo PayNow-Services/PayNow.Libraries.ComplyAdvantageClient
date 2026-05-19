@@ -5,7 +5,7 @@
   },
   "projects": {
     "/home/runner/work/PayNow.Libraries.ComplyAdvantageClient/PayNow.Libraries.ComplyAdvantageClient/src/PayNow.Libraries.ComplyAdvantageClient/PayNow.Libraries.ComplyAdvantageClient.csproj": {
-      "version": "0.0.40",
+      "version": "0.0.41",
       "restore": {
         "projectUniqueName": "/home/runner/work/PayNow.Libraries.ComplyAdvantageClient/PayNow.Libraries.ComplyAdvantageClient/src/PayNow.Libraries.ComplyAdvantageClient/PayNow.Libraries.ComplyAdvantageClient.csproj",
         "projectName": "PayNow.Libraries.ComplyAdvantageClient",
@@ -24,6 +24,7 @@
         },
         "frameworks": {
           "net8.0": {
+            "framework": "net8.0",
             "targetAlias": "net8.0",
             "projectReferences": {}
           }
@@ -38,10 +39,11 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.200"
+        "SdkAnalysisLevel": "10.0.300"
       },
       "frameworks": {
         "net8.0": {
+          "framework": "net8.0",
           "targetAlias": "net8.0",
           "dependencies": {
             "Microsoft.Kiota.Bundle": {
@@ -65,7 +67,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/10.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/10.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

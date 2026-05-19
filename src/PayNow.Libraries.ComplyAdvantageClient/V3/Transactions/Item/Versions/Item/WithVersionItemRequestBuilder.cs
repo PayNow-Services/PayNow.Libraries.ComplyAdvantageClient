@@ -4,55 +4,37 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using PayNow.Libraries.ComplyAdvantageClient.Models;
-using PayNow.Libraries.ComplyAdvantageClient.V3.Transactions.Item.Review;
-using PayNow.Libraries.ComplyAdvantageClient.V3.Transactions.Item.Risk_types;
-using PayNow.Libraries.ComplyAdvantageClient.V3.Transactions.Item.Versions;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace PayNow.Libraries.ComplyAdvantageClient.V3.Transactions.Item
+namespace PayNow.Libraries.ComplyAdvantageClient.V3.Transactions.Item.Versions.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \v3\transactions\{identifier}
+    /// Builds and executes requests for operations under \v3\transactions\{identifier}\versions\{version}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WithIdentifierItemRequestBuilder : BaseRequestBuilder
+    public partial class WithVersionItemRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The review property</summary>
-        public global::PayNow.Libraries.ComplyAdvantageClient.V3.Transactions.Item.Review.ReviewRequestBuilder Review
-        {
-            get => new global::PayNow.Libraries.ComplyAdvantageClient.V3.Transactions.Item.Review.ReviewRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The risk_types property</summary>
-        public global::PayNow.Libraries.ComplyAdvantageClient.V3.Transactions.Item.Risk_types.Risk_typesRequestBuilder Risk_types
-        {
-            get => new global::PayNow.Libraries.ComplyAdvantageClient.V3.Transactions.Item.Risk_types.Risk_typesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The versions property</summary>
-        public global::PayNow.Libraries.ComplyAdvantageClient.V3.Transactions.Item.Versions.VersionsRequestBuilder Versions
-        {
-            get => new global::PayNow.Libraries.ComplyAdvantageClient.V3.Transactions.Item.Versions.VersionsRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>
-        /// Instantiates a new <see cref="global::PayNow.Libraries.ComplyAdvantageClient.V3.Transactions.Item.WithIdentifierItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::PayNow.Libraries.ComplyAdvantageClient.V3.Transactions.Item.Versions.Item.WithVersionItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithIdentifierItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v3/transactions/{identifier}", pathParameters)
+        public WithVersionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v3/transactions/{identifier}/versions/{version}", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::PayNow.Libraries.ComplyAdvantageClient.V3.Transactions.Item.WithIdentifierItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::PayNow.Libraries.ComplyAdvantageClient.V3.Transactions.Item.Versions.Item.WithVersionItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithIdentifierItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v3/transactions/{identifier}", rawUrl)
+        public WithVersionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v3/transactions/{identifier}/versions/{version}", rawUrl)
         {
         }
         /// <summary>
-        /// When you submit a transaction to us we allocate an internal identifier for the Transaction. This API allows you to retrieve a Transaction using the identifier we set when we received your transaction.
+        /// When you submit a transaction to us we allocate an internal identifier for the Transaction. This API allows you to retrieve a specific version of a Transaction using the identifier we set when we received your transaction.
         /// </summary>
         /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_TransactionV3"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +59,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V3.Transactions.Item
             return await RequestAdapter.SendAsync<global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_TransactionV3>(requestInfo, global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_TransactionV3.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// When you submit a transaction to us we allocate an internal identifier for the Transaction. This API allows you to retrieve a Transaction using the identifier we set when we received your transaction.
+        /// When you submit a transaction to us we allocate an internal identifier for the Transaction. This API allows you to retrieve a specific version of a Transaction using the identifier we set when we received your transaction.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -98,18 +80,18 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V3.Transactions.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.V3.Transactions.Item.WithIdentifierItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.V3.Transactions.Item.Versions.Item.WithVersionItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::PayNow.Libraries.ComplyAdvantageClient.V3.Transactions.Item.WithIdentifierItemRequestBuilder WithUrl(string rawUrl)
+        public global::PayNow.Libraries.ComplyAdvantageClient.V3.Transactions.Item.Versions.Item.WithVersionItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::PayNow.Libraries.ComplyAdvantageClient.V3.Transactions.Item.WithIdentifierItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::PayNow.Libraries.ComplyAdvantageClient.V3.Transactions.Item.Versions.Item.WithVersionItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithIdentifierItemRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class WithVersionItemRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

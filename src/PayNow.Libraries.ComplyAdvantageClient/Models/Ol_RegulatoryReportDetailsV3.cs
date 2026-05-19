@@ -23,6 +23,14 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
 #else
         public global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_FincenDetailsV3 FincenDetails { get; set; }
 #endif
+        /// <summary>Your unique identifier for the Transaction Location.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TransactionLocationExternalIdentifier { get; set; }
+#nullable restore
+#else
+        public string TransactionLocationExternalIdentifier { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_RegulatoryReportDetailsV3"/> and sets the default values.
         /// </summary>
@@ -49,6 +57,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "fincen_details", n => { FincenDetails = n.GetObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_FincenDetailsV3>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_FincenDetailsV3.CreateFromDiscriminatorValue); } },
+                { "transaction_location_external_identifier", n => { TransactionLocationExternalIdentifier = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -59,6 +68,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_FincenDetailsV3>("fincen_details", FincenDetails);
+            writer.WriteStringValue("transaction_location_external_identifier", TransactionLocationExternalIdentifier);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
