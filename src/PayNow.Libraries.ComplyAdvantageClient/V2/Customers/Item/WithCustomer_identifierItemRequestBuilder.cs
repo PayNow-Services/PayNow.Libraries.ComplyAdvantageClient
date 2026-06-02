@@ -7,6 +7,7 @@ using PayNow.Libraries.ComplyAdvantageClient.Models;
 using PayNow.Libraries.ComplyAdvantageClient.V2.Customers.Item.Cases;
 using PayNow.Libraries.ComplyAdvantageClient.V2.Customers.Item.Labels;
 using PayNow.Libraries.ComplyAdvantageClient.V2.Customers.Item.Monitor;
+using PayNow.Libraries.ComplyAdvantageClient.V2.Customers.Item.Notes;
 using PayNow.Libraries.ComplyAdvantageClient.V2.Customers.Item.Products;
 using PayNow.Libraries.ComplyAdvantageClient.V2.Customers.Item.Reports;
 using PayNow.Libraries.ComplyAdvantageClient.V2.Customers.Item.Scores;
@@ -38,6 +39,11 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Customers.Item
         public global::PayNow.Libraries.ComplyAdvantageClient.V2.Customers.Item.Monitor.MonitorRequestBuilder Monitor
         {
             get => new global::PayNow.Libraries.ComplyAdvantageClient.V2.Customers.Item.Monitor.MonitorRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The notes property</summary>
+        public global::PayNow.Libraries.ComplyAdvantageClient.V2.Customers.Item.Notes.NotesRequestBuilder Notes
+        {
+            get => new global::PayNow.Libraries.ComplyAdvantageClient.V2.Customers.Item.Notes.NotesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The products property</summary>
         public global::PayNow.Libraries.ComplyAdvantageClient.V2.Customers.Item.Products.ProductsRequestBuilder Products
