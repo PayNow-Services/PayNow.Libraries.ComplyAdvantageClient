@@ -34,7 +34,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V3.Transactions.Process
         {
         }
         /// <summary>
-        /// Creates a transaction and executes our payment screening and transaction monitoring processes. The response will indicate whether the transaction should be held or processed. This endpoint requires PAYMENT_SCREENING_BASE and/or TRANSACTION_MONITORING_BASE account permission depending on the configuration identifies supplied with the payload.
+        /// Creates a transaction and executes our payment screening and transaction monitoring processes. The response will indicate whether the transaction should be held or processed. Updates a transaction if a transaction with the same external_identifier, occurred_at, customer_external_identifier and details.type already exists but other data has changed. Supports updating existing transactions on the Synchronous Transaction Monitoring flow only; not supported for fast payment screening or async flows. This endpoint requires PAYMENT_SCREENING_BASE and/or TRANSACTION_MONITORING_BASE account permission depending on the configuration identifies supplied with the payload.
         /// </summary>
         /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_TransactionResponseDTO"/></returns>
         /// <param name="body">The request body</param>
@@ -61,7 +61,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V3.Transactions.Process
             return await RequestAdapter.SendAsync<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_TransactionResponseDTO>(requestInfo, global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_TransactionResponseDTO.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a transaction and executes our payment screening and transaction monitoring processes. The response will indicate whether the transaction should be held or processed. This endpoint requires PAYMENT_SCREENING_BASE and/or TRANSACTION_MONITORING_BASE account permission depending on the configuration identifies supplied with the payload.
+        /// Creates a transaction and executes our payment screening and transaction monitoring processes. The response will indicate whether the transaction should be held or processed. Updates a transaction if a transaction with the same external_identifier, occurred_at, customer_external_identifier and details.type already exists but other data has changed. Supports updating existing transactions on the Synchronous Transaction Monitoring flow only; not supported for fast payment screening or async flows. This endpoint requires PAYMENT_SCREENING_BASE and/or TRANSACTION_MONITORING_BASE account permission depending on the configuration identifies supplied with the payload.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

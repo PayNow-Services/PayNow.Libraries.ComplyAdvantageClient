@@ -65,6 +65,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         public Sra_Configuration()
         {
             AdditionalData = new Dictionary<string, object>();
+            IsArchived = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

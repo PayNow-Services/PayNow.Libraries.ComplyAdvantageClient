@@ -51,14 +51,6 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             {
                 result.CaseManagementCounterpartySubject = new global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_CounterpartySubject();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.CaseManagementCustomerSubject = new global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_CustomerSubject();
-            }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.CaseManagementTransactionSubject = new global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_TransactionSubject();
-            }
             return result;
         }
         /// <summary>

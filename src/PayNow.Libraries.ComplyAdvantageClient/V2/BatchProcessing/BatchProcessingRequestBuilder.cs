@@ -48,7 +48,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.BatchProcessing
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BatchProcessingRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/batch-processing?workflow_type={workflow_type}{&created_by*,page_number*,page_size*,sort*,status*,target_identifier*}", pathParameters)
+        public BatchProcessingRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/batch-processing{?created_by*,page_number*,page_size*,sort*,status*,target_identifier*}", pathParameters)
         {
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.BatchProcessing
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BatchProcessingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/batch-processing?workflow_type={workflow_type}{&created_by*,page_number*,page_size*,sort*,status*,target_identifier*}", rawUrl)
+        public BatchProcessingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/batch-processing{?created_by*,page_number*,page_size*,sort*,status*,target_identifier*}", rawUrl)
         {
         }
         /// <summary>
@@ -111,7 +111,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.BatchProcessing
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::PayNow.Libraries.ComplyAdvantageClient.V2.BatchProcessing.BatchProcessingRequestBuilder.BatchProcessingRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/v2/batch-processing?workflow_type={workflow_type}{&created_by*,page_number*,page_size*,sort*,status*,target_identifier*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -132,7 +132,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.BatchProcessing
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/v2/batch-processing", PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "multipart/form-data", body);

@@ -118,10 +118,6 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
                 {
                     result.ActivityStructuredAddressV3 = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_StructuredAddressV3();
                 }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.ActivityUnstructuredAddressV3 = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Activity_UnstructuredAddressV3();
-                }
                 return result;
             }
             /// <summary>

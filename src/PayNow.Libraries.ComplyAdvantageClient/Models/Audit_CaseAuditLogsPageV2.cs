@@ -264,10 +264,6 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
                 {
                     result.AuditNoteToRiskLogV2 = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_NoteToRiskLogV2();
                 }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.AuditRiskCodeMutedForEntityDetailV2 = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_RiskCodeMutedForEntityDetailV2();
-                }
                 else if("RISK_CODE_UNMUTED_FOR_ENTITY".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.AuditRiskCodeUnmutedForEntityLogV2 = new global::PayNow.Libraries.ComplyAdvantageClient.Models.Audit_RiskCodeUnmutedForEntityLogV2();
