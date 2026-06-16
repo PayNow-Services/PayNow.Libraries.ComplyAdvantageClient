@@ -13,6 +13,14 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CaseManagement_CaseCustomerSummaryResponse : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Customer acquisition source.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AcquisitionSource { get; set; }
+#nullable restore
+#else
+        public string AcquisitionSource { get; set; }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Customer external identifier.</summary>
@@ -64,6 +72,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "acquisition_source", n => { AcquisitionSource = n.GetStringValue(); } },
                 { "external_identifier", n => { ExternalIdentifier = n.GetStringValue(); } },
                 { "identifier", n => { Identifier = n.GetGuidValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -79,6 +88,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("acquisition_source", AcquisitionSource);
             writer.WriteStringValue("external_identifier", ExternalIdentifier);
             writer.WriteGuidValue("identifier", Identifier);
             writer.WriteStringValue("name", Name);

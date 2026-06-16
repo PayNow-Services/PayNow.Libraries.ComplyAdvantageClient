@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using PayNow.Libraries.ComplyAdvantageClient.Models;
+using PayNow.Libraries.ComplyAdvantageClient.V2.Cases.Item.Alerts.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -17,6 +18,31 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Cases.Item.Alerts
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AlertsRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Gets an item from the PayNow.Libraries.ComplyAdvantageClient.v2.cases.item.alerts.item collection</summary>
+        /// <param name="position">The unique identifier of the alert.</param>
+        /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.V2.Cases.Item.Alerts.Item.WithAlert_identifierItemRequestBuilder"/></returns>
+        public global::PayNow.Libraries.ComplyAdvantageClient.V2.Cases.Item.Alerts.Item.WithAlert_identifierItemRequestBuilder this[Guid position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("alert_identifier", position);
+                return new global::PayNow.Libraries.ComplyAdvantageClient.V2.Cases.Item.Alerts.Item.WithAlert_identifierItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
+        /// <summary>Gets an item from the PayNow.Libraries.ComplyAdvantageClient.v2.cases.item.alerts.item collection</summary>
+        /// <param name="position">The unique identifier of the alert.</param>
+        /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.V2.Cases.Item.Alerts.Item.WithAlert_identifierItemRequestBuilder"/></returns>
+        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
+        public global::PayNow.Libraries.ComplyAdvantageClient.V2.Cases.Item.Alerts.Item.WithAlert_identifierItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("alert_identifier", position);
+                return new global::PayNow.Libraries.ComplyAdvantageClient.V2.Cases.Item.Alerts.Item.WithAlert_identifierItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::PayNow.Libraries.ComplyAdvantageClient.V2.Cases.Item.Alerts.AlertsRequestBuilder"/> and sets the default values.
         /// </summary>

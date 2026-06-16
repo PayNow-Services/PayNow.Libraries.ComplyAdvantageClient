@@ -15,6 +15,7 @@ using PayNow.Libraries.ComplyAdvantageClient.V2.Exports;
 using PayNow.Libraries.ComplyAdvantageClient.V2.Labels;
 using PayNow.Libraries.ComplyAdvantageClient.V2.Notifications;
 using PayNow.Libraries.ComplyAdvantageClient.V2.PaymentScreening;
+using PayNow.Libraries.ComplyAdvantageClient.V2.RegulatoryReports;
 using PayNow.Libraries.ComplyAdvantageClient.V2.Token;
 using PayNow.Libraries.ComplyAdvantageClient.V2.Users;
 using PayNow.Libraries.ComplyAdvantageClient.V2.Workflows;
@@ -94,6 +95,11 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2
         public global::PayNow.Libraries.ComplyAdvantageClient.V2.PaymentScreening.PaymentScreeningRequestBuilder PaymentScreening
         {
             get => new global::PayNow.Libraries.ComplyAdvantageClient.V2.PaymentScreening.PaymentScreeningRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The regulatoryReports property</summary>
+        public global::PayNow.Libraries.ComplyAdvantageClient.V2.RegulatoryReports.RegulatoryReportsRequestBuilder RegulatoryReports
+        {
+            get => new global::PayNow.Libraries.ComplyAdvantageClient.V2.RegulatoryReports.RegulatoryReportsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The token property</summary>
         public global::PayNow.Libraries.ComplyAdvantageClient.V2.Token.TokenRequestBuilder Token
