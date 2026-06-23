@@ -24,7 +24,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The type of webhook notification configuration being created</summary>
+        /// <summary>The type of webhook notification configuration being created.CASE_STATE_UPDATED is deprecated (replaced by CASE_TRANSITIONED)</summary>
         public global::PayNow.Libraries.ComplyAdvantageClient.Models.Ns_WebhookConfigurationPayload_type? Type { get; set; }
         /// <summary>The client side URL that webhooks should be sent to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

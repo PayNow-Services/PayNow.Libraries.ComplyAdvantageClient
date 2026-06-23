@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace PayNow.Libraries.ComplyAdvantageClient.Models
 {
-    /// <summary>The type of webhook notification configuration being created</summary>
+    /// <summary>The type of webhook notification configuration being created.CASE_STATE_UPDATED is deprecated (replaced by CASE_TRANSITIONED)</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum Ns_WebhookConfigurationPayload_type
     {
@@ -14,6 +14,10 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         [EnumMember(Value = "CASE_STATE_UPDATED")]
         #pragma warning disable CS1591
         CASE_STATE_UPDATED,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CASE_TRANSITIONED")]
+        #pragma warning disable CS1591
+        CASE_TRANSITIONED,
         #pragma warning restore CS1591
         [EnumMember(Value = "WORKFLOW_COMPLETED")]
         #pragma warning disable CS1591

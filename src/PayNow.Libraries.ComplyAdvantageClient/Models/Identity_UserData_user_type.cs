@@ -15,5 +15,9 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         #pragma warning disable CS1591
         HUMAN,
         #pragma warning restore CS1591
+        [EnumMember(Value = "MACHINE_CREDENTIAL")]
+        #pragma warning disable CS1591
+        MACHINE_CREDENTIAL,
+        #pragma warning restore CS1591
     }
 }

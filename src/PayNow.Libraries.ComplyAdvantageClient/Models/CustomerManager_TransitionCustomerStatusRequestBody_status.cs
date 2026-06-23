@@ -5,20 +5,16 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum Identity_NoRolesUserData_user_type
+    public enum CustomerManager_TransitionCustomerStatusRequestBody_status
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "AGENT")]
+        [EnumMember(Value = "ACTIVE")]
         #pragma warning disable CS1591
-        AGENT,
+        ACTIVE,
         #pragma warning restore CS1591
-        [EnumMember(Value = "HUMAN")]
+        [EnumMember(Value = "CLOSED")]
         #pragma warning disable CS1591
-        HUMAN,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "MACHINE_CREDENTIAL")]
-        #pragma warning disable CS1591
-        MACHINE_CREDENTIAL,
+        CLOSED,
         #pragma warning restore CS1591
     }
 }

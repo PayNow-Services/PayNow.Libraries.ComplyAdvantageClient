@@ -16,6 +16,10 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Notifications.Configurations
         #pragma warning disable CS1591
         CASE_STATE_UPDATED,
         #pragma warning restore CS1591
+        [EnumMember(Value = "CASE_TRANSITIONED")]
+        #pragma warning disable CS1591
+        CASE_TRANSITIONED,
+        #pragma warning restore CS1591
         [EnumMember(Value = "WORKFLOW_COMPLETED")]
         #pragma warning disable CS1591
         WORKFLOW_COMPLETED,

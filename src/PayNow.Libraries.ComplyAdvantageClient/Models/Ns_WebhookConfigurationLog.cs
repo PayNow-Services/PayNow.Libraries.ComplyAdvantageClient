@@ -30,7 +30,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The type of webhook notification configuration being created</summary>
+        /// <summary>The type of webhook notification configuration being created.CASE_STATE_UPDATED is deprecated (replaced by CASE_TRANSITIONED)</summary>
         public global::PayNow.Libraries.ComplyAdvantageClient.Models.Ns_WebhookConfigurationLog_type? Type { get; set; }
         /// <summary>The datetime that the webhook notification configuration was last updated</summary>
         public DateTimeOffset? UpdatedAt { get; set; }

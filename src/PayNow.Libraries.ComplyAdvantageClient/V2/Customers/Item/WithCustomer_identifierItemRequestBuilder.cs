@@ -11,6 +11,7 @@ using PayNow.Libraries.ComplyAdvantageClient.V2.Customers.Item.Notes;
 using PayNow.Libraries.ComplyAdvantageClient.V2.Customers.Item.Products;
 using PayNow.Libraries.ComplyAdvantageClient.V2.Customers.Item.Reports;
 using PayNow.Libraries.ComplyAdvantageClient.V2.Customers.Item.Scores;
+using PayNow.Libraries.ComplyAdvantageClient.V2.Customers.Item.Transition;
 using PayNow.Libraries.ComplyAdvantageClient.V2.Customers.Item.Workflows;
 using System.Collections.Generic;
 using System.IO;
@@ -59,6 +60,11 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Customers.Item
         public global::PayNow.Libraries.ComplyAdvantageClient.V2.Customers.Item.Scores.ScoresRequestBuilder Scores
         {
             get => new global::PayNow.Libraries.ComplyAdvantageClient.V2.Customers.Item.Scores.ScoresRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The transition property</summary>
+        public global::PayNow.Libraries.ComplyAdvantageClient.V2.Customers.Item.Transition.TransitionRequestBuilder Transition
+        {
+            get => new global::PayNow.Libraries.ComplyAdvantageClient.V2.Customers.Item.Transition.TransitionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The workflows property</summary>
         public global::PayNow.Libraries.ComplyAdvantageClient.V2.Customers.Item.Workflows.WorkflowsRequestBuilder Workflows
