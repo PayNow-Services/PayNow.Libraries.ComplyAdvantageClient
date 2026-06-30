@@ -7,6 +7,7 @@ using PayNow.Libraries.ComplyAdvantageClient.Models;
 using PayNow.Libraries.ComplyAdvantageClient.V2.Cases.Item.Alerts;
 using PayNow.Libraries.ComplyAdvantageClient.V2.Cases.Item.Assign;
 using PayNow.Libraries.ComplyAdvantageClient.V2.Cases.Item.Notes;
+using PayNow.Libraries.ComplyAdvantageClient.V2.Cases.Item.Subjects;
 using PayNow.Libraries.ComplyAdvantageClient.V2.Cases.Item.Transition;
 using System.Collections.Generic;
 using System.IO;
@@ -35,6 +36,11 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Cases.Item
         public global::PayNow.Libraries.ComplyAdvantageClient.V2.Cases.Item.Notes.NotesRequestBuilder Notes
         {
             get => new global::PayNow.Libraries.ComplyAdvantageClient.V2.Cases.Item.Notes.NotesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The subjects property</summary>
+        public global::PayNow.Libraries.ComplyAdvantageClient.V2.Cases.Item.Subjects.SubjectsRequestBuilder Subjects
+        {
+            get => new global::PayNow.Libraries.ComplyAdvantageClient.V2.Cases.Item.Subjects.SubjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The transition property</summary>
         public global::PayNow.Libraries.ComplyAdvantageClient.V2.Cases.Item.Transition.TransitionRequestBuilder Transition

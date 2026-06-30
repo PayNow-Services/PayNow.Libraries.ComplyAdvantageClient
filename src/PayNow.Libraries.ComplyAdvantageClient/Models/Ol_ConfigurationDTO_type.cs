@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace PayNow.Libraries.ComplyAdvantageClient.Models
 {
+    /// <summary>The type of processing configuration. Use `TRANSACTION_MONITORING` for TM scenarios.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum Ol_ConfigurationDTO_type
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "PAYMENT_SCREENING")]
         #pragma warning disable CS1591

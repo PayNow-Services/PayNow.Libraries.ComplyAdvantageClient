@@ -34,7 +34,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Exports.Item.Download
         {
         }
         /// <summary>
-        /// This endpoint will return the download url for the requested export.You need the &quot;View and download insights&quot; permission to use this endpoint.
+        /// This endpoint will return the download url for the requested export. For security reasons, the returned download URL is valid for only 5 seconds (TTL) from the moment it is issued, so the download must be started immediately or a new URL requested via this endpoint.You need the &quot;View and download insights&quot; permission to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Exports_DownloadExportResponseBody"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +59,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Exports.Item.Download
             return await RequestAdapter.SendAsync<global::PayNow.Libraries.ComplyAdvantageClient.Models.Exports_DownloadExportResponseBody>(requestInfo, global::PayNow.Libraries.ComplyAdvantageClient.Models.Exports_DownloadExportResponseBody.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This endpoint will return the download url for the requested export.You need the &quot;View and download insights&quot; permission to use this endpoint.
+        /// This endpoint will return the download url for the requested export. For security reasons, the returned download URL is valid for only 5 seconds (TTL) from the moment it is issued, so the download must be started immediately or a new URL requested via this endpoint.You need the &quot;View and download insights&quot; permission to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

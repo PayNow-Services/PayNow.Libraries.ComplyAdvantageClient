@@ -144,5 +144,9 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Cases
         #pragma warning disable CS1591
         CUSTOM,
         #pragma warning restore CS1591
+        [EnumMember(Value = "RISK_WORDS")]
+        #pragma warning disable CS1591
+        RISK_WORDS,
+        #pragma warning restore CS1591
     }
 }

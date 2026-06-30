@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace PayNow.Libraries.ComplyAdvantageClient.Models
 {
+    /// <summary>`SYNCHRONOUS` returns results inline. `ASYNCHRONOUS` returns `PENDING` immediately and delivers results later via webhook.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum Ol_ConfigurationDTO_processing_method
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "SYNCHRONOUS")]
         #pragma warning disable CS1591

@@ -8,33 +8,31 @@ using System;
 namespace PayNow.Libraries.ComplyAdvantageClient.Models
 {
     /// <summary>
-    /// Optional. Specifies how to deliver async evaluation results. Only valid when `processing_method` is `ASYNCHRONOUS` and `type` is `TRANSACTION_MONITORING`.
+    /// Summary information about the subjects associated with a case.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class Ol_EvaluationResultDeliveryDTO : IAdditionalDataHolder, IParsable
+    public partial class CaseManagement_SubjectsSummary : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The delivery method. Currently only `WEBHOOK` is supported.</summary>
-        public global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_EvaluationResultDeliveryDTO_method? Method { get; set; }
-        /// <summary>The `identifier` of a webhook configuration created via `POST /v2/notifications/configurations/webhook` with `type: TRANSACTION_MONITORING_ASYNC_COMPLETED`.</summary>
-        public Guid? WebhookIdentifier { get; set; }
+        /// <summary>The total number of subjects associated with the case.</summary>
+        public int? TotalCount { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_EvaluationResultDeliveryDTO"/> and sets the default values.
+        /// Instantiates a new <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_SubjectsSummary"/> and sets the default values.
         /// </summary>
-        public Ol_EvaluationResultDeliveryDTO()
+        public CaseManagement_SubjectsSummary()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_EvaluationResultDeliveryDTO"/></returns>
+        /// <returns>A <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_SubjectsSummary"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_EvaluationResultDeliveryDTO CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_SubjectsSummary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_EvaluationResultDeliveryDTO();
+            return new global::PayNow.Libraries.ComplyAdvantageClient.Models.CaseManagement_SubjectsSummary();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,8 +42,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "method", n => { Method = n.GetEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_EvaluationResultDeliveryDTO_method>(); } },
-                { "webhook_identifier", n => { WebhookIdentifier = n.GetGuidValue(); } },
+                { "total_count", n => { TotalCount = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -55,8 +52,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_EvaluationResultDeliveryDTO_method>("method", Method);
-            writer.WriteGuidValue("webhook_identifier", WebhookIdentifier);
+            writer.WriteIntValue("total_count", TotalCount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

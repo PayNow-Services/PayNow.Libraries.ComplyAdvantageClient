@@ -15,7 +15,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The evaluation_result_delivery property</summary>
+        /// <summary>Optional. Specifies how to deliver async evaluation results. Only valid when `processing_method` is `ASYNCHRONOUS` and `type` is `TRANSACTION_MONITORING`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_EvaluationResultDeliveryDTO? EvaluationResultDelivery { get; set; }
@@ -23,7 +23,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
 #else
         public global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_EvaluationResultDeliveryDTO EvaluationResultDelivery { get; set; }
 #endif
-        /// <summary>The identifiers property</summary>
+        /// <summary>The scenario configuration identifiers to evaluate the transaction against.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<Guid?>? Identifiers { get; set; }
@@ -31,9 +31,9 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
 #else
         public List<Guid?> Identifiers { get; set; }
 #endif
-        /// <summary>The processing_method property</summary>
+        /// <summary>`SYNCHRONOUS` returns results inline. `ASYNCHRONOUS` returns `PENDING` immediately and delivers results later via webhook.</summary>
         public global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_ConfigurationDTO_processing_method? ProcessingMethod { get; set; }
-        /// <summary>The type property</summary>
+        /// <summary>The type of processing configuration. Use `TRANSACTION_MONITORING` for TM scenarios.</summary>
         public global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_ConfigurationDTO_type? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Ol_ConfigurationDTO"/> and sets the default values.

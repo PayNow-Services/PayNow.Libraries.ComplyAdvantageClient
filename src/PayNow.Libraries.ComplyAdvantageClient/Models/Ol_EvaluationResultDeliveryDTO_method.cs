@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace PayNow.Libraries.ComplyAdvantageClient.Models
 {
+    /// <summary>The delivery method. Currently only `WEBHOOK` is supported.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum Ol_EvaluationResultDeliveryDTO_method
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "WEBHOOK")]
         #pragma warning disable CS1591
