@@ -48,7 +48,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.CustomLists
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CustomListsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/custom-lists{?page_number*,page_size*,sort*}", pathParameters)
+        public CustomListsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/custom-lists{?page_number*,page_size*,sort*,type*}", pathParameters)
         {
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.CustomLists
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CustomListsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/custom-lists{?page_number*,page_size*,sort*}", rawUrl)
+        public CustomListsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/custom-lists{?page_number*,page_size*,sort*,type*}", rawUrl)
         {
         }
         /// <summary>
@@ -173,6 +173,27 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.CustomLists
 #else
             [QueryParameter("sort")]
             public string[] Sort { get; set; }
+#endif
+            /// <summary>Filter by custom list type.</summary>
+            [Obsolete("This property is deprecated, use TypeAsGetTypeQueryParameterType instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("type")]
+            public string[]? Type { get; set; }
+#nullable restore
+#else
+            [QueryParameter("type")]
+            public string[] Type { get; set; }
+#endif
+            /// <summary>Filter by custom list type.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("type")]
+            public global::PayNow.Libraries.ComplyAdvantageClient.V2.CustomLists.GetTypeQueryParameterType[]? TypeAsGetTypeQueryParameterType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("type")]
+            public global::PayNow.Libraries.ComplyAdvantageClient.V2.CustomLists.GetTypeQueryParameterType[] TypeAsGetTypeQueryParameterType { get; set; }
 #endif
         }
         /// <summary>

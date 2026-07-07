@@ -15,5 +15,9 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         #pragma warning disable CS1591
         CUSTOM_LIST,
         #pragma warning restore CS1591
+        [EnumMember(Value = "RISK_WORD_LIST")]
+        #pragma warning disable CS1591
+        RISK_WORD_LIST,
+        #pragma warning restore CS1591
     }
 }

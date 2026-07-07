@@ -30,6 +30,8 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>The type property</summary>
+        public global::PayNow.Libraries.ComplyAdvantageClient.Models.Customlist_CustomListAddDTO_type? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Customlist_CustomListAddDTO"/> and sets the default values.
         /// </summary>
@@ -57,6 +59,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             {
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Customlist_CustomListAddDTO_type>(); } },
             };
         }
         /// <summary>
@@ -68,6 +71,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("name", Name);
+            writer.WriteEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Customlist_CustomListAddDTO_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

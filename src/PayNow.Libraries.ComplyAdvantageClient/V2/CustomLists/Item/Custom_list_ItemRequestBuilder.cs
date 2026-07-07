@@ -5,6 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using PayNow.Libraries.ComplyAdvantageClient.Models;
 using PayNow.Libraries.ComplyAdvantageClient.V2.CustomLists.Item.Entity;
+using PayNow.Libraries.ComplyAdvantageClient.V2.CustomLists.Item.RiskWord;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -22,6 +23,11 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.CustomLists.Item
         public global::PayNow.Libraries.ComplyAdvantageClient.V2.CustomLists.Item.Entity.EntityRequestBuilder Entity
         {
             get => new global::PayNow.Libraries.ComplyAdvantageClient.V2.CustomLists.Item.Entity.EntityRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The riskWord property</summary>
+        public global::PayNow.Libraries.ComplyAdvantageClient.V2.CustomLists.Item.RiskWord.RiskWordRequestBuilder RiskWord
+        {
+            get => new global::PayNow.Libraries.ComplyAdvantageClient.V2.CustomLists.Item.RiskWord.RiskWordRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::PayNow.Libraries.ComplyAdvantageClient.V2.CustomLists.Item.Custom_list_ItemRequestBuilder"/> and sets the default values.

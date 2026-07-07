@@ -58,6 +58,8 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>The type property</summary>
+        public global::PayNow.Libraries.ComplyAdvantageClient.Models.Customlist_CustomListDTO_type? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::PayNow.Libraries.ComplyAdvantageClient.Models.Customlist_CustomListDTO"/> and sets the default values.
         /// </summary>
@@ -90,6 +92,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
                 { "entities", n => { Entities = n.GetObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Customlist_EntitiesCountDTO>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Customlist_EntitiesCountDTO.CreateFromDiscriminatorValue); } },
                 { "last_updated", n => { LastUpdated = n.GetObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Customlist_AuditDTO>(global::PayNow.Libraries.ComplyAdvantageClient.Models.Customlist_AuditDTO.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Customlist_CustomListDTO_type>(); } },
             };
         }
         /// <summary>
@@ -106,6 +109,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
             writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Customlist_EntitiesCountDTO>("entities", Entities);
             writer.WriteObjectValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Customlist_AuditDTO>("last_updated", LastUpdated);
             writer.WriteStringValue("name", Name);
+            writer.WriteEnumValue<global::PayNow.Libraries.ComplyAdvantageClient.Models.Customlist_CustomListDTO_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
