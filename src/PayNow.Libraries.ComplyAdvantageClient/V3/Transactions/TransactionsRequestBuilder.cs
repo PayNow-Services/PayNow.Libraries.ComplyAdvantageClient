@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using PayNow.Libraries.ComplyAdvantageClient.Models;
+using PayNow.Libraries.ComplyAdvantageClient.V3.Transactions.CustomFields;
 using PayNow.Libraries.ComplyAdvantageClient.V3.Transactions.External;
 using PayNow.Libraries.ComplyAdvantageClient.V3.Transactions.Item;
 using PayNow.Libraries.ComplyAdvantageClient.V3.Transactions.Process;
@@ -20,6 +21,11 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V3.Transactions
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TransactionsRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The customFields property</summary>
+        public global::PayNow.Libraries.ComplyAdvantageClient.V3.Transactions.CustomFields.CustomFieldsRequestBuilder CustomFields
+        {
+            get => new global::PayNow.Libraries.ComplyAdvantageClient.V3.Transactions.CustomFields.CustomFieldsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The external property</summary>
         public global::PayNow.Libraries.ComplyAdvantageClient.V3.Transactions.External.ExternalRequestBuilder External
         {
