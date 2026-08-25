@@ -52,6 +52,10 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         public Identity_ClientData()
         {
             AdditionalData = new Dictionary<string, object>();
+            Active = false;
+            AllowPasswordLogin = false;
+            AllowSsoLogin = false;
+            CanManageSubscription = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

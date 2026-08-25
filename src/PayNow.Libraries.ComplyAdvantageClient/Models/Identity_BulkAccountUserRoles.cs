@@ -33,6 +33,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         public Identity_BulkAccountUserRoles()
         {
             AdditionalData = new Dictionary<string, object>();
+            Success = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

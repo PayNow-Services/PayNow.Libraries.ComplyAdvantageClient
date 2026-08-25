@@ -95,11 +95,11 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Clients.Me.Users
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("identifier")]
-            public string[]? Identifier { get; set; }
+            public Guid?[]? Identifier { get; set; }
 #nullable restore
 #else
             [QueryParameter("identifier")]
-            public string[] Identifier { get; set; }
+            public Guid?[] Identifier { get; set; }
 #endif
             /// <summary>Search users by name.</summary>
             [Obsolete("")]
@@ -112,10 +112,10 @@ namespace PayNow.Libraries.ComplyAdvantageClient.V2.Clients.Me.Users
             [QueryParameter("name_contains")]
             public string NameContains { get; set; }
 #endif
-            /// <summary>The page of results returned within the response.</summary>
+            /// <summary>One-based page index (1..N)</summary>
             [QueryParameter("page_number")]
             public int? PageNumber { get; set; }
-            /// <summary>The amount of results returned within the response.</summary>
+            /// <summary>The size of the page to be returned</summary>
             [QueryParameter("page_size")]
             public int? PageSize { get; set; }
             /// <summary>Search users.</summary>

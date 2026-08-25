@@ -24,6 +24,7 @@ namespace PayNow.Libraries.ComplyAdvantageClient.Models
         public Identity_UsersMePartialUpdateRequestBody()
         {
             AdditionalData = new Dictionary<string, object>();
+            CookieConsent = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
